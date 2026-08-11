@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Análise de Causa Raiz na Manutenção: 5 Porquês e Ishikawa</title>
+<meta name="description" content="Aprenda a aplicar a Análise de Causa Raiz (RCA), o método dos 5 Porquês e o Diagrama de Ishikawa para eliminar falhas recorrentes no chão de fábrica.">
+<link rel="canonical" href="https://maintor.com.br/blog/causa-raiz-de-falhas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Análise de Causa Raiz na Manutenção: 5 Porquês e Ishikawa">
+<meta property="og:description" content="Método prático para investigar quebras industriais, identificar a causa primária dos problemas e evitar que o mesmo defeito volte a acontecer.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Análise de Causa Raiz na Manutenção: 5 Porquês e Ishikawa",
+  "description": "Guia prático sobre Análise de Causa Raiz (RCA) utilizando as metodologias dos 5 Porquês e Diagrama de Ishikawa na gestão de manutenção.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://maintor.com.br/blog/causa-raiz-de-falhas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Maintor",
+    "url": "https://maintor.com.br"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é Análise de Causa Raiz (RCA)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É uma metodologia estruturada de resolução de problemas focada em identificar a origem primária (a causa raiz) de uma falha em vez de apenas remediar o sintoma superficial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "É preciso perguntar exatamente 5 vezes o 'Por quê'?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O número 5 é uma diretriz prática. Em algumas situações, a causa raiz é encontrada na 3ª ou 4ª pergunta; em problemas mais complexos, pode ser necessário avançar até o 6º ou 7º porquê até atingir uma causa gerenciável."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que são os 6M no Diagrama de Ishikawa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "São as 6 categorias de fatores que podem gerar uma falha: Máquina, Método, Mão de Obra, Material, Meio Ambiente e Medição."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando fazer uma investigação de causa raiz na fábrica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sempre que ocorrer uma falha em equipamento crítico (Classe A), quando houver risco à segurança/meio ambiente, ou quando uma falha for recorrente (quebrar 2 ou mais vezes pelo mesmo motivo)."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:6px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br">Maintor</a> › <a href="https://maintor.com.br/blog">Blog</a> › Análise de Causa Raiz</nav>
+
+  <h1>Análise de Causa Raiz na Manutenção: 5 Porquês e Ishikawa</h1>
+  <p class="dek">Como investigar falhas operacionais com método prático e impedir que os mesmos problemas voltem a paralisar a produção.</p>
+
+  <p class="resposta">A <strong>Análise de Causa Raiz</strong> (RCA, do inglês <em>Root Cause Analysis</em>) é o processo sistemático de investigação utilizado pela engenharia de manutenção para identificar o motivo primário de uma quebra. Em vez de apenas substituir o componente danificado, a RCA ataca o fator fundamental que gerou a falha, garantindo que o problema não se repita no futuro.</p>
+
+  <h2>Sintoma vs. Causa Raiz: A armadilha do conserto rápido</h2>
+  <p>Quando um equipamento para no meio do turno, a pressão por retomar a produção favorece correções superficiais. Por exemplo, se um fusível de um painel elétrico queima, a reação imediata é substituí-lo por um novo. No entanto, o fusível é apenas o <em>sintoma</em> de uma sobrecarga elétrica. Se a causa primária (como o curto-circuito interno em um enrolamento de motor) não for corrigida, o novo fusível queimará novamente em pouco tempo.</p>
+  <p>Tratar sintomas em vez de causas consome recursos da equipe e infla o número de ordens de serviço corretivas no sistema.</p>
+
+  <h2>Metodologia 1: A técnica dos 5 Porquês</h2>
+  <p>A ferramenta dos <a href="https://maintor.com.br/glossario/5-porques">5 Porquês</a> é um método simples e altamente eficaz desenvolvido no contexto da <a href="https://maintor.com.br/glossario/tpm">TPM (Manutenção Produtiva Total)</a>. Consiste em perguntar "por quê" sequencialmente diante de uma falha até atingir a raiz do problema.</p>
+
+  <h3>Exemplo prático de aplicação no chão de fábrica</h3>
+  <p>Imagine que a bomba principal de óleo de uma linha de usinagem travou durante a produção:</p>
+  <ol>
+    <li><strong>1º Por quê?</strong> Por que a bomba travou? <br><em>Resposta:</em> Porque o rolamento do eixo sofreu engripamento.</li>
+    <li><strong>2º Por quê?</strong> Por que o rolamento engripou? <br><em>Resposta:</em> Porque faltava lubrificação adequada no componente.</li>
+    <li><strong>3º Por quê?</strong> Por que faltava lubrificação? <br><em>Resposta:</em> Porque a graxa utilizada estava contaminada com limalha de ferro.</li>
+    <li><strong>4º Por quê?</strong> Por que a graxa estava contaminada? <br><em>Resposta:</em> Porque a tampa de vedação do reservatório estava trincada e sem vedação.</li>
+    <li><strong>5º Por quê?</strong> Por que a tampa estava trincada sem ser trocada? <br><em>Resposta:</em> Porque a inspeção de vedações não fazia parte do checklist da manutenção preventiva do ativo.</li>
+  </ol>
+  <p><strong>Causa Raiz Identificada:</strong> Ausência da verificação de vedações no plano de manutenção preventiva. A ação corretiva definitiva consiste em atualizar o checklist na <a href="https://maintor.com.br/glossario/ordem-de-servico">ordem de serviço</a> preventiva, e não apenas trocar a bomba travada.</p>
+
+  <h2>Metodologia 2: Diagrama de Ishikawa (Espinha de Peixe / 6M)</h2>
+  <p>Para falhas complexas que envolvem múltiplos fatores, o Diagrama de Causa e Efeito (desenvolvido por Kaoru Ishikawa) ajuda a organizar graficamente as possíveis hipóteses agrupadas em 6 categorias (os 6M):</p>
+  <table>
+    <tr><th>Categoria</th><th>Fatores Investigados</th></tr>
+    <tr><td><strong>Máquina</strong></td><td>Desgaste natural de peças, desalinhamento, falta de rigidez estrutural ou folgas.</td></tr>
+    <tr><td><strong>Método</strong></td><td>Procedimento operacional incorreto, checklist incompleto ou instrução de trabalho desatualizada.</td></tr>
+    <tr><td><strong>Mão de Obra</strong></td><td>Falta de treinamento técnico, fadiga da equipe ou descumprimento de padrão.</td></tr>
+    <tr><td><strong>Material</strong></td><td>Peça de reposição fora de especificação, óleo lubrificante incorreto ou lote de matéria-prima.</td></tr>
+    <tr><td><strong>Meio Ambiente</strong></td><td>Temperatura ambiente elevada, umidade excessiva, poeira suspensa ou vibração externa.</td></tr>
+    <tr><td><strong>Medição</strong></td><td>Sensor de temperatura descalibrado, manômetro com defeito ou falha de leitura.</td></tr>
+  </table>
+
+  <h2>Integrando a RCA à gestão diária da manutenção</h2>
+  <p>Para que a Análise de Causa Raiz funcione na prática, ela deve estar integrada aos processos normais da fábrica:</p>
+  <ul>
+    <li><strong>Critério de disparo:</strong> Defina regras claras para quando uma RCA é obrigatória. Por exemplo: qualquer parada acima de 2 horas em ativos críticos ou qualquer falha que se repita 2 vezes no mesmo mês.</li>
+    <li><strong>Registro na Ordem de Serviço:</strong> Exija que ao finalizar uma OS corretiva, o técnico selecione a causa primária a partir de uma lista padronizada de Causas de Falha (elétrica, mecânica, operação, lubrificação, contaminação).</li>
+    <li><strong>Alinhamento com FMEA:</strong> Utilize os achados da RCA para atualizar a análise de modos de falha e efeitos (<a href="https://maintor.com.br/glossario/fmea">FMEA</a>) do equipamento, refinando os controles preventivos.</li>
+  </ul>
+
+  <div class="faq">
+    <h2>Perguntas frequentes sobre Análise de Causa Raiz</h2>
+    <details>
+      <summary>O que é Análise de Causa Raiz (RCA)?</summary>
+      <p>É um método sistemático para descobrir a origem primária de um problema técnico, permitindo eliminá-lo em definitivo em vez de apenas consertar os sintomas.</p>
+    </details>
+    <details>
+      <summary>É preciso perguntar exatamente 5 vezes o 'Por quê'?</summary>
+      <p>Não. O número 5 é uma referência. O objetivo é continuar perguntando até encontrar uma causa fundamental e gerenciável sobre a qual a equipe possa agir.</p>
+    </details>
+    <details>
+      <summary>O que são os 6M no Diagrama de Ishikawa?</summary>
+      <p>São as 6 categorias de análise: Máquina, Método, Mão de Obra, Material, Meio Ambiente e Medição.</p>
+    </details>
+    <details>
+      <summary>Quando fazer uma investigação de causa raiz na fábrica?</summary>
+      <p>Sempre em falhas de ativos críticos (Classe A), acidentes de segurança, incidentes ambientais ou quando ocorrerem falhas recorrentes no mesmo equipamento.</p>
+    </details>
+  </div>
+
+  <div class="cta">
+    <h2>Registre causas de falha e elimine a reincidência</h2>
+    <p>No Maintor, cada ordem de serviço possui registro padronizado de causa da falha, facilitando a identificação dos principais motivos de quebra nos relatórios.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor CMMS</a>
+  </div>
+
+  <p class="rel"><strong>Termos e artigos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/5-porques">5 Porquês</a> ·
+    <a href="https://maintor.com.br/glossario/fmea">FMEA</a> ·
+    <a href="https://maintor.com.br/glossario/ordem-de-servico">Ordem de Serviço</a> ·
+    <a href="https://maintor.com.br/glossario/tpm">TPM (Manutenção Produtiva Total)</a>
+  </p>
+</article>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manutenção preditiva: o que é, como funciona e técnicas</title>
+<meta name="description" content="Manutenção preditiva monitora a condição real do ativo por sensores e prevê a falha antes que ela ocorra. Veja como funciona, técnicas e um exemplo.">
+<link rel="canonical" href="https://maintor.com.br/glossario/manutencao-preditiva">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manutenção preditiva: o que é e como funciona">
+<meta property="og:description" content="A estratégia que usa a condição real do ativo para prever falhas antes que elas parem a produção.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Manutenção preditiva",
+  "description": "Estratégia de manutenção baseada na condição real do ativo, que usa monitoramento contínuo e sensores (vibração, temperatura, análise de óleo) para prever a falha antes que ela ocorra e intervir no momento certo.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é manutenção preditiva?","acceptedAnswer":{"@type":"Answer","text":"Manutenção preditiva é a estratégia que monitora a condição real do ativo por meio de sensores e análises (vibração, temperatura, óleo) para prever quando uma falha vai ocorrer e intervir antes dela, no momento certo."}},
+    {"@type":"Question","name":"Qual a diferença entre manutenção preditiva e preventiva?","acceptedAnswer":{"@type":"Answer","text":"A preventiva troca ou revisa peças em intervalos fixos de tempo ou uso, independentemente do estado do ativo. A preditiva age com base na condição real medida, intervindo só quando os dados indicam degradação — o que evita trocas desnecessárias e falhas surpresa."}},
+    {"@type":"Question","name":"Quais técnicas são usadas na manutenção preditiva?","acceptedAnswer":{"@type":"Answer","text":"As principais são análise de vibração, termografia (temperatura por infravermelho), análise de óleo lubrificante, ultrassom, análise de corrente elétrica (MCA) e monitoramento de parâmetros de processo como pressão e rotação."}},
+    {"@type":"Question","name":"A manutenção preditiva substitui a preventiva?","acceptedAnswer":{"@type":"Answer","text":"Não. Elas se complementam: a preventiva cobre tarefas de rotina de baixo custo (lubrificação, limpeza), e a preditiva concentra o monitoramento nos ativos críticos, onde uma falha surpresa custa caro. A escolha depende da criticidade de cada equipamento."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › Manutenção preditiva</nav>
+
+  <h1>Manutenção preditiva: o que é e como funciona</h1>
+  <p class="dek">A estratégia que ouve a condição real do ativo — e avisa da falha antes que ela pare a produção.</p>
+
+  <p class="resposta"><strong>Manutenção preditiva</strong> é a estratégia baseada na <strong>condição real do ativo</strong>. Em vez de esperar quebrar (corretiva) ou trocar por calendário (preventiva), ela <strong>monitora o equipamento em operação</strong> — vibração, temperatura, óleo — e <strong>prevê a falha antes que ela aconteça</strong>, permitindo intervir no momento certo.</p>
+
+  <h2>Como a manutenção preditiva funciona</h2>
+  <p>A lógica é acompanhar parâmetros que se degradam <em>antes</em> da falha final. Um rolamento, por exemplo, não quebra de repente: ele passa meses aumentando vibração e temperatura. A preditiva captura esse sinal e transforma tendência em decisão.</p>
+  <p>O ciclo tem quatro passos:</p>
+  <div class="formula" style="font-size:16px">Medir a condição → <b>comparar com o limite</b> → detectar a tendência → <b>agir antes da falha</b></div>
+  <p>Sensores (fixos ou em rondas com coletor) geram os dados; um limite de alarme define o "normal"; e a tendência ao longo do tempo diz <em>quando</em> o ativo vai cruzar esse limite — a chamada estimativa de vida útil remanescente.</p>
+
+  <h3>Exemplo prático</h3>
+  <p>Um motor elétrico opera com vibração estável em <strong>2,8 mm/s RMS</strong>. Em três medições mensais o valor sobe para <strong>4,5</strong>, <strong>6,1</strong> e <strong>7,0 mm/s</strong>. A norma ISO 10816 classifica essa faixa como zona de alerta para a classe do motor. A tendência é clara: em vez de esperar o travamento, a equipe programa a troca do rolamento na próxima parada planejada — sem parada de emergência e sem dano ao eixo.</p>
+
+  <h2>Principais técnicas preditivas</h2>
+  <table>
+    <tr><th>Técnica</th><th>O que detecta</th></tr>
+    <tr><td>Análise de vibração</td><td>Desbalanceamento, desalinhamento, folga, defeito de rolamento</td></tr>
+    <tr><td>Termografia</td><td>Pontos quentes elétricos, atrito, falha de isolamento</td></tr>
+    <tr><td>Análise de óleo</td><td>Desgaste de metais, contaminação, degradação do lubrificante</td></tr>
+    <tr><td>Ultrassom</td><td>Vazamentos de ar/gás, descargas elétricas, falha de rolamento inicial</td></tr>
+    <tr><td>Análise de corrente (MCA)</td><td>Falhas em barras, curto entre espiras, problemas de rotor</td></tr>
+  </table>
+
+  <h2>Preditiva x preventiva x corretiva</h2>
+  <p>As três estratégias convivem numa mesma planta. A diferença está no <em>gatilho</em> da intervenção.</p>
+  <table>
+    <tr><th>Estratégia</th><th>Quando age</th><th>Base da decisão</th></tr>
+    <tr><td><a href="https://maintor.com.br/glossario/manutencao-corretiva">Corretiva</a></td><td>Depois da falha</td><td>Quebra</td></tr>
+    <tr><td><a href="https://maintor.com.br/glossario/manutencao-preventiva">Preventiva</a></td><td>Em intervalo fixo</td><td>Tempo ou uso</td></tr>
+    <tr><td>Preditiva</td><td>Antes da falha, no ponto certo</td><td>Condição real medida</td></tr>
+  </table>
+  <p>A preventiva troca por calendário e pode desperdiçar peça ainda boa — ou falhar antes do prazo. A preditiva age só quando os dados indicam degradação, o que reduz tanto a troca prematura quanto a falha surpresa.</p>
+
+  <h2>Como começar com manutenção preditiva</h2>
+  <h3>1. Priorize por criticidade</h3>
+  <p>Não monitore tudo. Comece pelos ativos onde a falha para a produção ou custa caro. Uma matriz de <a href="https://maintor.com.br/glossario/criticidade-de-ativos">criticidade de ativos</a> mostra onde a preditiva se paga.</p>
+  <h3>2. Estabeleça a linha de base</h3>
+  <p>Cada ativo tem um "normal" próprio. Sem uma medição de referência com o equipamento saudável, não há como saber o que é desvio.</p>
+  <h3>3. Feche o laço com a ordem de serviço</h3>
+  <p>Um alarme só vira valor quando dispara uma ação. A leitura preditiva deve gerar uma <a href="https://maintor.com.br/glossario/ordem-de-servico">ordem de serviço</a> planejada — do contrário, o dado morre na planilha.</p>
+
+  <h2>Erros comuns na manutenção preditiva</h2>
+  <p>Monitorar ativo não crítico e gastar mais no acompanhamento do que a falha custaria; definir limite de alarme sem linha de base; coletar dado e não agir sobre a tendência; e confundir preditiva com preventiva por calendário — a preditiva depende da <strong>condição medida</strong>, não da data.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que é manutenção preditiva?</summary><p>É a estratégia que monitora a condição real do ativo por sensores e análises (vibração, temperatura, óleo) para prever quando a falha vai ocorrer e intervir antes dela, no momento certo.</p></details>
+    <details><summary>Qual a diferença entre manutenção preditiva e preventiva?</summary><p>A preventiva age em intervalos fixos de tempo ou uso, independentemente do estado do ativo. A preditiva age com base na condição real medida, intervindo só quando os dados indicam degradação — evitando trocas desnecessárias e falhas surpresa.</p></details>
+    <details><summary>Quais técnicas são usadas na manutenção preditiva?</summary><p>As principais são análise de vibração, termografia, análise de óleo lubrificante, ultrassom, análise de corrente elétrica (MCA) e o monitoramento de parâmetros de processo como pressão e rotação.</p></details>
+    <details><summary>A manutenção preditiva substitui a preventiva?</summary><p>Não. Elas se complementam: a preventiva cobre a rotina de baixo custo e a preditiva concentra o monitoramento nos ativos críticos. A escolha depende da criticidade de cada equipamento.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Da leitura preditiva à ação, sem planilha</h2>
+    <p>No Maintor, uma medição fora do limite pode virar ordem de serviço planejada na hora — e o histórico de cada ativo fica registrado para acompanhar a tendência ao longo do tempo.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-corretiva">Manutenção corretiva</a> ·
+    <a href="https://maintor.com.br/glossario/criticidade-de-ativos">Criticidade de ativos</a> ·
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a>
+  </p>
+</article>
+</body>
+</html>

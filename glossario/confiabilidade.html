@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confiabilidade de Ativos: o que é, como medir e melhorar</title>
+<meta name="description" content="A confiabilidade de ativos mede a probabilidade de um equipamento operar sem falhas. Veja como usar indicadores como MTBF para avaliar sua manutenção.">
+<link rel="canonical" href="https://maintor.com.br/glossario/confiabilidade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Confiabilidade na Manutenção Industrial">
+<meta property="og:description" content="A base de fábricas líderes: saiba o que é confiabilidade de ativos e como mensurar.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Confiabilidade",
+  "description": "Probabilidade de que um ativo, sistema ou componente desempenhe sua função exigida sob condições especificadas por um determinado período de tempo.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é confiabilidade de ativos?","acceptedAnswer":{"@type":"Answer","text":"É a probabilidade de um equipamento realizar a função para a qual foi projetado, sem falhar, durante um período de tempo pré-determinado, operando sob as condições corretas."}},
+    {"@type":"Question","name":"Como se mede a confiabilidade?","acceptedAnswer":{"@type":"Answer","text":"A confiabilidade é medida principalmente através da taxa de falhas e pelo indicador MTBF (Tempo Médio Entre Falhas). Matematicamente, calcula-se através de funções estatísticas como R(t) = e^(-λt)."}},
+    {"@type":"Question","name":"Qual a diferença entre confiabilidade e disponibilidade?","acceptedAnswer":{"@type":"Answer","text":"Confiabilidade avalia o tempo entre paradas (quanto o ativo quebra). Disponibilidade é a porcentagem do tempo em que o ativo esteve apto a produzir (combinando o quão raro ele falha com o quão rápido é consertado)."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › Confiabilidade</nav>
+
+  <h1>Confiabilidade de ativos: o que é, como medir e melhorar</h1>
+  <p class="dek">O alicerce da indústria moderna: garantir que as máquinas cumpram seu papel pelo tempo esperado, sem surpresas na linha de produção.</p>
+
+  <p class="resposta">A <strong>confiabilidade</strong> na manutenção é a probabilidade de um ativo (ou sistema) realizar sua função pretendida, sem apresentar falhas, durante um período de tempo predeterminado e sob condições normais de operação.</p>
+
+  <h2>Como a confiabilidade é medida?</h2>
+  <p>Na prática do dia a dia, medimos a confiabilidade através do aumento do <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> (Tempo Médio Entre Falhas). Matematicamente, para equipamentos complexos, a confiabilidade é frequentemente representada por uma função de tempo, onde a taxa de falha (denotada por λ) determina o desempenho.</p>
+  <div class="formula">R(t) = e<sup>-(t ÷ <b>MTBF</b>)</sup></div>
+  <p>Onde <em>t</em> é o tempo de missão desejado. Se o MTBF sobe, a probabilidade <em>R(t)</em> de o ativo operar com sucesso nesse período também sobe.</p>
+
+  <h2>Confiabilidade vs Disponibilidade</h2>
+  <p>Essa é a confusão mais comum nos indicadores de manutenção. Elas andam juntas, mas representam coisas diferentes da saúde do ativo:</p>
+  <table>
+    <tr><th>Métrica</th><th>O que foca</th><th>Como otimizar</th></tr>
+    <tr><td>Confiabilidade</td><td>Probabilidade de não quebrar</td><td>Planos preditivos, engenharia de manutenção, RCA</td></tr>
+    <tr><td><a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a></td><td>Porcentagem do tempo que está apto a operar</td><td>Reduzindo falhas e acelerando o <a href="https://maintor.com.br/glossario/mttr">MTTR</a></td></tr>
+  </table>
+  <p>Um equipamento que quebra o tempo todo (baixa confiabilidade) pode ter alta disponibilidade se for consertado em minutos. Porém, quebras constantes causam refugos, instabilidade e stress na equipe.</p>
+
+  <h2>Pilares da Engenharia de Confiabilidade</h2>
+  <h3>1. Manutenção Centrada em Confiabilidade (RCM)</h3>
+  <p>A RCM avalia as consequências operacionais das falhas e foca as estratégias de manutenção nos itens que garantem as funções críticas do processo, abandonando preventivas desnecessárias.</p>
+  <h3>2. Eliminação de falhas repetitivas</h3>
+  <p>Investigar a causa raiz. Não basta registrar que o motor queimou; a confiabilidade exige uso de <a href="https://maintor.com.br/glossario/5-porques">5 Porquês</a> e análise atenta para evitar que queime novamente pela mesma razão.</p>
+  <h3>3. O papel da operação (TPM)</h3>
+  <p>A <a href="https://maintor.com.br/glossario/tpm">Manutenção Produtiva Total</a> delega cuidados básicos (limpeza, lubrificação básica, inspeção visual) aos operadores, preservando a condição básica e elevando a confiabilidade.</p>
+
+  <h2>Erros comuns</h2>
+  <p>Focar toda a equipe apenas no cumprimento do cronograma preventivo, sem avaliar se essas rotinas realmente reduzem a taxa de falha; ignorar as condições reais de ambiente (poeira, vibração externa) no projeto do ativo.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que é confiabilidade de ativos?</summary><p>É a probabilidade de um ativo operar sem falhas sob condições específicas durante um tempo determinado. É sinônimo de previsibilidade na linha de produção.</p></details>
+    <details><summary>Como se mede a confiabilidade?</summary><p>A forma mais acessível no chão de fábrica é medindo a evolução do MTBF. Quanto maior o MTBF, maior a estabilidade e a confiabilidade da máquina.</p></details>
+    <details><summary>Qual a diferença entre confiabilidade e disponibilidade?</summary><p>Confiabilidade mede a capacidade de operar continuamente sem falhar. Disponibilidade mede a prontidão de uso, combinando falhas e tempo gasto no reparo.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Gerencie a confiabilidade com dados</h2>
+    <p>O Maintor consolida o histórico de quebras, causas raiz e gera o MTBF de forma automática. Pare de chutar e comece a atuar com estratégia.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a> ·
+    <a href="https://maintor.com.br/glossario/fmea">FMEA</a> ·
+    <a href="https://maintor.com.br/glossario/tpm">TPM</a>
+  </p>
+</article>
+</body>
+</html>

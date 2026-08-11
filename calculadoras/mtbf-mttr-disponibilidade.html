@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de MTBF, MTTR e Disponibilidade | Maintor</title>
+<meta name="description" content="Calcule o MTBF (Tempo Médio Entre Falhas), MTTR (Tempo Médio para Reparo) e a Disponibilidade dos seus equipamentos de forma automática.">
+<link rel="canonical" href="https://maintor.com.br/calculadoras/mtbf-mttr-disponibilidade">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de MTBF, MTTR e Disponibilidade">
+<meta property="og:description" content="Ferramenta gratuita para calcular os 3 principais indicadores de confiabilidade e manutenabilidade industrial.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de MTBF, MTTR e Disponibilidade",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "description": "Calculadora interativa dos indicadores MTBF, MTTR e Disponibilidade na manutenção industrial.",
+  "browserRequirements": "Requires JavaScript"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que mede o MTBF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O MTBF (Mean Time Between Failures) mede o tempo médio em horas que um equipamento reparável opera entre uma falha e a seguinte, avaliando sua confiabilidade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que mede o MTTR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O MTTR (Mean Time To Repair) mede o tempo médio necessário para reparar um equipamento que apresentou falha, avaliando a eficiência da equipe de manutenção."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual é a meta recomendada para a disponibilidade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para equipamentos críticos na indústria, busca-se manter a disponibilidade operacional acima de 95%."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED;--verde:#16a34a;--vermelho:#dc2626}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:800px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:32px 0 12px;letter-spacing:-.3px}
+  p{margin:0 0 14px}
+  
+  .calc-box{background:var(--nuvem);border:1px solid var(--linha);border-radius:16px;padding:24px;margin:24px 0}
+  .grid-form{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+  @media(max-width:600px){.grid-form{grid-template-columns:1fr}}
+  .form-group{display:flex;flex-direction:column}
+  label{font-weight:600;font-size:14px;margin-bottom:6px;color:var(--tinta)}
+  input{padding:10px 14px;border:1px solid var(--linha);border-radius:8px;font-size:16px;color:var(--tinta);background:#fff}
+  input:focus{outline:2px solid var(--azul);border-color:transparent}
+  
+  .result-box{margin-top:24px;background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:14px;padding:24px;text-align:center}
+  .result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  @media(max-width:600px){.result-grid{grid-template-columns:1fr}}
+  .result-card{background:rgba(255,255,255,.05);padding:16px;border-radius:10px}
+  .result-title{font-size:13px;text-transform:uppercase;letter-spacing:1px;opacity:.8;margin-bottom:4px}
+  .result-value{font-size:28px;font-weight:800;color:#60a5fa}
+
+  .formula-card{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:24px 0;font-size:16px;line-height:1.8}
+  .formula-card b{color:var(--violeta)}
+
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br">Maintor</a> › <a href="https://maintor.com.br/calculadoras">Calculadoras</a> › MTBF, MTTR e Disponibilidade</nav>
+
+  <h1>Calculadora de MTBF, MTTR e Disponibilidade</h1>
+  <p class="dek">Insira os dados do seu período operacional e obtenha instantaneamente os três indicadores fundamentais de manutenção.</p>
+
+  <div class="calc-box">
+    <form id="calcForm" onsubmit="return false;">
+      <div class="grid-form">
+        <div class="form-group">
+          <label for="t_oper">Tempo planejado no período (horas)</label>
+          <input type="number" id="t_oper" value="600" min="1" step="1">
+        </div>
+        <div class="form-group">
+          <label for="t_parada">Tempo total de parada / reparo (horas)</label>
+          <input type="number" id="t_parada" value="18" min="0" step="0.5">
+        </div>
+        <div class="form-group">
+          <label for="n_falhas">Número de falhas no período</label>
+          <input type="number" id="n_falhas" value="3" min="1" step="1">
+        </div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-grid">
+          <div class="result-card">
+            <div class="result-title">MTBF (Confiabilidade)</div>
+            <div class="result-value" id="resMtbf">194,0 h</div>
+          </div>
+          <div class="result-card">
+            <div class="result-title">MTTR (Manutenabilidade)</div>
+            <div class="result-value" id="resMttr">6,0 h</div>
+          </div>
+          <div class="result-card">
+            <div class="result-title">Disponibilidade</div>
+            <div class="result-value" id="resDisp" style="color:#4ade80;">97,00%</div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <h2>Fórmulas Aplicadas</h2>
+  <div class="formula-card">
+    <b>MTBF</b> = (Tempo Planejado − Tempo de Parada) ÷ Número de Falhas <br>
+    <b>MTTR</b> = Tempo de Parada ÷ Número de Falhas <br>
+    <b>Disponibilidade (%)</b> = [ MTBF ÷ (MTBF + MTTR) ] × 100
+  </div>
+
+  <h2>Interpretação dos Indicadores</h2>
+  <ul>
+    <li><strong>MTBF (<a href="https://maintor.com.br/glossario/mtbf">Tempo Médio Entre Falhas</a>):</strong> Indica a média de horas que o ativo funciona sem quebras. Quanto maior o MTBF, mais confiável é a máquina.</li>
+    <li><strong>MTTR (<a href="https://maintor.com.br/glossario/mttr">Tempo Médio para Reparo</a>):</strong> Indica a média de horas que a equipe gasta para restabelecer a máquina após uma falha. Quanto menor o MTTR, mais ágil é o atendimento.</li>
+    <li><strong>Disponibilidade (<a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade de Equipamentos</a>):</strong> Porcentagem do tempo total em que a máquina esteve apta a produzir. Metas industriais padrão buscam valores acima de 95%.</li>
+  </ul>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>O que mede o MTBF?</summary>
+      <p>O MTBF mede o tempo médio em horas que um equipamento reparável opera entre uma falha e a seguinte.</p>
+    </details>
+    <details>
+      <summary>O que mede o MTTR?</summary>
+      <p>O MTTR mede o tempo médio de reparo necessário para colocar o equipamento de volta em operação.</p>
+    </details>
+    <details>
+      <summary>Qual é a meta recomendada para a disponibilidade?</summary>
+      <p>Para equipamentos críticos de linha de produção, a meta recomendada é manter a disponibilidade acima de 95%.</p>
+    </details>
+  </div>
+
+  <div class="cta">
+    <h2>Calcule MTBF e MTTR sem planilhas</h2>
+    <p>No Maintor, os indicadores de MTBF, MTTR e disponibilidade são calculados automaticamente no fechamento de cada ordem de serviço.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor CMMS</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/mttr">MTTR</a> ·
+    <a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a> ·
+    <a href="https://maintor.com.br/glossario/indicadores-de-manutencao">Indicadores de Manutenção</a>
+  </p>
+</article>
+
+<script>
+function calcular() {
+  const tOper = parseFloat(document.getElementById('t_oper').value) || 0;
+  const tParada = parseFloat(document.getElementById('t_parada').value) || 0;
+  const nFalhas = parseFloat(document.getElementById('n_falhas').value) || 0;
+
+  const tempoEfetivo = Math.max(0, tOper - tParada);
+  const mtbf = nFalhas > 0 ? (tempoEfetivo / nFalhas) : tempoEfetivo;
+  const mttr = nFalhas > 0 ? (tParada / nFalhas) : 0;
+  
+  const soma = mtbf + mttr;
+  const disp = soma > 0 ? (mtbf / soma) * 100 : 0;
+
+  document.getElementById('resMtbf').textContent = mtbf.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' h';
+  document.getElementById('resMttr').textContent = mttr.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' h';
+  
+  const elDisp = document.getElementById('resDisp');
+  elDisp.textContent = disp.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+
+  if (disp >= 95) {
+    elDisp.style.color = '#4ade80';
+  } else if (disp >= 90) {
+    elDisp.style.color = '#facc15';
+  } else {
+    elDisp.style.color = '#f87171';
+  }
+}
+
+document.querySelectorAll('#calcForm input').forEach(input => {
+  input.addEventListener('input', calcular);
+});
+calcular();
+</script>
+</body>
+</html>

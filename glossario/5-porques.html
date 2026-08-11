@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Análise dos 5 Porquês: o que é e exemplo prático</title>
+<meta name="description" content="A técnica dos 5 Porquês ajuda a encontrar a causa raiz de falhas. Aprenda como aplicar este método simples e evitar que máquinas quebrem pelo mesmo motivo.">
+<link rel="canonical" href="https://maintor.com.br/glossario/5-porques">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5 Porquês: como achar a causa raiz de falhas">
+<meta property="og:description" content="Pare de trocar peças e descubra o motivo real das quebras de equipamentos na indústria.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "5 Porquês",
+  "description": "Técnica de análise de causa raiz que consiste em perguntar repetidamente 'por que' um defeito ocorreu até chegar à raiz do problema, para prevenir sua recorrência.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é a técnica dos 5 Porquês?","acceptedAnswer":{"@type":"Answer","text":"É um método de resolução de problemas inventado na Toyota que consiste em perguntar 'por que' repetidas vezes (geralmente cinco) até encontrar a causa raiz de uma falha."}},
+    {"@type":"Question","name":"Sempre precisam ser exatamente 5 porquês?","acceptedAnswer":{"@type":"Answer","text":"Não. O número 5 é uma regra de ouro empírica. Às vezes a causa raiz é encontrada no terceiro porquê; outras vezes, pode ser necessário um sexto ou sétimo."}},
+    {"@type":"Question","name":"Qual a diferença entre 5 Porquês e FMEA?","acceptedAnswer":{"@type":"Answer","text":"A análise dos 5 Porquês investiga falhas que já ocorreram (reativa). A FMEA procura identificar e prevenir falhas que ainda não aconteceram (proativa)."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:left;margin:16px 0;font-size:17px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › 5 Porquês</nav>
+
+  <h1>Análise dos 5 Porquês na manutenção: o que é e como aplicar</h1>
+  <p class="dek">O método criado pela Toyota para achar a verdadeira causa raiz das quebras de equipamentos — e não apenas tratar os sintomas.</p>
+
+  <p class="resposta">A técnica dos <strong>5 Porquês</strong> é um método investigativo de análise de causa raiz (RCA) que consiste em perguntar "por quê?" de forma encadeada até encontrar a origem estrutural de uma falha em um ativo. Isso impede que a <a href="https://maintor.com.br/glossario/manutencao-corretiva">manutenção corretiva</a> apenas troque a peça quebrada.</p>
+
+  <h2>Exemplo prático de aplicação</h2>
+  <p>Considere que o braço robótico de uma linha de solda parou abruptamente.</p>
+  <div class="formula">
+    <strong>Problema inicial:</strong> O robô de solda parou no meio do lote.<br><br>
+    <strong>1. Por que ele parou?</strong><br>
+    R: Porque houve uma sobrecarga que queimou o fusível.<br><br>
+    <strong>2. Por que houve sobrecarga?</strong><br>
+    R: Porque o rolamento do eixo travou.<br><br>
+    <strong>3. Por que o rolamento travou?</strong><br>
+    R: Porque estava sem lubrificação adequada.<br><br>
+    <strong>4. Por que faltou lubrificação?</strong><br>
+    R: Porque a bomba de óleo não injetou o volume correto.<br><br>
+    <strong>5. Por que a bomba falhou na injeção?</strong><br>
+    R: <b>Causa Raiz:</b> O filtro da sucção da bomba estava entupido com rebarba de metal, por falta de inspeção no plano de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a>.
+  </div>
+  <p>Se a equipe parasse no 1º porquê, apenas trocaria o fusível (que voltaria a queimar). Parando no 3º, apenas lubrificaria (o problema retornaria). O 5º porquê ataca a raiz: alterar o plano de manutenção para incluir a troca do filtro da bomba de óleo.</p>
+
+  <h2>Quando usar os 5 Porquês vs FMEA</h2>
+  <p>O 5 Porquês é uma ferramenta reativa: a falha <em>já ocorreu</em> e você precisa investigar o motivo para melhorar o <a href="https://maintor.com.br/glossario/mtbf">MTBF</a>. Já a <a href="https://maintor.com.br/glossario/fmea">FMEA</a> é proativa: você analisa o que <em>pode</em> falhar no futuro.</p>
+  <table>
+    <tr><th>Característica</th><th>5 Porquês</th><th>FMEA</th></tr>
+    <tr><td>Natureza</td><td>Investigação (reativo)</td><td>Prevenção de risco (proativo)</td></tr>
+    <tr><td>Complexidade</td><td>Baixa (aplicação rápida na fábrica)</td><td>Alta (exige pontuação de risco)</td></tr>
+  </table>
+
+  <h2>Como aplicar sem errar</h2>
+  <h3>1. Vá ao chão de fábrica (Gemba)</h3>
+  <p>Não faça análise de trás de uma mesa. Vá até a máquina, veja o componente quebrado e converse com o operador.</p>
+  <h3>2. Baseie-se em fatos</h3>
+  <p>O 3º porquê tem que ser provado. Achar que faltou lubrificação é diferente de olhar a peça e ver o desgaste por atrito seco.</p>
+  <h3>3. Pare na causa sistêmica</h3>
+  <p>A raiz não é um "erro humano". É sempre um erro de processo: falta de padrão, falta de treinamento ou plano de manutenção ausente.</p>
+
+  <h2>Erros comuns ao usar a técnica</h2>
+  <p>Fazer perguntas cujas respostas não têm conexão lógica; apontar o dedo culpando o operador (o que destrói a cultura); e parar as perguntas cedo demais, resolvendo apenas um sintoma intermediário.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que é a técnica dos 5 Porquês?</summary><p>É um método simples de resolução de problemas, criado na Toyota, que consiste em perguntar "por quê?" de forma sequencial até atingir a causa raiz da falha.</p></details>
+    <details><summary>Sempre precisam ser exatamente 5 porquês?</summary><p>Não. É uma regra empírica. Às vezes a raiz é descoberta no terceiro porquê, outras vezes precisa de seis perguntas. O foco é a raiz do processo.</p></details>
+    <details><summary>Qual a diferença entre 5 Porquês e FMEA?</summary><p>Os 5 Porquês olham para falhas que já ocorreram (reativa) para corrigir o processo. A FMEA procura prever riscos que ainda não aconteceram (proativa).</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Atrele a causa raiz direto na OS</h2>
+    <p>No Maintor, os técnicos podem documentar o que causou o problema dentro da própria ordem de serviço. Pare de perder o histórico das quebras.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/fmea">FMEA</a> ·
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-corretiva">Manutenção corretiva</a>
+  </p>
+</article>
+</body>
+</html>

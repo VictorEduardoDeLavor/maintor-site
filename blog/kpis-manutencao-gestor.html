@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Os 7 Principais KPIs de Manutenção para a Gestão Industrial</title>
+<meta name="description" content="MTBF, MTTR, Disponibilidade, OEE, Backlog e mais: conheça os 7 principais indicadores de manutenção industrial para apresentar à diretoria.">
+<link rel="canonical" href="https://maintor.com.br/blog/kpis-manutencao-gestor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Os 7 Principais KPIs de Manutenção para o Gestor">
+<meta property="og:description" content="Guia executivo dos indicadores fundamentais de manutenção industrial: fórmulas, metas recomendadas e como transformar dados em decisões.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Os 7 Principais KPIs de Manutenção para o Gestor",
+  "description": "Explicação detalhada dos 7 principais indicadores-chave de desempenho (KPIs) na gestão de manutenção industrial.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://maintor.com.br/blog/kpis-manutencao-gestor"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Maintor",
+    "url": "https://maintor.com.br"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qual é o indicador de manutenção mais importante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não existe um indicador único isolado. A gestão eficiente analisa a combinação de MTBF (confiabilidade), MTTR (manutenabilidade) e Disponibilidade para compreender a performance operacional da fábrica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre KPI e métrica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uma métrica é uma medição genérica (como total de OS abertas). Um KPI (Key Performance Indicator) é uma métrica estratégica vinculada a um objetivo claro do negócio (como manter a disponibilidade acima de 95%)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual o nível ideal para o cumprimento do plano de preventiva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A meta recomendada em indústrias de alta maturidade é manter o índice de cumprimento de manutenção preventiva (PMP) acima de 90%, garantindo que poucas rotinas fiquem pendentes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como apresentar KPIs de manutenção para a diretoria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apresente os indicadores operacionais traduzidos em impacto financeiro: mostre como o aumento do MTBF reduziu as horas de máquina parada e evitou custos com compras emergenciais."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:6px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br">Maintor</a> › <a href="https://maintor.com.br/blog">Blog</a> › KPIs de Manutenção para o Gestor</nav>
+
+  <h1>Os 7 Principais KPIs de Manutenção para a Gestão Industrial</h1>
+  <p class="dek">Como acompanhar os indicadores certos para tomar decisões baseadas em dados e comprovar o valor da manutenção para a diretoria.</p>
+
+  <p class="resposta">Gerenciar um departamento de manutenção industrial sem acompanhar <strong><a href="https://maintor.com.br/glossario/indicadores-de-manutencao">indicadores de desempenho (KPIs)</a></strong> é o mesmo que pilotar um avião sem painel de instrumentos. Os KPIs traduzem o volume de ordens de serviço e horas trabalhadas em números estratégicos de confiabilidade, produtividade e eficiência financeira.</p>
+
+  <h2>1. MTBF (Tempo Médio Entre Falhas)</h2>
+  <p>O <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> mede o tempo médio em que um equipamento reparável opera de forma contínua entre uma falha e a seguinte. É o principal indicador da <strong>confiabilidade</strong> dos seus ativos.</p>
+  <div class="formula">MTBF = <b>Tempo Total de Operação</b> ÷ <b>Número de Falhas</b></div>
+  <p><em>Objetivo:</em> Quanto maior o MTBF, melhor. Acompanhar a curva de MTBF mês a mês mostra se as ações preventivas estão surtindo efeito.</p>
+
+  <h2>2. MTTR (Tempo Médio para Reparo)</h2>
+  <p>O <a href="https://maintor.com.br/glossario/mttr">MTTR</a> avalia a agilidade da equipe de manutenção ao medir o tempo médio gasto para diagnosticar, reparar e colocar a máquina de volta em operação após uma falha. Mede a <strong>manutenabilidade</strong>.</p>
+  <div class="formula">MTTR = <b>Tempo Total de Parada por Falha</b> ÷ <b>Número de Falhas</b></div>
+  <p><em>Objetivo:</em> Quanto menor o MTTR, melhor. Reduz-se o MTTR através de treinamento técnico, organização de ferramentas e facilidade de acesso a peças no estoque.</p>
+
+  <h2>3. Disponibilidade do Equipamento</h2>
+  <p>A disponibilidade calcula o percentual de tempo em que a máquina esteve em condições operacionais em relação ao tempo total em que esteve disponível no planejamento.</p>
+  <div class="formula">Disponibilidade = <b>MTBF</b> ÷ (<b>MTBF</b> + <b>MTTR</b>) × 100</div>
+  <p><em>Objetivo:</em> Em indústrias de manufatura contínua, busca-se manter a disponibilidade acima de 95% nos equipamentos críticos.</p>
+
+  <h2>4. OEE (Eficiência Global do Equipamento)</h2>
+  <p>O <a href="https://maintor.com.br/glossario/oee">OEE</a> é o indicador mais completo da produção industrial. Ele combina a performance da manutenção com o desempenho da operação através de três pilares:</p>
+  <div class="formula">OEE = <b>Disponibilidade</b> × <b>Desempenho</b> × <b>Qualidade</b></div>
+  <ul>
+    <li><strong>Disponibilidade:</strong> Tempo rodando vs Tempo planejado.</li>
+    <li><strong>Desempenho:</strong> Velocidade real de produção vs Velocidade nominal do equipamento.</li>
+    <li><strong>Qualidade:</strong> Peças boas vs Total de peças produzidas.</li>
+  </ul>
+
+  <h2>5. Backlog de Manutenção</h2>
+  <p>O <a href="https://maintor.com.br/glossario/backlog-de-manutencao">backlog de manutenção</a> representa a quantidade de trabalho pendente (ordens de serviço abertas, aguardando peças ou em execução) expressa em horas de trabalho necessárias para a equipe conclui-las.</p>
+
+  <h2>6. Cumprimento do Plano de Preventivas (PMP)</h2>
+  <p>Mede a taxa de execução das rotinas preventivas que foram programadas para o período:</p>
+  <div class="formula">PMP = (<b>OS Preventivas Concluídas no Prazo</b> ÷ <b>OS Preventivas Agendadas</b>) × 100</div>
+  <p><em>Objetivo:</em> Manter o PMP acima de 90%. Um PMP baixo é o primeiro sinal de que as quebras corretivas aumentarão nas semanas seguintes.</p>
+
+  <h2>7. Custo de Manutenção vs RAV (Valor de Reposição do Ativo)</h2>
+  <p>Este indicador financeiro compara o gasto total acumulado com manutenção (mão de obra + peças) contra o valor de compra de um equipamento novo equivalente (RAV - <em>Replacement Asset Value</em>).</p>
+
+  <h2>Tabela resumo dos 7 KPIs e suas metas de referência</h2>
+  <table>
+    <tr><th>KPI</th><th>O que mede</th><th>Fórmula Direta</th><th>Tendência Desejada</th></tr>
+    <tr><td><strong>MTBF</strong></td><td>Confiabilidade (tempo entre quebras)</td><td>Operação ÷ Falhas</td><td>⬆️ Aumentar</td></tr>
+    <tr><td><strong>MTTR</strong></td><td>Agilidade no reparo</td><td>Tempo de reparo ÷ Falhas</td><td>⬇️ Reduzir</td></tr>
+    <tr><td><strong>Disponibilidade</strong></td><td>Tempo pronto para produzir</td><td>MTBF ÷ (MTBF + MTTR)</td><td>⬆️ Aumentar (> 95%)</td></tr>
+    <tr><td><strong>OEE</strong></td><td>Eficiência global da máquina</td><td>Disponibilidade × Desempenho × Qualidade</td><td>⬆️ Aumentar (> 85%)</td></tr>
+    <tr><td><strong>Backlog</strong></td><td>Carga de trabalho pendente</td><td>Horas de OS abertas ÷ Horas disponíveis</td><td>Estável (1 a 2 semanas)</td></tr>
+    <tr><td><strong>PMP</strong></td><td>Aderência ao plano preventivo</td><td>Preventivas feitas ÷ Agendadas</td><td>⬆️ Aumentar (> 90%)</td></tr>
+    <tr><td><strong>Custo / RAV</strong></td><td>Impacto financeiro sobre o ativo</td><td>Custo de Manutenção ÷ Valor do Ativo Novo</td><td>⬇️ Reduzir (< 3% a 5% a.a.)</td></tr>
+  </table>
+
+  <h2>Como apresentar resultados para a diretoria</h2>
+  <p>Ao se reunir com a gerência geral ou diretoria industrial, evite apresentar apenas tabelas técnicas com números isolados de ordens de serviço. Traduza os KPIs de manutenção em linguagem de negócio:</p>
+  <ul>
+    <li>Em vez de dizer "aumentamos o MTBF em 40 horas", mostre "o ganho de confiabilidade evitou 16 horas de paradas não planejadas neste mês".</li>
+    <li>Em vez de falar "cumprimos 92% das preventivas", apresente "a aderência ao plano reduziu as compras emergenciais de peças em R$ 14.000".</li>
+  </ul>
+
+  <div class="faq">
+    <h2>Perguntas frequentes sobre KPIs de manutenção</h2>
+    <details>
+      <summary>Qual é o indicador de manutenção mais importante?</summary>
+      <p>Não há um único KPI absoluto. A gestão analisa a tríade MTBF, MTTR e Disponibilidade para medir a saúde operacional da fábrica.</p>
+    </details>
+    <details>
+      <summary>Qual a diferença entre KPI e métrica?</summary>
+      <p>Uma métrica mede qualquer dado simples. Um KPI é uma métrica chave direcionada a alcançar uma meta estratégica da empresa.</p>
+    </details>
+    <details>
+      <summary>Qual o nível ideal para o cumprimento do plano de preventiva?</summary>
+      <p>Em indústrias maduras, a meta recomendada de cumprimento do plano de preventiva (PMP) é superior a 90%.</p>
+    </details>
+    <details>
+      <summary>Como apresentar KPIs de manutenção para a diretoria?</summary>
+      <p>Conecte os dados operacionais ao resultado financeiro, mostrando como o aumento do MTBF reduziu horas paradas e custos de emergência.</p>
+    </details>
+  </div>
+
+  <div class="cta">
+    <h2>Acompanhe seus KPIs de manutenção em tempo real</h2>
+    <p>O Maintor calcula MTBF, MTTR, disponibilidade e paradas por máquina automaticamente com base no fechamento das ordens de serviço.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor CMMS</a>
+  </div>
+
+  <p class="rel"><strong>Termos e artigos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/indicadores-de-manutencao">Indicadores de Manutenção</a> ·
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/mttr">MTTR</a> ·
+    <a href="https://maintor.com.br/glossario/oee">OEE</a> ·
+    <a href="https://maintor.com.br/glossario/backlog-de-manutencao">Backlog de Manutenção</a>
+  </p>
+</article>
+</body>
+</html>

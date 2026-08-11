@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de OEE: eficiência global do equipamento</title>
+<meta name="description" content="Calcule o OEE (Overall Equipment Effectiveness) dos seus equipamentos industriais: meça Disponibilidade, Desempenho e Qualidade de forma simples.">
+<link rel="canonical" href="https://maintor.com.br/calculadoras/oee">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de OEE (Eficiência Global)">
+<meta property="og:description" content="Ferramenta gratuita para calcular o OEE e identificar perdas de disponibilidade, performance e qualidade na produção.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de OEE",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "description": "Calculadora interativa do indicador OEE (Overall Equipment Effectiveness).",
+  "browserRequirements": "Requires JavaScript"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é OEE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OEE (Overall Equipment Effectiveness) é o indicador que mede a eficiência global de um equipamento multiplicando Disponibilidade, Desempenho e Qualidade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual é a meta de OEE de Classe Mundial (World Class)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O benchmark de OEE de Classe Mundial é de 85%, composto tipicamente por 90% de Disponibilidade, 95% de Desempenho e 99,9% de Qualidade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como a manutenção afeta o OEE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A manutenção afeta diretamente a Disponibilidade (reduzindo paradas) e o Desempenho/Qualidade (evitando que máquinas desgastadas operem em velocidade reduzida ou gerem refugo)."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED;--verde:#16a34a;--vermelho:#dc2626}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:800px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:32px 0 12px;letter-spacing:-.3px}
+  p{margin:0 0 14px}
+  
+  .calc-box{background:var(--nuvem);border:1px solid var(--linha);border-radius:16px;padding:24px;margin:24px 0}
+  .grid-form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:600px){.grid-form{grid-template-columns:1fr}}
+  .form-group{display:flex;flex-direction:column}
+  label{font-weight:600;font-size:14px;margin-bottom:6px;color:var(--tinta)}
+  input{padding:10px 14px;border:1px solid var(--linha);border-radius:8px;font-size:16px;color:var(--tinta);background:#fff}
+  input:focus{outline:2px solid var(--azul);border-color:transparent}
+  
+  .result-box{margin-top:24px;background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:14px;padding:24px;text-align:center}
+  .result-title{font-size:14px;text-transform:uppercase;letter-spacing:1px;opacity:.8;margin-bottom:6px}
+  .result-value{font-size:40px;font-weight:800;color:#60a5fa;margin-bottom:12px}
+  .result-sub{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;margin-top:12px;font-size:14px}
+  @media(max-width:600px){.result-sub{grid-template-columns:1fr}}
+  .result-sub span{font-size:18px;font-weight:700;display:block;color:#f3f4f6;margin-top:4px}
+
+  .formula-card{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:24px 0;font-size:17px}
+  .formula-card b{color:var(--violeta)}
+
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br">Maintor</a> › <a href="https://maintor.com.br/calculadoras">Calculadoras</a> › OEE</nav>
+
+  <h1>Calculadora de OEE (Eficiência Global do Equipamento)</h1>
+  <p class="dek">Mapeie as perdas de produção e descubra o índice OEE da sua linha de fabricação.</p>
+
+  <div class="calc-box">
+    <form id="calcForm" onsubmit="return false;">
+      <div class="grid-form">
+        <div class="form-group">
+          <label for="t_plan">Tempo planejado de produção (minutos)</label>
+          <input type="number" id="t_plan" value="480" min="1" step="10">
+        </div>
+        <div class="form-group">
+          <label for="t_parada_oee">Tempo de paradas não planejadas (minutos)</label>
+          <input type="number" id="t_parada_oee" value="40" min="0" step="5">
+        </div>
+        <div class="form-group">
+          <label for="t_ciclo">Tempo de ciclo ideal por peça (minutos)</label>
+          <input type="number" id="t_ciclo" value="0.5" min="0.01" step="0.05">
+        </div>
+        <div class="form-group">
+          <label for="qtd_prod">Total de peças produzidas (unidades)</label>
+          <input type="number" id="qtd_prod" value="800" min="1" step="10">
+        </div>
+        <div class="form-group" style="grid-column: 1 / -1;">
+          <label for="qtd_refugo">Peças defeituosas / Refugo (unidades)</label>
+          <input type="number" id="qtd_refugo" value="24" min="0" step="1">
+        </div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-title">OEE Geral da Operação</div>
+        <div class="result-value" id="resOee">80,84%</div>
+        <div class="result-sub">
+          <div>
+            Disponibilidade
+            <span id="resDisp">91,67%</span>
+          </div>
+          <div>
+            Desempenho
+            <span id="resDesemp">90,91%</span>
+          </div>
+          <div>
+            Qualidade
+            <span id="resQual">97,00%</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <h2>Fórmula Geral do OEE</h2>
+  <div class="formula-card">
+    <b>OEE (%)</b> = Disponibilidade (%) × Desempenho (%) × Qualidade (%)
+  </div>
+
+  <h2>Entendendo os 3 Pilares do OEE</h2>
+  <ul>
+    <li><strong>Disponibilidade:</strong> Porcentagem do tempo planejado em que a máquina esteve realmente operando (Tempo de Operação ÷ Tempo Planejado).</li>
+    <li><strong>Desempenho:</strong> Compara a velocidade real de produção contra a velocidade máxima nominal teórica (Produção Real ÷ Produção Teórica).</li>
+    <li><strong>Qualidade:</strong> Porcentagem de peças produzidas sem defeitos (Peças Boas ÷ Produção Total).</li>
+  </ul>
+  <p>Na metodologia TPM, o OEE de Classe Mundial (World Class OEE) é estabelecido em <strong>85%</strong>. Se o resultado da sua linha estiver abaixo de 65%, há grande oportunidade de ganho de eficiência com a organização da manutenção preventiva.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>O que é OEE?</summary>
+      <p>OEE (Overall Equipment Effectiveness) é a métrica padrão que avalia a eficiência de um equipamento multiplicando Disponibilidade, Desempenho e Qualidade.</p>
+    </details>
+    <details>
+      <summary>Qual é a meta de OEE de Classe Mundial (World Class)?</summary>
+      <p>A referência de Classe Mundial é de 85% de OEE geral.</p>
+    </details>
+    <details>
+      <summary>Como a manutenção afeta o OEE?</summary>
+      <p>A manutenção atua diretamente na Disponibilidade (eliminando paradas) e no Desempenho/Qualidade (evitando desgaste que reduza a velocidade da máquina).</p>
+    </details>
+  </div>
+
+  <div class="cta">
+    <h2>Eleve o OEE da sua fábrica</h2>
+    <p>O Maintor ajuda a eliminar paradas não planejadas e manter seus equipamentos operando em máxima performance.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor CMMS</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/oee">OEE</a> ·
+    <a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a> ·
+    <a href="https://maintor.com.br/glossario/tpm">TPM</a> ·
+    <a href="https://maintor.com.br/glossario/indicadores-de-manutencao">Indicadores de Manutenção</a>
+  </p>
+</article>
+
+<script>
+function calcular() {
+  const tPlan = parseFloat(document.getElementById('t_plan').value) || 1;
+  const tParada = parseFloat(document.getElementById('t_parada_oee').value) || 0;
+  const tCiclo = parseFloat(document.getElementById('t_ciclo').value) || 0.01;
+  const qtdProd = parseFloat(document.getElementById('qtd_prod').value) || 0;
+  const qtdRefugo = parseFloat(document.getElementById('qtd_refugo').value) || 0;
+
+  const tOper = Math.max(0, tPlan - tParada);
+  const disp = tPlan > 0 ? (tOper / tPlan) : 0;
+  
+  const prodTeorica = tCiclo > 0 ? (tOper / tCiclo) : 0;
+  const desemp = prodTeorica > 0 ? Math.min(1, qtdProd / prodTeorica) : 0;
+
+  const pecasBoas = Math.max(0, qtdProd - qtdRefugo);
+  const qual = qtdProd > 0 ? (pecasBoas / qtdProd) : 0;
+
+  const oee = disp * desemp * qual * 100;
+
+  document.getElementById('resDisp').textContent = (disp * 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+  document.getElementById('resDesemp').textContent = (desemp * 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+  document.getElementById('resQual').textContent = (qual * 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+
+  const elOee = document.getElementById('resOee');
+  elOee.textContent = oee.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+
+  if (oee >= 85) {
+    elOee.style.color = '#60a5fa';
+  } else if (oee >= 70) {
+    elOee.style.color = '#facc15';
+  } else {
+    elOee.style.color = '#f87171';
+  }
+}
+
+document.querySelectorAll('#calcForm input').forEach(input => {
+  input.addEventListener('input', calcular);
+});
+calcular();
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OEE: o que é, a fórmula e como calcular a eficiência</title>
+<meta name="description" content="OEE (Eficiência Global do Equipamento) mede o desempenho real de um ativo. Veja a fórmula, um exemplo prático, o padrão-ouro de 85% e como melhorá-lo.">
+<link rel="canonical" href="https://maintor.com.br/glossario/oee">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OEE: o que é, fórmula e como calcular">
+<meta property="og:description" content="O indicador que mede a eficiência global dos seus ativos, explicado com fórmula e exemplo.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "OEE (Eficiência Global do Equipamento)",
+  "description": "Indicador que mede a eficiência real de um ativo produtivo combinando disponibilidade, performance e qualidade, usado como padrão-ouro de eficiência na manutenção e produção industrial.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que significa OEE?","acceptedAnswer":{"@type":"Answer","text":"OEE significa Overall Equipment Effectiveness, ou Eficiência Global do Equipamento. É um indicador que mede a eficiência real de um ativo combinando três fatores: disponibilidade, performance e qualidade."}},
+    {"@type":"Question","name":"Qual a fórmula do OEE?","acceptedAnswer":{"@type":"Answer","text":"OEE = Disponibilidade × Performance × Qualidade. Cada fator é um percentual, e o resultado da multiplicação também é um percentual que representa a eficiência global do equipamento."}},
+    {"@type":"Question","name":"O que é um bom OEE?","acceptedAnswer":{"@type":"Answer","text":"O padrão-ouro (world class) é 85%, resultado de 90% de disponibilidade, 95% de performance e 99% de qualidade. Muitas fábricas operam entre 40% e 60%, o que indica grande espaço para ganho."}},
+    {"@type":"Question","name":"Qual a diferença entre OEE e disponibilidade?","acceptedAnswer":{"@type":"Answer","text":"A disponibilidade é apenas um dos três fatores do OEE. Sozinha, ela mede só quanto tempo o ativo esteve disponível para operar. O OEE cruza esse tempo com a velocidade real e a qualidade produzida."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › OEE</nav>
+
+  <h1>OEE: o que é, fórmula e como calcular</h1>
+  <p class="dek">O padrão-ouro de eficiência industrial — cruza disponibilidade, velocidade e qualidade em um único número.</p>
+
+  <p class="resposta"><strong>OEE</strong> (do inglês <em>Overall Equipment Effectiveness</em>, ou <strong>Eficiência Global do Equipamento</strong>) é o indicador que mede a eficiência real de um ativo produtivo. Ele combina três fatores — <strong>disponibilidade × performance × qualidade</strong> — e resulta em um percentual único: o quanto do potencial máximo o equipamento realmente entregou.</p>
+
+  <h2>A fórmula do OEE</h2>
+  <p>O OEE é o produto de três percentuais. Cada fator captura um tipo diferente de perda — parada, lentidão e refugo —, e a multiplicação revela o efeito combinado de todas elas.</p>
+  <div class="formula">OEE = <b>Disponibilidade</b> × <b>Performance</b> × <b>Qualidade</b></div>
+  <table>
+    <tr><th>Fator</th><th>O que mede</th><th>Perda que revela</th></tr>
+    <tr><td>Disponibilidade</td><td>Tempo operando ÷ tempo planejado</td><td>Paradas e setup</td></tr>
+    <tr><td>Performance</td><td>Velocidade real ÷ velocidade nominal</td><td>Pequenas paradas e lentidão</td></tr>
+    <tr><td>Qualidade</td><td>Peças boas ÷ peças produzidas</td><td>Refugo e retrabalho</td></tr>
+  </table>
+
+  <h3>Exemplo prático</h3>
+  <p>Uma linha de envase tem os seguintes números em um turno:</p>
+  <table>
+    <tr><td><strong>Disponibilidade</strong></td><td>90% (operou 90% do tempo planejado)</td></tr>
+    <tr><td><strong>Performance</strong></td><td>95% (rodou a 95% da velocidade nominal)</td></tr>
+    <tr><td><strong>Qualidade</strong></td><td>99% (99% das peças saíram boas)</td></tr>
+  </table>
+  <div class="formula">0,90 × 0,95 × 0,99 = <b>84,6% de OEE</b></div>
+  <p>Repare como três fatores "altos" resultam em ~85%: como o OEE é uma multiplicação, cada perda derruba o número final. É por isso que ele expõe ineficiências que um indicador isolado esconderia.</p>
+
+  <h2>O que é um bom OEE?</h2>
+  <p>A referência clássica de classe mundial (<em>world class</em>) é <strong>85%</strong>, formado exatamente por 90% de disponibilidade, 95% de performance e 99% de qualidade. Na prática, muitas operações começam entre 40% e 60% — o que não é fracasso, e sim a medida honesta de onde há ganho a capturar.</p>
+  <table>
+    <tr><th>Faixa de OEE</th><th>Leitura</th></tr>
+    <tr><td>85% ou mais</td><td>Classe mundial</td></tr>
+    <tr><td>60% a 85%</td><td>Típico, com espaço para melhorar</td></tr>
+    <tr><td>40% a 60%</td><td>Comum em quem começou a medir agora</td></tr>
+    <tr><td>Abaixo de 40%</td><td>Perdas relevantes não atacadas</td></tr>
+  </table>
+
+  <h2>OEE, disponibilidade e as métricas de manutenção</h2>
+  <p>A disponibilidade que entra no OEE é a mesma que a manutenção acompanha via <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> e <a href="https://maintor.com.br/glossario/mttr">MTTR</a>. Reduzir o tempo de reparo (MTTR) e espaçar as falhas (MTBF) empurra a <a href="https://maintor.com.br/glossario/disponibilidade">disponibilidade</a> para cima — e, com ela, o OEE. Por isso o indicador é uma ponte entre manutenção e produção: ele traduz confiabilidade em eficiência de negócio.</p>
+
+  <h2>Como melhorar o OEE</h2>
+  <p>Como o OEE é um produto, o maior ganho vem de atacar o fator mais fraco. Na prática:</p>
+  <h3>1. Elevar a disponibilidade</h3>
+  <p>Menos paradas não planejadas e setups mais rápidos. Planos de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a> atacam a falha antes que ela pare a linha.</p>
+  <h3>2. Recuperar a performance</h3>
+  <p>Pequenas paradas e operação abaixo da velocidade nominal corroem o número silenciosamente. Medir a cadência real por ativo revela onde a linha "escorrega".</p>
+  <h3>3. Blindar a qualidade</h3>
+  <p>Refugo e retrabalho não só reduzem o fator qualidade — consomem capacidade que já foi paga. Rastrear a causa do defeito evita que ele volte no próximo lote.</p>
+
+  <h2>Erros comuns ao usar o OEE</h2>
+  <p>Comparar OEE entre ativos ou processos muito diferentes (o número só faz sentido contra ele mesmo ao longo do tempo); confundir o fator disponibilidade com o OEE inteiro; perseguir 100%, que é fisicamente inviável; e medir sem registrar as perdas de forma consistente, o que transforma o indicador em chute.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que significa OEE?</summary><p>Overall Equipment Effectiveness — Eficiência Global do Equipamento. Mede a eficiência real de um ativo combinando disponibilidade, performance e qualidade.</p></details>
+    <details><summary>Qual a fórmula do OEE?</summary><p>OEE = Disponibilidade × Performance × Qualidade. Cada fator é um percentual, e o produto também é um percentual que representa a eficiência global.</p></details>
+    <details><summary>O que é um bom OEE?</summary><p>O padrão-ouro (world class) é 85% — resultado de 90% de disponibilidade, 95% de performance e 99% de qualidade. Muitas fábricas operam entre 40% e 60%.</p></details>
+    <details><summary>Qual a diferença entre OEE e disponibilidade?</summary><p>A disponibilidade é só um dos três fatores do OEE. Sozinha mede quanto tempo o ativo esteve disponível; o OEE cruza isso com velocidade real e qualidade.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Meça o OEE sem planilha</h2>
+    <p>No Maintor, cada ordem de serviço e parada vira dado — e a disponibilidade dos seus ativos, base do OEE, aparece pronta no dashboard.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a> ·
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/mttr">MTTR</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a>
+  </p>
+</article>
+</body>
+</html>

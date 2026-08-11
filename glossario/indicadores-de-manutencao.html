@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indicadores de manutenção: quais medir e calcular</title>
+<meta name="description" content="Conheça os principais KPIs de manutenção industrial. De MTBF e MTTR a Backlog e Disponibilidade, veja quais indicadores focar na sua gestão.">
+<link rel="canonical" href="https://maintor.com.br/glossario/indicadores-de-manutencao">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Indicadores de Manutenção: Os KPIs vitais da indústria">
+<meta property="og:description" content="Quais métricas focar, como calcular e o que elas revelam sobre a sua operação.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Indicadores de Manutenção (KPIs)",
+  "description": "Métricas de desempenho (Key Performance Indicators) utilizadas para quantificar, avaliar e gerenciar o sucesso e a eficiência das atividades e dos ativos da manutenção industrial.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Quais são os principais indicadores de manutenção?","acceptedAnswer":{"@type":"Answer","text":"Os KPIs mundiais mais utilizados incluem: MTBF (Tempo Médio Entre Falhas), MTTR (Tempo Médio de Reparo), Disponibilidade, Backlog e OEE (Eficiência Global do Equipamento)."}},
+    {"@type":"Question","name":"Por que usar KPIs na manutenção?","acceptedAnswer":{"@type":"Answer","text":"Os indicadores transformam o esforço invisível (consertar máquinas) em dados palpáveis. Eles provam o ROI do setor, fundamentam contratações e apontam onde as falhas crônicas estão drenando dinheiro."}},
+    {"@type":"Question","name":"O que é disponibilidade física?","acceptedAnswer":{"@type":"Answer","text":"É um KPI que reflete o tempo percentual que o equipamento ficou pronto para produzir, desconsiderando paradas para quebra. É o resultado matemático direto do balanço entre o MTBF e o MTTR."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:left;margin:16px 0;font-size:17px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › Indicadores</nav>
+
+  <h1>Indicadores de Manutenção (KPIs): quais medir e por quê</h1>
+  <p class="dek">Quem não mede não gerencia. Conheça as métricas que transformam sua manutenção de 'centro de custo' em braço estratégico.</p>
+
+  <p class="resposta"><strong>Indicadores de manutenção</strong> (KPIs – <em>Key Performance Indicators</em>) são métricas objetivas usadas para avaliar a <a href="https://maintor.com.br/glossario/confiabilidade">confiabilidade</a> das máquinas, a agilidade técnica da equipe e os custos gerados no setor, embasando decisões com fatos e não opiniões.</p>
+
+  <h2>Os 5 principais KPIs de manutenção industrial</h2>
+  <p>Tentar controlar vinte indicadores em planilhas é a receita para o caos. O padrão global indica concentrar foco em cinco pilares fundamentais:</p>
+
+  <h3>1. MTBF (Tempo Médio Entre Falhas)</h3>
+  <p>A métrica rainha da confiabilidade. Mede o quão esporadicamente a máquina quebra. <strong>Meta:</strong> aumentar o tempo livre de avarias contínuas.</p>
+  <div class="formula"><b>MTBF</b> = Tempo Total de Operação ÷ Número de Falhas</div>
+
+  <h3>2. MTTR (Tempo Médio de Reparo)</h3>
+  <p>O KPI da manutenabilidade. Avalia a habilidade da equipe (e o acesso a peças e ferramentas) para realizar o conserto. <strong>Meta:</strong> reduzir, treinando a equipe e melhorando o estoque.</p>
+  <div class="formula"><b>MTTR</b> = Tempo Total em Reparos ÷ Número de Reparos</div>
+
+  <h3>3. Disponibilidade Física</h3>
+  <p>Cruza o MTBF e o MTTR em um único percentual. Representa o tempo em que a linha de produção esteve entregue à operação (sem parar por quebra).</p>
+  <div class="formula"><b>Disponibilidade</b> = [ MTBF ÷ (MTBF + MTTR) ] × 100</div>
+
+  <h3>4. OEE (Eficiência Global do Equipamento)</h3>
+  <p>Indicador que une a Manutenção à Produção. Multiplica a Disponibilidade da máquina pela sua Performance (velocidade) e pela Qualidade (peças boas aprovadas).</p>
+
+  <h3>5. Backlog de Manutenção</h3>
+  <p>Avalia o pulmão da equipe e a carga horária pendente na pilha de <a href="https://maintor.com.br/glossario/ordem-de-servico">ordens de serviço</a>. O mundo ideal aponta um saudável limite entre 2 e 4 semanas de retenção.</p>
+
+  <h2>Métricas Secundárias: O Custo (CMFV)</h2>
+  <p>Diretores olham o bolso. O <strong>Custo de Manutenção sobre o Faturamento (CMFV)</strong> prova o peso do setor nas finanças. Um KPI auxiliar essencial se seu objetivo é expandir equipe aprovando orçamentos maiores para o <a href="https://maintor.com.br/glossario/plano-de-manutencao">plano de manutenção</a>.</p>
+
+  <h2>Erros comuns ao usar KPIs</h2>
+  <p>Omitir dados sujos ("vamos ignorar as paradas menores que 10 min para não estragar a meta"); preencher a OS só no fim da semana baseando-se na memória dos técnicos; e adotar metas agressivas sem fornecer infraestrutura via <a href="https://maintor.com.br/glossario/cmms">CMMS</a>.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Quais são os principais indicadores de manutenção?</summary><p>A base mundial (World Class) é composta por: MTBF, MTTR, Disponibilidade, OEE e Backlog de manutenção.</p></details>
+    <details><summary>Por que usar KPIs na manutenção?</summary><p>Porque eles quantificam o progresso da equipe, baseiam decisões de substituição de máquinas e garantem o controle financeiro do que costuma ser o 2º maior gasto de indústrias.</p></details>
+    <details><summary>Qual a diferença de indicador de processo e de resultado?</summary><p>Cumprir preventivas em dia (Taxa de Cumprimento) é indicador de processo. Ter a máquina sem falhar no mês (MTBF) é indicador de resultado.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>KPIs processados em tempo real</h2>
+    <p>O painel do Maintor lê as ações diárias da equipe e plota MTBF, MTTR e Disponibilidade no dashboard no mesmo instante, sem dependência de formulários no Excel.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/mttr">MTTR</a> ·
+    <a href="https://maintor.com.br/glossario/oee">OEE</a> ·
+    <a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a>
+  </p>
+</article>
+</body>
+</html>

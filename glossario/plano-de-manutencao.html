@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plano de Manutenção: o que é e como montar passo a passo</title>
+<meta name="description" content="Plano de manutenção é o conjunto de tarefas preventivas por ativo, com periodicidade e responsável. Veja o que compõe, um exemplo real e como montar o seu.">
+<link rel="canonical" href="https://maintor.com.br/glossario/plano-de-manutencao">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Plano de Manutenção: o que é e como montar">
+<meta property="og:description" content="O documento que transforma manutenção reativa em prevenção, explicado com exemplo e passo a passo.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Plano de Manutenção",
+  "description": "Conjunto estruturado de tarefas preventivas definidas por ativo, com periodicidade, procedimento e responsável, usado para antecipar falhas e transformar manutenção reativa em manutenção planejada.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é um plano de manutenção?","acceptedAnswer":{"@type":"Answer","text":"É um documento que define, para cada ativo, quais tarefas preventivas executar, com que periodicidade, seguindo qual procedimento e sob responsabilidade de quem. Ele transforma a manutenção reativa (esperar quebrar) em manutenção planejada (agir antes)."}},
+    {"@type":"Question","name":"Qual a diferença entre plano de manutenção e ordem de serviço?","acceptedAnswer":{"@type":"Answer","text":"O plano é a regra: define o que fazer e quando. A ordem de serviço é a execução concreta: é a tarefa individual gerada a partir do plano, atribuída a um técnico em uma data específica."}},
+    {"@type":"Question","name":"Como definir a periodicidade das tarefas?","acceptedAnswer":{"@type":"Answer","text":"A periodicidade vem da recomendação do fabricante, do histórico de falhas do ativo e da sua criticidade. Pode ser baseada em tempo (a cada 30 dias) ou em uso (a cada 500 horas de operação)."}},
+    {"@type":"Question","name":"Por onde começar um plano de manutenção?","acceptedAnswer":{"@type":"Answer","text":"Comece cadastrando os ativos e ordenando-os por criticidade. Monte planos primeiro para os equipamentos cuja parada custa mais caro, e só depois expanda para o restante da planta."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › Plano de manutenção</nav>
+
+  <h1>Plano de Manutenção: o que é e como montar</h1>
+  <p class="dek">O documento que troca o "esperar quebrar" pela prevenção — e mantém cada ativo funcionando por decisão, não por sorte.</p>
+
+  <p class="resposta">Um <strong>plano de manutenção</strong> é o conjunto estruturado de tarefas preventivas definidas para cada ativo, com <strong>periodicidade</strong>, procedimento e <strong>responsável</strong>. Ele transforma manutenção reativa em prevenção: em vez de correr atrás da falha, você age antes que ela pare a produção.</p>
+
+  <h2>O que compõe um plano de manutenção</h2>
+  <p>Um plano bem-feito responde, para cada ativo, a quatro perguntas objetivas. Sem qualquer uma delas, ele vira intenção — não execução.</p>
+  <table>
+    <tr><th>Elemento</th><th>Responde à pergunta</th><th>Exemplo</th></tr>
+    <tr><td>Tarefa</td><td>O que fazer?</td><td>Trocar filtro de ar</td></tr>
+    <tr><td>Periodicidade</td><td>Quando / a cada quanto?</td><td>A cada 500 h de operação</td></tr>
+    <tr><td>Procedimento</td><td>Como fazer?</td><td>Checklist / POP nº 12</td></tr>
+    <tr><td>Responsável</td><td>Quem faz?</td><td>Mecânico do turno A</td></tr>
+  </table>
+  <p>A periodicidade pode ser <strong>baseada em tempo</strong> (a cada 30 dias) ou <strong>baseada em uso</strong> (a cada 500 horas, a cada 10.000 ciclos). A escolha depende de como o desgaste do ativo se acumula.</p>
+
+  <h2>Exemplo prático: plano de um compressor</h2>
+  <p>Veja como fica o plano de um único ativo — um compressor de ar industrial. Cada linha é uma tarefa recorrente que o sistema dispara na data certa.</p>
+  <table>
+    <tr><th>Tarefa</th><th>Periodicidade</th><th>Tipo</th></tr>
+    <tr><td>Inspeção visual e drenagem de condensado</td><td>Diária</td><td>Preventiva</td></tr>
+    <tr><td>Limpeza do filtro de ar</td><td>500 h</td><td>Preventiva</td></tr>
+    <tr><td>Troca do óleo lubrificante</td><td>2.000 h</td><td>Preventiva</td></tr>
+    <tr><td>Análise de vibração do motor</td><td>Trimestral</td><td>Preditiva</td></tr>
+  </table>
+  <p>Repetido para todos os ativos da planta, esse conjunto de linhas é o plano de manutenção da empresa. Ele antecipa a falha e, ao reduzir paradas inesperadas, tende a elevar o <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> dos equipamentos.</p>
+
+  <h2>Plano ≠ ordem de serviço</h2>
+  <p>É a confusão mais comum. O plano é a <em>regra</em>; a <a href="https://maintor.com.br/glossario/ordem-de-servico">ordem de serviço</a> é a <em>execução</em>. Quando chega a data prevista no plano, o sistema gera automaticamente uma OS — a tarefa concreta que o técnico recebe, executa e registra.</p>
+  <div class="formula" style="font-size:17px">Plano <b>(quando + o quê)</b> → gera → Ordem de serviço <b>(execução)</b></div>
+
+  <h2>Como montar um plano passo a passo</h2>
+  <h3>1. Cadastre e priorize os ativos</h3>
+  <p>Liste os equipamentos e ordene-os por <a href="https://maintor.com.br/glossario/criticidade-de-ativos">criticidade</a>: quanto custa a parada de cada um. Comece o plano pelos ativos mais críticos, não pelos mais fáceis.</p>
+  <h3>2. Defina as tarefas e a periodicidade</h3>
+  <p>Combine a recomendação do fabricante (manual do equipamento) com o histórico real de falhas do seu ativo. O manual dá o ponto de partida; o histórico ajusta a frequência à sua operação.</p>
+  <h3>3. Atribua responsável e procedimento</h3>
+  <p>Toda tarefa precisa de um dono e de um passo a passo. Um checklist padronizado garante que a inspeção do técnico A seja igual à do técnico B — e que a falha não escape por interpretação.</p>
+  <h3>4. Automatize a geração e meça</h3>
+  <p>Fazer o plano rodar em planilha significa alguém lembrar de abrir cada tarefa. Um sistema dispara as OSs sozinho e registra cada execução — e é esse registro que alimenta os indicadores de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a>.</p>
+
+  <h2>Erros comuns ao montar um plano</h2>
+  <p>Copiar o intervalo do manual sem olhar o histórico do ativo; criar tarefas sem responsável definido (ninguém executa); planejar tudo de uma vez em vez de começar pelos críticos; e deixar o plano na planilha, onde a tarefa "some" se ninguém lembrar. Plano que não vira ordem de serviço registrada é só documento parado.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que é um plano de manutenção?</summary><p>É um documento que define, para cada ativo, quais tarefas preventivas executar, com que periodicidade, seguindo qual procedimento e sob responsabilidade de quem. Ele transforma a manutenção reativa em manutenção planejada.</p></details>
+    <details><summary>Qual a diferença entre plano de manutenção e ordem de serviço?</summary><p>O plano é a regra: define o que fazer e quando. A ordem de serviço é a execução concreta — a tarefa individual gerada a partir do plano, atribuída a um técnico em uma data específica.</p></details>
+    <details><summary>Como definir a periodicidade das tarefas?</summary><p>Ela vem da recomendação do fabricante, do histórico de falhas do ativo e da sua criticidade. Pode ser baseada em tempo (a cada 30 dias) ou em uso (a cada 500 horas de operação).</p></details>
+    <details><summary>Por onde começar um plano de manutenção?</summary><p>Cadastre os ativos e ordene-os por criticidade. Monte planos primeiro para os equipamentos cuja parada custa mais caro e só depois expanda para o restante da planta.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Tire o plano da planilha</h2>
+    <p>No Maintor, você cadastra os planos por ativo e o sistema gera as ordens de serviço na data certa, sozinho — com responsável, checklist e histórico registrado.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/ordem-de-servico">Ordem de serviço</a> ·
+    <a href="https://maintor.com.br/glossario/criticidade-de-ativos">Criticidade de ativos</a> ·
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a>
+  </p>
+</article>
+</body>
+</html>

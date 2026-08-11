@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MTTF: o que é, fórmula e como calcular</title>
+<meta name="description" content="O MTTF mede a vida útil de itens não reparáveis (como lâmpadas e rolamentos). Aprenda a fórmula, a diferença para o MTBF e como usá-lo na manutenção.">
+<link rel="canonical" href="https://maintor.com.br/glossario/mttf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MTTF: Tempo Médio Até a Falha">
+<meta property="og:description" content="Entenda como calcular o MTTF para itens não reparáveis e otimizar seu estoque.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "MTTF (Tempo Médio Até a Falha)",
+  "description": "Indicador que representa o tempo de vida esperado para um equipamento ou componente não reparável, ou seja, até sua falha e descarte final.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que significa MTTF?","acceptedAnswer":{"@type":"Answer","text":"MTTF significa Mean Time To Failure (Tempo Médio Até a Falha). É o tempo médio que um item não reparável opera até quebrar e ser substituído."}},
+    {"@type":"Question","name":"Qual a diferença entre MTTF e MTBF?","acceptedAnswer":{"@type":"Answer","text":"O MTBF (Tempo Médio Entre Falhas) é usado para ativos que podem ser consertados. O MTTF é usado para itens que, ao falhar, são descartados e substituídos, como rolamentos e fusíveis."}},
+    {"@type":"Question","name":"Como se calcula o MTTF?","acceptedAnswer":{"@type":"Answer","text":"Soma-se as horas de vida útil (tempo até a quebra) de todos os itens similares observados e divide-se pela quantidade de itens que falharam."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › MTTF</nav>
+
+  <h1>MTTF: o que é, fórmula e como calcular</h1>
+  <p class="dek">A métrica que dita a vida útil dos componentes que você não conserta, apenas descarta.</p>
+
+  <p class="resposta"><strong>MTTF</strong> (do inglês <em>Mean Time To Failure</em>, ou <strong>Tempo Médio Até a Falha</strong>) é o indicador de confiabilidade aplicado exclusivamente a itens <em>não reparáveis</em>. Ele mede o tempo médio que o componente opera antes de quebrar permanentemente e ser substituído.</p>
+
+  <h2>A fórmula do MTTF</h2>
+  <p>O cálculo avalia a soma das horas trabalhadas por um grupo de itens similares ao longo do período observado, dividido pela quantidade de falhas.</p>
+  <div class="formula">MTTF = <b>Soma do tempo de vida dos itens</b> ÷ <b>Quantidade de itens observados</b></div>
+
+  <h3>Exemplo prático</h3>
+  <p>Você testa 4 rolamentos de um lote idêntico até a quebra:</p>
+  <ul>
+    <li>O rolamento 1 durou 200 horas.</li>
+    <li>O rolamento 2 durou 220 horas.</li>
+    <li>O rolamento 3 durou 190 horas.</li>
+    <li>O rolamento 4 durou 230 horas.</li>
+  </ul>
+  <div class="formula">Soma (840h) ÷ 4 itens = <b>210 horas</b></div>
+  <p>O MTTF desse lote é 210 horas. Em uma estratégia de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a>, a troca dessa peça seria agendada antes dessa margem de vida útil terminar.</p>
+
+  <h2>A grande confusão: MTTF vs MTBF</h2>
+  <p>Em resumo: <strong>consertou? MTBF. Jogou fora? MTTF.</strong></p>
+  <table>
+    <tr><th>Indicador</th><th>Tipo de Ativo</th><th>O que ele aponta</th></tr>
+    <tr><td><a href="https://maintor.com.br/glossario/mtbf">MTBF</a> (Tempo Médio Entre Falhas)</td><td>Reparável (ex: Bomba centrífuga)</td><td>O tempo de calmaria <em>entre</em> os consertos da bomba.</td></tr>
+    <tr><td>MTTF (Tempo Médio Até a Falha)</td><td>Descartável (ex: Lâmpada LED, filtro)</td><td>O tempo total que a lâmpada dura até pifar e ir para o lixo.</td></tr>
+  </table>
+
+  <h2>Como usar o MTTF na prática</h2>
+  <h3>1. Compras e Almoxarifado</h3>
+  <p>Fornecedores prometem componentes vitalícios. Medir o MTTF mostra qual marca de correia ou fusível realmente apresenta o melhor custo-benefício financeiro.</p>
+  <h3>2. Agendamento Preventivo</h3>
+  <p>Um item cujo MTTF calculado é de 500 horas de operação deve estar no <a href="https://maintor.com.br/glossario/plano-de-manutencao">plano de manutenção</a> para troca com 450 horas, prevenindo a parada inesperada da linha.</p>
+
+  <h2>Erros comuns</h2>
+  <p>Usar a métrica <a href="https://maintor.com.br/glossario/mttr">MTTR</a> junto do MTTF (não há tempo de reparo num item não reparável, apenas tempo de <em>substituição</em>); e acreditar estritamente no catálogo do fabricante sem aferir o MTTF sob as vibrações e temperaturas reais da sua planta.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que significa MTTF?</summary><p>Mean Time To Failure — Tempo Médio Até a Falha. Indica o tempo médio de sobrevida operacional de um item descartável antes de sua falha irreversível.</p></details>
+    <details><summary>Qual a diferença entre MTTF e MTBF?</summary><p>O MTBF aplica-se a equipamentos que são mantidos e consertados após falhar. O MTTF aplica-se a componentes de uso único, que são substituídos após a falha.</p></details>
+    <details><summary>Como se calcula o MTTF?</summary><p>Soma-se o tempo total de operação até a morte dos itens e divide-se pelo número de componentes testados ou observados na amostragem.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Evite o achismo na troca de peças</h2>
+    <p>Com o histórico de consumo de peças no Maintor, você cruza o custo de aquisição com o tempo de duração em máquina. Troque de marca quando os dados comprovarem a baixa vida útil.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/mttr">MTTR</a> ·
+    <a href="https://maintor.com.br/glossario/plano-de-manutencao">Plano de manutenção</a>
+  </p>
+</article>
+</body>
+</html>

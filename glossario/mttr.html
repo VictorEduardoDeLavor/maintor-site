@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MTTR: o que é, fórmula e como calcular na manutenção</title>
+<meta name="description" content="MTTR (Tempo Médio de Reparo) mede a manutenabilidade de um ativo. Veja a fórmula, um exemplo prático, a diferença para o MTBF e como reduzir o indicador.">
+<link rel="canonical" href="https://maintor.com.br/glossario/mttr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MTTR: o que é, fórmula e como calcular">
+<meta property="og:description" content="O indicador de manutenabilidade da manutenção industrial, explicado com fórmula e exemplo.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "MTTR (Tempo Médio de Reparo)",
+  "description": "Indicador que mede o tempo médio necessário para reparar um ativo após uma falha, usado para avaliar a manutenabilidade na manutenção industrial.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que significa MTTR?","acceptedAnswer":{"@type":"Answer","text":"MTTR significa Mean Time To Repair, ou Tempo Médio de Reparo. É o tempo médio necessário para restaurar um ativo após uma falha, contado do início do reparo até o equipamento voltar a operar."}},
+    {"@type":"Question","name":"Como se calcula o MTTR?","acceptedAnswer":{"@type":"Answer","text":"Divide-se o tempo total gasto em reparos no período pelo número de reparos realizados. Por exemplo, 9 horas de reparo em 6 falhas resultam em MTTR de 1,5 hora."}},
+    {"@type":"Question","name":"Qual a diferença entre MTTR e MTBF?","acceptedAnswer":{"@type":"Answer","text":"O MTTR mede quanto tempo leva para reparar o ativo (manutenabilidade). O MTBF mede quanto tempo o ativo opera entre falhas (confiabilidade). Juntos definem a disponibilidade."}},
+    {"@type":"Question","name":"O tempo de reparo inclui a espera por peças?","acceptedAnswer":{"@type":"Answer","text":"O MTTR clássico considera apenas o tempo de reparo ativo. A espera por peças, deslocamento e diagnóstico costuma ser medida por indicadores como o MTTR estendido ou o tempo médio de indisponibilidade (MDT)."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › MTTR</nav>
+
+  <h1>MTTR: o que é, fórmula e como calcular</h1>
+  <p class="dek">O indicador que mede a agilidade do reparo — e mostra o quanto sua equipe de manutenção demora para colocar o ativo de volta em operação.</p>
+
+  <p class="resposta"><strong>MTTR</strong> (do inglês <em>Mean Time To Repair</em>, ou <strong>Tempo Médio de Reparo</strong>) é o tempo médio necessário para reparar um ativo após uma falha, contado do início da intervenção até o equipamento voltar a operar. Quanto menor o MTTR, mais rápida é a resposta da manutenção.</p>
+
+  <h2>A fórmula do MTTR</h2>
+  <p>O cálculo é direto: divide-se o tempo total gasto em reparos no período pelo número de reparos realizados.</p>
+  <div class="formula">MTTR = <b>Tempo total de reparo</b> ÷ <b>Número de reparos</b></div>
+
+  <h3>Exemplo prático</h3>
+  <p>Um compressor falhou <strong>6 vezes</strong> em um mês e o somatório do tempo de reparo foi de <strong>9 horas</strong>. O MTTR é:</p>
+  <div class="formula">9 h ÷ 6 reparos = <b>1,5 hora</b> por reparo</div>
+  <p>Em média, a equipe leva 1,5 hora para restaurar o compressor a cada falha. Acompanhar esse número mês a mês revela se as ações de manutenção — treinamento, peças em estoque, procedimentos — estão de fato acelerando o reparo.</p>
+
+  <h2>MTTR e MTBF: por que andam juntos</h2>
+  <p>O MTTR sozinho não conta a história toda. Ele mede o quão <em>rápido</em> o ativo volta a operar (manutenabilidade); o <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> mede o quão <em>raramente</em> ele falha (confiabilidade). Juntos, definem a <a href="https://maintor.com.br/glossario/disponibilidade">disponibilidade</a>.</p>
+  <table>
+    <tr><th>Indicador</th><th>O que mede</th><th>Objetivo</th></tr>
+    <tr><td>MTTR</td><td>Tempo para reparar (manutenabilidade)</td><td>Reduzir</td></tr>
+    <tr><td>MTBF</td><td>Tempo entre falhas (confiabilidade)</td><td>Aumentar</td></tr>
+  </table>
+  <div class="formula" style="font-size:17px">Disponibilidade = MTBF ÷ (MTBF + MTTR)</div>
+
+  <h2>Como reduzir o MTTR</h2>
+  <p>Reduzir o MTTR significa fazer o ativo voltar a operar mais rápido depois da falha. Na prática:</p>
+  <h3>1. Ter as peças certas em estoque</h3>
+  <p>Boa parte do tempo de reparo é espera por peça. Uma <a href="https://maintor.com.br/glossario/criticidade-de-ativos">criticidade dos ativos</a>, que define quais peças manter em estoque, de itens críticos por ativo corta essa espera drasticamente.</p>
+  <h3>2. Padronizar procedimentos de reparo</h3>
+  <p>Um POP (procedimento operacional padrão) por tipo de falha faz o técnico ir direto ao ponto, sem improviso, reduzindo o tempo de diagnóstico e execução.</p>
+  <h3>3. Registrar cada reparo</h3>
+  <p>MTTR só é útil se cada <a href="https://maintor.com.br/glossario/ordem-de-servico">ordem de serviço</a> registrar o início e o fim do reparo de forma consistente. Sem esse dado, o número vira chute.</p>
+
+  <h2>Erros comuns ao usar o MTTR</h2>
+  <p>Confundir tempo de reparo com tempo total de indisponibilidade (o MDT inclui espera, deslocamento e diagnóstico); comparar MTTR entre ativos de complexidade muito diferente; e olhar o número isolado sem cruzar com <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> e a criticidade do ativo.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que significa MTTR?</summary><p>Mean Time To Repair — Tempo Médio de Reparo. É o tempo médio necessário para restaurar um ativo após uma falha, do início do reparo até o equipamento voltar a operar.</p></details>
+    <details><summary>Como se calcula o MTTR?</summary><p>Divide-se o tempo total gasto em reparos no período pelo número de reparos realizados. Por exemplo, 9 horas de reparo em 6 falhas resultam em MTTR de 1,5 hora.</p></details>
+    <details><summary>Qual a diferença entre MTTR e MTBF?</summary><p>O MTTR mede quanto tempo leva para reparar o ativo (manutenabilidade). O MTBF mede quanto tempo o ativo opera entre falhas (confiabilidade). Juntos definem a disponibilidade.</p></details>
+    <details><summary>O tempo de reparo inclui a espera por peças?</summary><p>O MTTR clássico considera apenas o tempo de reparo ativo. A espera por peças, deslocamento e diagnóstico costuma ser medida à parte, pelo tempo médio de indisponibilidade (MDT).</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Meça o MTTR sem planilha</h2>
+    <p>No Maintor, cada ordem de serviço vira dado — e o MTTR, o MTBF e a disponibilidade dos seus ativos aparecem prontos no dashboard.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a> ·
+    <a href="https://maintor.com.br/glossario/ordem-de-servico">Ordem de serviço</a> ·
+    <a href="https://maintor.com.br/calculadoras/custo-parada-maquina">Custo de parada</a>
+  </p>
+</article>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ordem de Serviço: o que é, tipos e o que uma OS deve ter</title>
+<meta name="description" content="Ordem de serviço (OS) é o documento que autoriza e registra uma tarefa de manutenção. Veja o que uma OS deve conter, seus tipos e o ciclo de vida.">
+<link rel="canonical" href="https://maintor.com.br/glossario/ordem-de-servico">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ordem de Serviço (OS): o que é e o que deve conter">
+<meta property="og:description" content="O documento que formaliza, autoriza e registra cada tarefa de manutenção industrial, explicado com estrutura e exemplos.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Ordem de Serviço (OS)",
+  "description": "Documento que formaliza, autoriza e registra uma tarefa de manutenção: define o que fazer, em qual ativo, por quem e com que resultado. É a unidade básica de trabalho e de dado na gestão da manutenção.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é uma ordem de serviço na manutenção?","acceptedAnswer":{"@type":"Answer","text":"É o documento que formaliza, autoriza e registra uma tarefa de manutenção. Define o que fazer, em qual ativo, por quem, com quais recursos e com que resultado esperado, servindo como registro histórico do trabalho executado."}},
+    {"@type":"Question","name":"Qual a diferença entre ordem de serviço e solicitação de serviço?","acceptedAnswer":{"@type":"Answer","text":"A solicitação (SS) é o pedido de um problema ou necessidade, aberto por qualquer pessoa. A ordem de serviço (OS) é a autorização formal para executar o trabalho, criada e priorizada pelo planejamento após analisar a solicitação."}},
+    {"@type":"Question","name":"Quais são os tipos de ordem de serviço?","acceptedAnswer":{"@type":"Answer","text":"As principais são: corretiva (após a falha), preventiva (programada por tempo ou uso), preditiva (disparada por condição monitorada), de melhoria e inspeção. O tipo classifica a OS e alimenta indicadores como MTBF e MTTR."}},
+    {"@type":"Question","name":"O que uma ordem de serviço deve conter?","acceptedAnswer":{"@type":"Answer","text":"Número/identificação, ativo e local, tipo e prioridade, descrição do serviço, responsável, data de abertura e conclusão, peças e recursos utilizados, tempo gasto e o relato do que foi feito. Esses campos tornam a OS auditável e mensurável."}},
+    {"@type":"Question","name":"Por que a ordem de serviço é importante para os indicadores?","acceptedAnswer":{"@type":"Answer","text":"Cada OS registra falhas, tempos e custos. Sem OS padronizada não há dado confiável para calcular MTBF, MTTR, disponibilidade ou custo de manutenção. A OS transforma cada intervenção em informação para decisão."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+  @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › Ordem de serviço</nav>
+
+  <h1>Ordem de serviço: o que é e o que uma OS deve ter</h1>
+  <p class="dek">O documento que autoriza e registra cada tarefa de manutenção — e vira a base de todo indicador confiável.</p>
+
+  <p class="resposta">Uma <strong>ordem de serviço</strong> (OS) é o documento que <strong>formaliza, autoriza e registra</strong> uma tarefa de manutenção: define <em>o que fazer</em>, <em>em qual ativo</em>, <em>por quem</em> e <em>com que resultado</em>. É a unidade básica de trabalho da manutenção — e a fonte de dado por trás de qualquer indicador.</p>
+
+  <h2>Para que serve uma ordem de serviço</h2>
+  <p>A OS cumpre três papéis ao mesmo tempo, e é isso que a diferencia de um simples aviso de reparo:</p>
+  <table>
+    <tr><th>Papel</th><th>O que garante</th></tr>
+    <tr><td>Formaliza</td><td>Descreve a tarefa por escrito, sem depender da memória de quem executou.</td></tr>
+    <tr><td>Autoriza</td><td>Registra quem aprovou o trabalho, a prioridade e o momento certo de intervir.</td></tr>
+    <tr><td>Registra</td><td>Guarda o que foi feito, quanto tempo levou, que peças usou e qual o custo.</td></tr>
+  </table>
+  <p>Sem esse registro, cada intervenção se perde. Com ele, cada parada vira dado — e o dado alimenta a análise de confiabilidade e de custo.</p>
+
+  <h2>O que uma OS deve conter</h2>
+  <p>Uma ordem de serviço auditável e mensurável reúne, no mínimo, os seguintes campos:</p>
+  <table>
+    <tr><th>Campo</th><th>Exemplo</th></tr>
+    <tr><td>Número / identificação</td><td>OS-2026-0417</td></tr>
+    <tr><td>Ativo e local</td><td>Compressor CP-02 · Sala de utilidades</td></tr>
+    <tr><td>Tipo e prioridade</td><td>Corretiva · Alta</td></tr>
+    <tr><td>Descrição do serviço</td><td>Vazamento de ar na tubulação de saída</td></tr>
+    <tr><td>Responsável</td><td>Equipe mecânica — turno 1</td></tr>
+    <tr><td>Abertura e conclusão</td><td>03/07 08:12 → 03/07 10:40</td></tr>
+    <tr><td>Recursos utilizados</td><td>Vedação 3/4", 2,5 h de mão de obra</td></tr>
+    <tr><td>Relato de execução</td><td>Substituída conexão danificada; teste de estanqueidade OK</td></tr>
+  </table>
+  <p>Repare que o par <em>abertura → conclusão</em> e o <em>tempo gasto</em> não são detalhe burocrático: são exatamente os números que alimentam <a href="https://maintor.com.br/glossario/mttr">MTTR</a> e <a href="https://maintor.com.br/glossario/mtbf">MTBF</a>.</p>
+
+  <h2>Tipos de ordem de serviço</h2>
+  <p>O <em>tipo</em> classifica a OS e permite separar o que é reação do que é planejamento — uma das leituras mais importantes da gestão de manutenção.</p>
+  <h3>Corretiva</h3>
+  <p>Aberta <strong>depois</strong> da falha, para restabelecer a função do ativo. É a mais cara e a que se busca reduzir.</p>
+  <h3>Preventiva</h3>
+  <p>Programada por tempo ou uso, executada <strong>antes</strong> da falha. Nasce de um plano de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a> e é gerada de forma recorrente.</p>
+  <h3>Preditiva</h3>
+  <p>Disparada por uma <strong>condição monitorada</strong> (vibração, temperatura, análise de óleo) que indica falha iminente. Age no momento certo, nem cedo nem tarde demais.</p>
+  <h3>Melhoria e inspeção</h3>
+  <p>Modificações que aumentam desempenho ou segurança, e rotinas de verificação que não trocam peça, mas geram diagnóstico.</p>
+
+  <h2>O ciclo de vida da OS</h2>
+  <p>Da necessidade ao histórico, uma ordem de serviço percorre estágios bem definidos:</p>
+  <div class="formula" style="font-size:16px">Solicitação → <b>Abertura</b> → Planejamento → <b>Execução</b> → Conclusão → <b>Análise</b></div>
+  <p>Tudo começa numa <strong>solicitação de serviço</strong> (SS): o pedido de quem detectou o problema. O planejamento avalia, prioriza e a converte numa OS — a autorização formal. Após a execução e o registro, a OS entra no histórico do ativo, onde vira indicador.</p>
+
+  <h2>OS e solicitação: não confunda</h2>
+  <table>
+    <tr><th></th><th>Solicitação (SS)</th><th>Ordem de serviço (OS)</th></tr>
+    <tr><td>Quem cria</td><td>Qualquer pessoa</td><td>Planejamento / manutenção</td></tr>
+    <tr><td>O que é</td><td>Pedido de um problema</td><td>Autorização do trabalho</td></tr>
+    <tr><td>Contém</td><td>Sintoma e local</td><td>Plano, recursos e execução</td></tr>
+  </table>
+  <p>Toda OS pode vir de uma SS, mas nem toda SS vira OS — algumas são recusadas ou agrupadas. Manter os dois separados evita inflar a carga de trabalho com pedidos duplicados.</p>
+
+  <h2>Por que a OS é a base dos indicadores</h2>
+  <p>Uma OS bem preenchida é a matéria-prima da análise. Dela saem:</p>
+  <ul>
+    <li><strong>Confiabilidade</strong> — a data de cada OS corretiva mede o intervalo entre falhas (<a href="https://maintor.com.br/glossario/mtbf">MTBF</a>).</li>
+    <li><strong>Manutenabilidade</strong> — o tempo de execução alimenta o <a href="https://maintor.com.br/glossario/mttr">MTTR</a>.</li>
+    <li><strong>Disponibilidade</strong> — o cruzamento dos dois define a <a href="https://maintor.com.br/glossario/disponibilidade">disponibilidade</a> do ativo.</li>
+    <li><strong>Custo</strong> — peças e horas somadas por OS revelam o custo real de manter cada equipamento.</li>
+  </ul>
+
+  <h2>Erros comuns ao usar ordens de serviço</h2>
+  <p>Fechar a OS sem descrever o que foi feito (perde-se a causa raiz); não registrar tempo nem peças (indicador fica cego); usar tipo errado — chamar de preventiva uma corretiva planejada distorce toda a análise; e acumular OS abertas sem prioridade, o que esconde o backlog real da equipe.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que é uma ordem de serviço na manutenção?</summary><p>É o documento que formaliza, autoriza e registra uma tarefa de manutenção: o que fazer, em qual ativo, por quem e com que resultado. Funciona como registro histórico do trabalho executado.</p></details>
+    <details><summary>Qual a diferença entre ordem de serviço e solicitação de serviço?</summary><p>A solicitação (SS) é o pedido de um problema, aberto por qualquer pessoa. A ordem de serviço (OS) é a autorização formal para executar o trabalho, criada e priorizada pelo planejamento.</p></details>
+    <details><summary>Quais são os tipos de ordem de serviço?</summary><p>Principais tipos: corretiva (após a falha), preventiva (programada), preditiva (por condição monitorada), de melhoria e de inspeção. O tipo classifica a OS e alimenta os indicadores.</p></details>
+    <details><summary>O que uma ordem de serviço deve conter?</summary><p>Identificação, ativo e local, tipo e prioridade, descrição, responsável, datas de abertura e conclusão, peças e recursos, tempo gasto e o relato de execução.</p></details>
+    <details><summary>Por que a OS é importante para os indicadores?</summary><p>Cada OS registra falhas, tempos e custos. Sem OS padronizada não há dado confiável para calcular MTBF, MTTR, disponibilidade ou custo de manutenção.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Abra e feche OS sem papel</h2>
+    <p>No Maintor, cada ordem de serviço vira dado automaticamente — tipo, tempo, peças e custo alimentam os indicadores do ativo sem planilha no meio do caminho.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/mttr">MTTR</a> ·
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a>
+  </p>
+</article>
+</body>
+</html>

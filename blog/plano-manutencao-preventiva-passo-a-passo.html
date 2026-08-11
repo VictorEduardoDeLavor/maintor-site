@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plano de Manutenção Preventiva: Passo a Passo Completo</title>
+<meta name="description" content="Aprenda a estruturar um plano de manutenção preventiva industrial do zero: inventário, criticidade, rotinas, checklists e cronograma de execução.">
+<link rel="canonical" href="https://maintor.com.br/blog/plano-manutencao-preventiva-passo-a-passo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Plano de Manutenção Preventiva: Passo a Passo Completo">
+<meta property="og:description" content="Guia prático para estruturar e implementar rotinas de manutenção preventiva na indústria sem parar a produção.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Plano de Manutenção Preventiva: Passo a Passo Completo",
+  "description": "Guia prático e estruturado para planejar, criar e gerenciar planos de manutenção preventiva na indústria.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://maintor.com.br/blog/plano-manutencao-preventiva-passo-a-passo"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Maintor",
+    "url": "https://maintor.com.br"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é um plano de manutenção preventiva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É um conjunto cronológico e detalhado de inspeções, ajustes, lubrificações e substituições programadas de componentes para evitar que falhas e quebras inesperadas aconteçam no chão de fábrica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com qual frequência a manutenção preventiva deve ser executada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A frequência depende das recomendações do fabricante do equipamento, do histórico de falhas do ativo, do regime de trabalho da máquina (horas/dia ou ciclos) e da criticidade do equipamento na produção."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre plano de manutenção preventiva e preditiva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A preventiva é baseada em intervalos pré-determinados (tempo ou uso). A preditiva monitora parâmetros operacionais em tempo real (como vibração e temperatura) para intervir apenas quando há sinais de degradação."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como garantir que a equipe siga o plano de preventiva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Padronizando as rotinas através de checklists objetivos nas ordens de serviço, definindo prazos realistas e utilizando um sistema de gestão que dispare alertas de vencimento automaticamente."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:6px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br">Maintor</a> › <a href="https://maintor.com.br/blog">Blog</a> › Plano de Manutenção Preventiva</nav>
+
+  <h1>Plano de Manutenção Preventiva: Passo a Passo Completo</h1>
+  <p class="dek">Como transformar o combate a incêndios em rotinas estruturadas que garantem a disponibilidade dos equipamentos na indústria.</p>
+
+  <p class="resposta">Um <strong>plano de manutenção preventiva</strong> é o documento estratégico e operacional que reúne todas as intervenções programadas para os equipamentos de uma fábrica. O objetivo principal é atuar antes que a falha aconteça, substituindo peças desgastadas, ajustando folgas e renovando a lubrificação dentro de intervalos seguros.</p>
+
+  <h2>Por que implementar um plano de preventiva na indústria?</h2>
+  <p>Na manutenção industrial, trabalhar apenas no modo corretivo (esperar o equipamento quebrar para consertar) resulta em paradas não planejadas longas, custos elevados com fretes de emergência e riscos à segurança da equipe. Por exemplo, em uma linha de produção com um compressor central de ar comprimido, a quebra inesperada do ativo paralisa todas as ferramentas pneumáticas e atuadores da fábrica ao mesmo tempo.</p>
+  <p>Ao estruturar uma rotina de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a>, a equipe técnica assume o controle do cronograma. As paradas são agendadas para janelas de menor impacto (como trocas de turno ou finais de semana), as peças de reposição são reservadas com antecedência e a vida útil dos ativos é estendida.</p>
+
+  <h2>Passo 1: Fazer o inventário completo dos ativos</h2>
+  <p>Não é possível prevenir falhas em máquinas que a gestão não conhece. O primeiro passo prático é mapear e cadastrar todos os equipamentos da planta industrial em uma estrutura hierárquica clara:</p>
+  <ul>
+    <li><strong>Unidade:</strong> Planta principal ou filial.</li>
+    <li><strong>Setor / Área:</strong> Linha de Injeção, Utilidades, Usinagem, Embalagem.</li>
+    <li><strong>Ativo Pai:</strong> Injetora 500t, Caldeira NR-13, Prensa Hidráulica.</li>
+    <li><strong>Sub-ativos e Componentes (BOM):</strong> Motor principal, Bomba de lubrificação, Unidade hidráulica, Painel elétrico.</li>
+  </ul>
+  <p>Esse cadastramento detalhado garante que nenhuma bomba secundária ou motor de exaustão fique de fora do planejamento.</p>
+
+  <h2>Passo 2: Definir a criticidade dos equipamentos</h2>
+  <p>Nem todas as máquinas possuem o mesmo peso no resultado da fábrica. Tentar fazer preventiva diária em 100% dos ativos gera uma carga de trabalho inalcançável. Por isso, aplica-se a classificação de <a href="https://maintor.com.br/glossario/criticidade-de-ativos">criticidade de ativos</a> (Matriz ABC):</p>
+  <table>
+    <tr><th>Classe</th><th>Impacto na Produção</th><th>Estratégia Recomendada</th></tr>
+    <tr><td><strong>Classe A (Crítica)</strong></td><td>Parada interrompe imediatamente a fábrica inteira ou coloca em risco a segurança/meio ambiente. Ex: Chiller central, Caldeira.</td><td>Preventiva rigorosa com tolerância zero, inspeções diárias e plano de contingência.</td></tr>
+    <tr><td><strong>Classe B (Média)</strong></td><td>Parada reduz a capacidade produtiva, mas há alternativa temporária ou pulmão de estoque.</td><td>Preventiva periódica quinzenal ou mensal com troca de componentes desgastáveis.</td></tr>
+    <tr><td><strong>Classe C (Baixa)</strong></td><td>Parada não impacta o fluxo direto de produção. Ex: Esteira secundária de sucata.</td><td>Manutenção preditiva leve ou corretiva planejada (rodar até falhar se o custo do componente for baixo).</td></tr>
+  </table>
+
+  <h2>Passo 3: Mapear rotinas, tarefas e checklists</h2>
+  <p>Com a criticidade estabelecida, o passo seguinte é determinar <em>o que</em> exatamente será feito em cada intervenção. Um <a href="https://maintor.com.br/glossario/plano-de-manutencao">plano de manutenção</a> eficiente não pode conter instruções genéricas como "verificar máquina". Ele deve especificar verificações objetivas:</p>
+  <ul>
+    <li><strong>Elétrica:</strong> Reaperto de bornes e contatores, medição de corrente nos motores, limpeza dos filtros de exaustão do painel.</li>
+    <li><strong>Mecânica:</strong> Inspeção de folha e alinhamento de correias, verificação de ruído em rolamentos, medição de desgaste em guias e barramentos.</li>
+    <li><strong>Hidráulica/Pneumática:</strong> Drenagem de condensado em reservatórios, checagem de vazamentos em conexões, substituição de elementos filtrantes de óleo.</li>
+    <li><strong>Lubrificação:</strong> Aplicação da graxa especificada no manual, verificação do nível de óleo da caixa de engrenagens.</li>
+  </ul>
+  <p>Cada tarefa deve incluir uma indicação clara de resposta (Sim/Não, Leitura Numérica ou Texto), para que o mantenedor registre exatamente as condições encontradas durante a execução.</p>
+
+  <h2>Passo 4: Definir a gatilho de disparo e a periodicidade</h2>
+  <p>As rotinas preventivas podem ser disparadas por dois critérios principais:</p>
+  <ol>
+    <li><strong>Gatilho por Calendário (Tempo Fixo):</strong> Intervenções executadas a cada 7 dias, 30 dias, 60 dias ou anualmente. É a abordagem padrão para inspeções prediais, lubrificações periódicas e auditorias como NR-13.</li>
+    <li><strong>Gatilho por Uso / Horímetro (Horas de Operação ou Ciclos):</strong> A manutenção é agendada quando o equipamento atinge determinada marca (por exemplo, a cada 500 horas de rodagem de um compressor ou a cada 100.000 ciclos de uma injetora).</li>
+  </ol>
+  <p>Para ativos de produção contínua, a política de agendamento pode seguir a regra "após conclusão" (a próxima data conta a partir de quando a última OS foi finalizada) ou "por calendário estrito" (mantendo as datas fixas no cronograma).</p>
+
+  <h2>Passo 5: Listar materiais e recursos necessários</h2>
+  <p>Uma das maiores causas de atrasos no cumprimento da preventiva é abrir o equipamento e descobrir que o filtro ou o anel O-ring necessário não está no estoque. O plano de preventiva precisa vincular previamente a lista de materiais sugeridos (BOM de manutenção):</p>
+  <ul>
+    <li>Quantidade exata de óleo lubrificante (especificando viscosidade e norma).</li>
+    <li>Códigos dos elementos filtrantes e juntas de vedação.</li>
+    <li>Ferramental especial necessário (como chave dinamométrica ou sacador de rolamento).</li>
+    <li>Tempo estimado de execução em horas/homem.</li>
+  </ul>
+
+  <h2>Passo 6: Emitir e gerenciar Ordens de Serviço</h2>
+  <p>O plano de manutenção ganha vida quando é convertido em <a href="https://maintor.com.br/glossario/ordem-de-servico">ordem de serviço (OS)</a>. Uma ordem de serviço preventiva deve contelar todas as informações reunidas até aqui: ativo, localização, checklist de tarefas, lista de materiais e manutentor responsável.</p>
+  <p>O acompanhamento contínuo do <a href="https://maintor.com.br/glossario/backlog-de-manutencao">backlog de manutenção</a> permite identificar se as preventivas estão sendo cumpridas dentro do prazo estipulado ou se há acúmulo de rotinas atrasadas por falta de mão de obra ou peça.</p>
+
+  <h2>Como a tecnologia facilita a gestão do plano</h2>
+  <p>Gerenciar planos de manutenção preventiva para dezenas ou centenas de equipamentos através de planilhas manuais torna-se inviável à medida que a fábrica cresce. Esquecimento de datas de vencimento, perda de histórico e falta de controle do estoque de peças são problemas comuns do controle em papel.</p>
+  <p>O uso de um sistema de manutenção permite criar rotinas com checklists padronizados, programar a geração automática de ordens de serviço preventivas e acompanhar a saúde dos ativos através de indicadores em tempo real.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes sobre planos de manutenção</h2>
+    <details>
+      <summary>O que é um plano de manutenção preventiva?</summary>
+      <p>É o planejamento detalhado de inspeções, ajustes e trocas de peças com datas ou horas de uso pré-determinadas para evitar falhas inesperadas no chão de fábrica.</p>
+    </details>
+    <details>
+      <summary>Com qual frequência a manutenção preventiva deve ser executada?</summary>
+      <p>A frequência é definida a partir dos manuais dos fabricantes, da criticidade do equipamento na produção e do histórico de quebras registrado nas ordens de serviço.</p>
+    </details>
+    <details>
+      <summary>Qual a diferença entre plano de manutenção preventiva e preditiva?</summary>
+      <p>A preventiva ocorre em intervalos fixos definidos por tempo ou uso. A preditiva utiliza sensores e medições em tempo real para intervir apenas quando há sinal de desgaste estrutural.</p>
+    </details>
+    <details>
+      <summary>Como garantir que a equipe siga o plano de preventiva?</summary>
+      <p>Utilize ordens de serviço com checklists claros e obrigatórios, acompanhe o percentual de cumprimento de preventivas e garanta que o estoque tenha os materiais necessários antes da data agendada.</p>
+    </details>
+  </div>
+
+  <div class="cta">
+    <h2>Automatize seus planos de manutenção</h2>
+    <p>No Maintor, você cadastra planos de preventiva por calendário ou horímetro e o sistema gera as ordens de serviço automaticamente no dia certo.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor CMMS</a>
+  </div>
+
+  <p class="rel"><strong>Termos e artigos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção Preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/plano-de-manutencao">Plano de Manutenção</a> ·
+    <a href="https://maintor.com.br/glossario/criticidade-de-ativos">Criticidade de Ativos</a> ·
+    <a href="https://maintor.com.br/glossario/ordem-de-servico">Ordem de Serviço</a> ·
+    <a href="https://maintor.com.br/glossario/backlog-de-manutencao">Backlog de Manutenção</a>
+  </p>
+</article>
+</body>
+</html>

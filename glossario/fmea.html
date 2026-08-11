@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FMEA na manutenção: o que é e como aplicar</title>
+<meta name="description" content="FMEA (Análise de Modos de Falha e Efeitos) mapeia e prioriza riscos na manutenção industrial. Veja o que é, como calcular o RPN e um exemplo prático.">
+<link rel="canonical" href="https://maintor.com.br/glossario/fmea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FMEA na manutenção: o que é e como calcular">
+<meta property="og:description" content="Aprenda a aplicar a Análise de Modos de Falha para prevenir paradas na indústria.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "FMEA (Análise de Modos de Falha e Efeitos)",
+  "description": "Metodologia que identifica sistematicamente falhas potenciais em um ativo, analisa suas causas e efeitos, e prioriza ações preventivas baseadas em risco.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é FMEA?","acceptedAnswer":{"@type":"Answer","text":"FMEA (Failure Mode and Effects Analysis) é a Análise de Modos de Falha e Efeitos. É um método sistemático usado para identificar, avaliar e mitigar riscos e potenciais falhas em equipamentos e processos."}},
+    {"@type":"Question","name":"O que é RPN na FMEA?","acceptedAnswer":{"@type":"Answer","text":"RPN (Risk Priority Number) é o Número de Prioridade de Risco. Ele é calculado multiplicando os índices de Severidade, Ocorrência e Detecção. O resultado ajuda a priorizar quais falhas devem ser tratadas primeiro."}},
+    {"@type":"Question","name":"Qual a diferença entre FMEA e FMECA?","acceptedAnswer":{"@type":"Answer","text":"A FMECA inclui o 'C' de Criticality (Criticidade). Além de mapear os modos de falha, ela cruza a probabilidade da falha com a gravidade de suas consequências de forma mais quantitativa."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › FMEA</nav>
+
+  <h1>FMEA na manutenção: o que é e como aplicar passo a passo</h1>
+  <p class="dek">Identifique as falhas antes que elas aconteçam. Entenda como o Número de Prioridade de Risco (RPN) blinda seus equipamentos.</p>
+
+  <p class="resposta"><strong>FMEA</strong> (do inglês <em>Failure Mode and Effects Analysis</em>, ou Análise de Modos de Falha e Efeitos) é uma metodologia usada na manutenção para prever como um equipamento pode quebrar, quais seriam as consequências dessa quebra, e o que pode ser feito para impedi-la.</p>
+
+  <h2>Como calcular o risco: A fórmula do RPN</h2>
+  <p>A base da FMEA é o cálculo do RPN (<em>Risk Priority Number</em>, ou Número de Prioridade de Risco). Ele é o produto de três fatores, cada um avaliado com notas de 1 a 10.</p>
+  <div class="formula">RPN = <b>Severidade (S)</b> × <b>Ocorrência (O)</b> × <b>Detecção (D)</b></div>
+  
+  <ul>
+    <li><strong>Severidade:</strong> Quão grave é a falha? (1 = nenhum efeito, 10 = parada total com risco de morte).</li>
+    <li><strong>Ocorrência:</strong> Com que frequência ela acontece? (1 = raríssima, 10 = inevitável).</li>
+    <li><strong>Detecção:</strong> Quão fácil é perceber o problema antes de quebrar? (1 = muito fácil, 10 = impossível sem desmontar).</li>
+  </ul>
+
+  <h3>Exemplo prático de RPN</h3>
+  <p>Imagine o rolamento de um motor crítico:</p>
+  <ul>
+    <li>Travar o motor para a produção. <strong>Severidade = 8</strong>.</li>
+    <li>Historicamente, isso acontece de vez em quando. <strong>Ocorrência = 5</strong>.</li>
+    <li>Não há sensor de vibração, só escutando o ruído alto. <strong>Detecção = 7</strong>.</li>
+  </ul>
+  <div class="formula">8 × 5 × 7 = <b>RPN de 280</b></div>
+  <p>Um RPN 280 é altíssimo. A equipe precisa de ações imediatas (como adotar <a href="https://maintor.com.br/glossario/manutencao-preditiva">manutenção preditiva</a> com análise de vibração) para diminuir a nota de Detecção de 7 para 2, reduzindo o RPN geral.</p>
+
+  <h2>FMEA vs FMECA e 5 Porquês</h2>
+  <p>A FMEA olha para o futuro (o que <em>pode</em> falhar). Já a técnica dos <a href="https://maintor.com.br/glossario/5-porques">5 Porquês</a> atua no passado, procurando a causa raiz de algo que <em>já falhou</em>. A FMECA é uma variação da FMEA que cruza os dados qualitativos com uma análise mais profunda de custo e criticidade.</p>
+
+  <h2>Como aplicar a FMEA</h2>
+  <h3>1. Escolha ativos de Classe A</h3>
+  <p>Não faça FMEA para torneiras. Foque apenas nos ativos topo da <a href="https://maintor.com.br/glossario/criticidade-de-ativos">matriz de criticidade</a>.</p>
+  <h3>2. Mapeie os componentes</h3>
+  <p>Desdobre o equipamento em partes (ex: motor, bomba, acoplamento). Liste como cada componente pode falhar (desgaste, quebra, desalinhamento).</p>
+  <h3>3. Defina planos de ação</h3>
+  <p>A FMEA não é um documento para gaveta. Modos de falha com alto RPN devem virar rotinas no <a href="https://maintor.com.br/glossario/plano-de-manutencao">plano de manutenção</a> da fábrica.</p>
+
+  <h2>Erros comuns ao usar a FMEA</h2>
+  <p>Fazer a FMEA sozinho numa sala sem consultar os técnicos de chão de fábrica; focar no RPN e não desenhar ações de bloqueio; e preencher planilhas complexas para ativos de baixíssima importância.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que é FMEA?</summary><p>FMEA (Failure Mode and Effects Analysis) é um método sistemático usado para identificar, avaliar e mitigar falhas potenciais em equipamentos antes que elas ocorram.</p></details>
+    <details><summary>O que é RPN na FMEA?</summary><p>RPN (Risk Priority Number) é calculado multiplicando-se Severidade, Ocorrência e Detecção. O resultado ajuda a priorizar quais falhas devem ser tratadas primeiro.</p></details>
+    <details><summary>Qual a diferença entre FMEA e FMECA?</summary><p>A FMECA inclui a Criticidade (Criticality). Além de mapear os modos de falha, ela aprofunda a análise quantitativa do impacto da falha nos custos e segurança.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Transforme a FMEA em ordens de serviço</h2>
+    <p>Com o Maintor, os planos de ação da sua análise de risco viram tarefas automáticas no calendário. Abandone as planilhas desconexas.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/5-porques">5 Porquês</a> ·
+    <a href="https://maintor.com.br/glossario/criticidade-de-ativos">Criticidade de ativos</a> ·
+    <a href="https://maintor.com.br/glossario/plano-de-manutencao">Plano de manutenção</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-preditiva">Manutenção preditiva</a>
+  </p>
+</article>
+</body>
+</html>

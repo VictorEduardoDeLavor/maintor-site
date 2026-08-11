@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curva PF na Manutenção: o que é e como usar na prática</title>
+<meta name="description" content="A Curva PF ilustra o intervalo entre a falha potencial e a falha funcional de um equipamento. Entenda como ela guia a manutenção preditiva e preventiva.">
+<link rel="canonical" href="https://maintor.com.br/glossario/curva-pf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Curva PF: O que é o intervalo P-F na manutenção">
+<meta property="og:description" content="Entenda como a Curva PF ajuda a antecipar quebras e guiar o plano de inspeção dos ativos industriais.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Curva PF",
+  "description": "Gráfico de confiabilidade que demonstra o declínio da condição de um ativo, marcando o Ponto P (Falha Potencial identificável) até o Ponto F (Falha Funcional completa).",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é a Curva PF?","acceptedAnswer":{"@type":"Answer","text":"É um gráfico que mostra como a condição de um ativo decai com o tempo, desde o momento em que um defeito pode ser detectado (Falha Potencial, P) até a perda total da sua função (Falha Funcional, F)."}},
+    {"@type":"Question","name":"O que significa o intervalo P-F?","acceptedAnswer":{"@type":"Answer","text":"É a janela de tempo entre a descoberta do problema (P) e a quebra total (F). Se as inspeções preditivas forem feitas dentro desse intervalo, a manutenção atua antes que o equipamento pare."}},
+    {"@type":"Question","name":"Por que a Curva PF é importante?","acceptedAnswer":{"@type":"Answer","text":"Porque ela define a frequência exata das rotinas de manutenção preditiva. A periodicidade de inspeção precisa ser menor do que o intervalo P-F para que o problema seja flagrado a tempo."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › Curva PF</nav>
+
+  <h1>Curva PF na manutenção: o que é e como usar</h1>
+  <p class="dek">Entenda a janela de tempo que separa um pequeno defeito de uma quebra catastrófica da sua máquina.</p>
+
+  <p class="resposta">A <strong>Curva PF</strong> é um gráfico que ilustra como a condição de um equipamento decai ao longo do tempo. Ela mapeia o momento em que uma falha pode ser detectada pela primeira vez (Ponto P - Falha Potencial) até o instante em que o ativo perde totalmente a capacidade de operar (Ponto F - Falha Funcional).</p>
+
+  <h2>O que é o intervalo P-F?</h2>
+  <p>O intervalo P-F é o coração da estratégia de manutenção baseada em condição. Ele representa a <strong>janela de oportunidade</strong> que a equipe tem para intervir.</p>
+  <div class="formula">Intervalo P-F = <b>Tempo da Falha Funcional (F)</b> − <b>Tempo da Falha Potencial (P)</b></div>
+  <p>Se o intervalo P-F de um rolamento (desde começar a vibrar anormalmente até fundir) for de 30 dias, e a sua equipe inspeciona a máquina a cada 45 dias, a quebra vai ocorrer antes de ser percebida. O planejamento falhou.</p>
+
+  <h2>Fases de detecção na Curva PF</h2>
+  <p>À medida que nos aproximamos do Ponto F, o problema fica mais evidente, mas também mais caro para reparar. Onde a <a href="https://maintor.com.br/glossario/manutencao-preditiva">manutenção preditiva</a> atua vs a sensitiva:</p>
+  <table>
+    <tr><th>Estágio na Curva</th><th>O que detecta</th><th>Tecnologia/Estratégia</th></tr>
+    <tr><td>Início (Logo após P)</td><td>Mudanças microestruturais, alteração química</td><td>Análise de óleo, ultrassom</td></tr>
+    <tr><td>Meio</td><td>Variações cinéticas</td><td>Análise de vibração</td></tr>
+    <tr><td>Perto do Fim</td><td>Aumento de calor</td><td>Termografia</td></tr>
+    <tr><td>Fim (Perto de F)</td><td>Ruído alto, fumaça, peças soltas</td><td>Inspeção sensitiva (humana)</td></tr>
+    <tr><td>Ponto F</td><td>O equipamento parou</td><td><a href="https://maintor.com.br/glossario/manutencao-corretiva">Manutenção corretiva</a></td></tr>
+  </table>
+
+  <h2>Como usar a Curva PF na prática</h2>
+  <h3>1. Dimensionar o plano de inspeção</h3>
+  <p>A frequência de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a> ou inspeção preditiva deve ser sempre <strong>menor</strong> que o intervalo P-F. Recomenda-se realizar inspeções em intervalos equivalentes a metade (1/2) do tempo P-F.</p>
+  <h3>2. Combater a falha na raiz</h3>
+  <p>Antes do Ponto P, existe o estágio de concepção e projeto (Instalação, lubrificação de precisão). Um <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> alto se constrói operando e mantendo os equipamentos de modo a atrasar o início do ponto P.</p>
+
+  <h2>Erros comuns sobre a Curva PF</h2>
+  <p>Achar que existe um intervalo P-F fixo universal (ele varia por tipo de modo de falha e carga de operação); adotar tecnologia preditiva cara em ativos de classe C (onde a <a href="https://maintor.com.br/glossario/criticidade-de-ativos">criticidade</a> não compensa o custo de detectar o Ponto P precocemente).</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que é a Curva PF?</summary><p>É um modelo gráfico da Confiabilidade Centrada na Manutenção (RCM) que descreve o declínio da saúde de um ativo, do início da degradação (P) até a falha total (F).</p></details>
+    <details><summary>O que significa o intervalo P-F?</summary><p>É a janela de tempo entre a detecção do problema (Falha Potencial) e a quebra da máquina (Falha Funcional). Define quanto tempo a equipe tem para agir.</p></details>
+    <details><summary>Por que a Curva PF é importante?</summary><p>Porque ela orienta o calendário de rotinas preditivas e preventivas: as inspeções devem ser feitas com frequência que "encaixe" dentro dessa janela P-F.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Automatize seus planos baseados na Curva PF</h2>
+    <p>Agende tarefas com a periodicidade exata para pegar as falhas potenciais antes da quebra funcional. O Maintor gera as rotinas sozinho.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/manutencao-preditiva">Manutenção preditiva</a> ·
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/criticidade-de-ativos">Criticidade de ativos</a>
+  </p>
+</article>
+</body>
+</html>

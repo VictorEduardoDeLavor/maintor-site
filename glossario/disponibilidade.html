@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disponibilidade na manutenção: fórmula e como calcular</title>
+<meta name="description" content="Disponibilidade mede o percentual de tempo em que um ativo fica operável. Veja a fórmula (MTBF e MTTR), um exemplo prático e como elevar o indicador.">
+<link rel="canonical" href="https://maintor.com.br/glossario/disponibilidade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Disponibilidade: o que é, fórmula e como calcular">
+<meta property="og:description" content="O indicador que mostra quanto tempo seus ativos ficam realmente operáveis, explicado com fórmula e exemplo.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Disponibilidade (Availability)",
+  "description": "Indicador que mede o percentual de tempo em que um ativo permanece operável, calculado a partir do MTBF e do MTTR, usado para avaliar desempenho na manutenção industrial.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é disponibilidade na manutenção?","acceptedAnswer":{"@type":"Answer","text":"Disponibilidade é o percentual de tempo em que um ativo está operável e apto a produzir. É calculada dividindo o MTBF pela soma de MTBF e MTTR."}},
+    {"@type":"Question","name":"Como se calcula a disponibilidade?","acceptedAnswer":{"@type":"Answer","text":"A fórmula é Disponibilidade = MTBF ÷ (MTBF + MTTR). O resultado, multiplicado por 100, dá o percentual de tempo em que o ativo esteve operável."}},
+    {"@type":"Question","name":"Qual a diferença entre disponibilidade e confiabilidade?","acceptedAnswer":{"@type":"Answer","text":"Confiabilidade (MTBF) mede o quão raramente o ativo falha. Disponibilidade combina confiabilidade e manutenabilidade (MTTR) para dizer quanto tempo, no total, o ativo ficou operável."}},
+    {"@type":"Question","name":"O que é considerada uma boa disponibilidade?","acceptedAnswer":{"@type":"Answer","text":"Depende da criticidade do ativo e do setor. Ativos críticos costumam ter metas altas, mas o número só faz sentido comparado à meta interna e ao histórico do próprio equipamento, não a padrões genéricos."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › Disponibilidade</nav>
+
+  <h1>Disponibilidade: o que é, fórmula e como calcular</h1>
+  <p class="dek">O indicador que mostra quanto tempo, de fato, seus ativos ficam operáveis — e onde a manutenção está perdendo produção.</p>
+
+  <p class="resposta"><strong>Disponibilidade</strong> (do inglês <em>Availability</em>) é o percentual de tempo em que um ativo permanece <strong>operável e apto a produzir</strong>. Ela combina o quanto o equipamento falha (confiabilidade) com o quanto demora para voltar (manutenabilidade). Quanto maior a disponibilidade, mais horas produtivas o ativo entrega.</p>
+
+  <h2>A fórmula da disponibilidade</h2>
+  <p>A disponibilidade inerente relaciona dois indicadores que você provavelmente já acompanha: o tempo médio entre falhas e o tempo médio de reparo.</p>
+  <div class="formula">Disponibilidade = <b>MTBF</b> ÷ (<b>MTBF</b> + <b>MTTR</b>)</div>
+  <p>O <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> é o tempo médio que o ativo opera entre uma falha e a próxima. O <a href="https://maintor.com.br/glossario/mttr">MTTR</a> é o tempo médio que leva para repará-lo. O resultado, multiplicado por 100, vira um percentual.</p>
+
+  <h3>Exemplo prático</h3>
+  <p>Uma injetora tem <strong>MTBF de 200 horas</strong> (opera, em média, 200 h entre falhas) e <strong>MTTR de 5 horas</strong> (leva 5 h para ser reparada). A disponibilidade é:</p>
+  <div class="formula">200 ÷ (200 + 5) = 200 ÷ 205 = <b>0,9756</b> → <b>97,56%</b></div>
+  <p>Ou seja: a injetora fica operável em cerca de <strong>97,6% do tempo</strong>. Os 2,4% restantes são horas paradas por falha e reparo — tempo em que a produção deixa de acontecer.</p>
+
+  <h2>Disponibilidade, confiabilidade e manutenabilidade</h2>
+  <p>A disponibilidade não é um número solto: ela é o resultado de dois esforços distintos da manutenção. Fazer o ativo <em>falhar menos</em> (subir o MTBF) e fazê-lo <em>voltar mais rápido</em> (baixar o MTTR).</p>
+  <table>
+    <tr><th>Indicador</th><th>O que mede</th><th>Efeito na disponibilidade</th></tr>
+    <tr><td>MTBF</td><td>Tempo entre falhas (confiabilidade)</td><td>Sobe quando aumenta</td></tr>
+    <tr><td>MTTR</td><td>Tempo para reparar (manutenabilidade)</td><td>Sobe quando diminui</td></tr>
+    <tr><td>Disponibilidade</td><td>% de tempo operável</td><td>Resultado dos dois</td></tr>
+  </table>
+  <p>Por isso dois ativos podem ter o mesmo MTBF e disponibilidades bem diferentes: quem repara mais rápido perde menos tempo produtivo.</p>
+
+  <h2>Disponibilidade inerente vs. disponibilidade operacional</h2>
+  <p>A fórmula acima calcula a <strong>disponibilidade inerente</strong>, que considera só o tempo de falha e reparo. A <strong>disponibilidade operacional</strong> é mais rigorosa: inclui também esperas que não são reparo em si — espera por peça, por equipe, por liberação da produção. Ela costuma ser menor que a inerente e é a que melhor reflete a realidade do chão de fábrica.</p>
+
+  <h2>Como melhorar a disponibilidade</h2>
+  <p>Como a disponibilidade depende de MTBF e MTTR, você a eleva atacando os dois lados:</p>
+  <h3>1. Aumentar o MTBF (falhar menos)</h3>
+  <p>Planos de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a> e análise de causa raiz reduzem a frequência das falhas, aumentando o tempo operável entre paradas.</p>
+  <h3>2. Reduzir o MTTR (voltar mais rápido)</h3>
+  <p>Peças críticas em estoque, procedimentos de reparo padronizados e equipe treinada encurtam cada parada. Menos tempo reparando é mais tempo produzindo.</p>
+  <h3>3. Medir com dado confiável</h3>
+  <p>Disponibilidade só é útil se as paradas e os reparos forem registrados de forma consistente. Ordens de serviço padronizadas transformam cada parada em dado — e o dado em decisão.</p>
+
+  <h2>Erros comuns ao usar a disponibilidade</h2>
+  <p>Confundir disponibilidade inerente com operacional (e comparar números que medem coisas diferentes); perseguir uma meta genérica em vez da meta ligada à criticidade do ativo; e olhar o percentual isolado, sem cruzar com MTBF, MTTR e o custo da parada.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que é disponibilidade na manutenção?</summary><p>É o percentual de tempo em que um ativo está operável e apto a produzir. Calcula-se dividindo o MTBF pela soma de MTBF e MTTR.</p></details>
+    <details><summary>Como se calcula a disponibilidade?</summary><p>Pela fórmula Disponibilidade = MTBF ÷ (MTBF + MTTR). O resultado, multiplicado por 100, dá o percentual de tempo operável.</p></details>
+    <details><summary>Qual a diferença entre disponibilidade e confiabilidade?</summary><p>Confiabilidade (MTBF) mede o quão raramente o ativo falha. Disponibilidade combina confiabilidade e manutenabilidade (MTTR) para dizer quanto tempo, no total, o ativo ficou operável.</p></details>
+    <details><summary>O que é considerada uma boa disponibilidade?</summary><p>Depende da criticidade do ativo e do setor. O número só faz sentido comparado à sua meta interna e ao histórico do próprio equipamento, não a padrões genéricos.</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Acompanhe a disponibilidade sem planilha</h2>
+    <p>No Maintor, cada ordem de serviço vira dado — e a disponibilidade, o MTBF e o MTTR dos seus ativos aparecem prontos no dashboard.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/mtbf">MTBF</a> ·
+    <a href="https://maintor.com.br/glossario/mttr">MTTR</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/ordem-de-servico">Ordem de serviço</a>
+  </p>
+</article>
+</body>
+</html>

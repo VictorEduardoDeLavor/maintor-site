@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de ROI do CMMS | Payback da Automação Maintor</title>
+<meta name="description" content="Calcule o retorno sobre investimento (ROI) e o tempo de payback da adoção de um software CMMS na sua manutenção industrial.">
+<link rel="canonical" href="https://maintor.com.br/calculadoras/roi-cmms">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de ROI do CMMS">
+<meta property="og:description" content="Ferramenta gratuita para estimar a economia financeira gerada pela redução de paradas e ganho de eficiência no chão de fábrica.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de ROI do CMMS",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "description": "Calculadora interativa de retorno sobre investimento para adoção de software CMMS industrial.",
+  "browserRequirements": "Requires JavaScript"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como um CMMS gera economia financeira na fábrica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O CMMS reduz paradas não planejadas organizando a manutenção preventiva, evita compras emergenciais de peças e aumenta a produtividade da equipe técnica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é Payback de um investimento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Payback é o tempo necessário (em meses ou dias) para que a economia gerada pela solução pague integralmente o custo de sua contratação."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a redução média de paradas ao adotar a manutenção preventiva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A substituição gradual da manutenção corretiva emergencial por rotinas preventivas bem planejadas reduz as paradas não programadas em proporções significativas já nos primeiros meses."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED;--verde:#16a34a;--vermelho:#dc2626}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:800px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:32px 0 12px;letter-spacing:-.3px}
+  p{margin:0 0 14px}
+  
+  .calc-box{background:var(--nuvem);border:1px solid var(--linha);border-radius:16px;padding:24px;margin:24px 0}
+  .grid-form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:600px){.grid-form{grid-template-columns:1fr}}
+  .form-group{display:flex;flex-direction:column}
+  label{font-weight:600;font-size:14px;margin-bottom:6px;color:var(--tinta)}
+  input{padding:10px 14px;border:1px solid var(--linha);border-radius:8px;font-size:16px;color:var(--tinta);background:#fff}
+  input:focus{outline:2px solid var(--azul);border-color:transparent}
+  
+  .result-box{margin-top:24px;background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:14px;padding:24px;text-align:center}
+  .result-title{font-size:14px;text-transform:uppercase;letter-spacing:1px;opacity:.8;margin-bottom:6px}
+  .result-value{font-size:36px;font-weight:800;color:#4ade80;margin-bottom:12px}
+  .result-sub{display:flex;justify-content:space-around;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;margin-top:12px;font-size:15px}
+  .result-sub span{font-size:20px;font-weight:700;display:block;color:#f3f4f6}
+
+  .formula-card{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:24px 0;font-size:17px}
+  .formula-card b{color:var(--violeta)}
+
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br">Maintor</a> › <a href="https://maintor.com.br/calculadoras">Calculadoras</a> › ROI do CMMS</nav>
+
+  <h1>Calculadora de ROI do CMMS</h1>
+  <p class="dek">Estime a economia financeira mensal e o tempo de retorno ao implantar um software de gestão de manutenção.</p>
+
+  <div class="calc-box">
+    <form id="calcForm" onsubmit="return false;">
+      <div class="grid-form">
+        <div class="form-group">
+          <label for="v_hora_parada">Custo de 1h de máquina parada (R$)</label>
+          <input type="number" id="v_hora_parada" value="500" min="0" step="50">
+        </div>
+        <div class="form-group">
+          <label for="h_parada_mes">Horas paradas atuais no mês (h)</label>
+          <input type="number" id="h_parada_mes" value="12" min="0" step="1">
+        </div>
+        <div class="form-group">
+          <label for="pct_reducao">Estimativa de redução de paradas (%)</label>
+          <input type="number" id="pct_reducao" value="25" min="5" max="80" step="5">
+        </div>
+        <div class="form-group">
+          <label for="custo_cmms">Investimento mensal no CMMS (R$)</label>
+          <input type="number" id="custo_cmms" value="490" min="0" step="10">
+        </div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-title">Economia Líquida Mensal Estimada</div>
+        <div class="result-value" id="resLiquido">R$ 1.010,00</div>
+        <div class="result-sub">
+          <div>
+            Economia Bruta Mensal
+            <span id="resBruto">R$ 1.500,00</span>
+          </div>
+          <div>
+            Payback Estimado
+            <span id="resPayback">10 dias</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <h2>Fórmula Utilizada</h2>
+  <div class="formula-card">
+    <b>Economia Bruta</b> = Horas Paradas × % Redução × Custo da Hora Parada <br>
+    <b>Economia Líquida</b> = Economia Bruta − Mensalidade do CMMS
+  </div>
+
+  <h2>Por que o CMMS traz retorno financeiro rápido?</h2>
+  <p>Diferente de sistemas corporativos pesados que levam anos para demonstrar valor, a adoção de um software <a href="https://maintor.com.br/glossario/cmms">CMMS</a> gera impacto imediato na rotina operacional:</p>
+  <ul>
+    <li><strong>Organização das Preventivas:</strong> Ao evitar que 2 ou 3 horas de quebras não planejadas aconteçam no mês, a economia gerada já supera o valor da assinatura do software.</li>
+    <li><strong>Rastreabilidade de Peças:</strong> Evita a compra de componentes em duplicidade e reduz a perda de itens no almoxarifado.</li>
+    <li><strong>Produtividade Técnica:</strong> Os mantenedores recebem as ordens de serviço no celular, reduzindo o tempo de deslocamento até a sala do supervisor.</li>
+  </ul>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>Como um CMMS gera economia financeira na fábrica?</summary>
+      <p>Reduzindo paradas de máquina, evitando compras de emergência e eliminando horas de digitação manual de relatórios.</p>
+    </details>
+    <details>
+      <summary>O que é Payback de um investimento?</summary>
+      <p>É o tempo necessário para que a economia gerada pelo sistema pague o custo de sua contratação.</p>
+    </details>
+    <details>
+      <summary>Qual a redução média de paradas ao adotar a manutenção preventiva?</summary>
+      <p>Rotinas preventivas padronizadas reduzem paradas não programadas significativamente já nos primeiros meses de uso.</p>
+    </details>
+  </div>
+
+  <div class="cta">
+    <h2>Comprove o retorno na sua operação</h2>
+    <p>O Maintor oferece todas as ferramentas para organizar suas ordens de serviço e preventivas com excelente relação custo-benefício.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor CMMS</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/cmms">CMMS</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção Preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/indicadores-de-manutencao">Indicadores de Manutenção</a> ·
+    <a href="https://maintor.com.br/glossario/ordem-de-servico">Ordem de Serviço</a>
+  </p>
+</article>
+
+<script>
+function fmt(val) {
+  return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function calcular() {
+  const vHora = parseFloat(document.getElementById('v_hora_parada').value) || 0;
+  const hParada = parseFloat(document.getElementById('h_parada_mes').value) || 0;
+  const pctRed = (parseFloat(document.getElementById('pct_reducao').value) || 0) / 100;
+  const cCmms = parseFloat(document.getElementById('custo_cmms').value) || 0;
+
+  const economiaBruta = hParada * pctRed * vHora;
+  const economiaLiquida = economiaBruta - cCmms;
+
+  // Sem economia nao existe payback. Antes ficava 'Imediato' quando a economia
+  // era zero — quem zerasse a reducao lia exatamente o contrario do que a conta
+  // diz, e uma pagina que existe para calcular perde a credibilidade inteira.
+  let paybackTexto = economiaBruta > 0 ? 'Imediato' : 'Nao se paga';
+  if (economiaBruta > 0 && cCmms > 0) {
+    const dias = Math.round((cCmms / economiaBruta) * 30);
+    paybackTexto = dias <= 30 ? dias + ' dias' : (dias / 30).toFixed(1) + ' meses';
+  }
+
+  document.getElementById('resBruto').textContent = fmt(economiaBruta);
+  document.getElementById('resLiquido').textContent = fmt(economiaLiquida);
+  document.getElementById('resPayback').textContent = paybackTexto;
+}
+
+document.querySelectorAll('#calcForm input').forEach(input => {
+  input.addEventListener('input', calcular);
+});
+calcular();
+</script>
+</body>
+</html>

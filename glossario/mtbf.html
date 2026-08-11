@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MTBF: o que é, fórmula e como calcular na manutenção</title>
+<meta name="description" content="MTBF (Tempo Médio Entre Falhas) mede a confiabilidade de um ativo. Veja a fórmula, um exemplo prático, a diferença para o MTTR e como melhorar o indicador.">
+<link rel="canonical" href="https://maintor.com.br/glossario/mtbf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MTBF: o que é, fórmula e como calcular">
+<meta property="og:description" content="O indicador de confiabilidade da manutenção industrial, explicado com fórmula e exemplo.">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "MTBF (Tempo Médio Entre Falhas)",
+  "description": "Indicador que mede o tempo médio de operação de um ativo reparável entre uma falha e a seguinte, usado para avaliar confiabilidade na manutenção industrial.",
+  "inDefinedTermSet": "https://maintor.com.br/glossario"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que significa MTBF?","acceptedAnswer":{"@type":"Answer","text":"MTBF significa Mean Time Between Failures, ou Tempo Médio Entre Falhas. É o tempo médio de operação de um ativo reparável entre uma falha e a próxima."}},
+    {"@type":"Question","name":"Qual a diferença entre MTBF e MTTR?","acceptedAnswer":{"@type":"Answer","text":"O MTBF mede quanto tempo o ativo opera entre falhas (confiabilidade). O MTTR mede quanto tempo leva para reparar (manutenabilidade). Juntos definem a disponibilidade do ativo."}},
+    {"@type":"Question","name":"MTBF serve para qualquer equipamento?","acceptedAnswer":{"@type":"Answer","text":"O MTBF se aplica a ativos reparáveis. Para itens que são substituídos e não reparados, usa-se o MTTF (Tempo Médio Até a Falha)."}}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--bg:#ffffff;--nuvem:#f8fafc;--azul:#2563EB;--violeta:#7C3AED}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 72px}
+  .crumbs{font-size:13px;color:var(--suave);margin-bottom:18px}
+  .crumbs a{color:var(--azul);text-decoration:none}
+  h1{font-size:32px;line-height:1.2;letter-spacing:-.5px;margin:0 0 6px}
+  .dek{font-size:18px;color:var(--suave);margin:0 0 28px}
+  h2{font-size:23px;margin:38px 0 12px;letter-spacing:-.3px}
+  h3{font-size:17px;margin:24px 0 8px}
+  p{margin:0 0 14px}
+  .resposta{background:var(--nuvem);border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 18px;font-size:17px}
+  .formula{background:linear-gradient(180deg,#f5f3ff,#eff6ff);border:1px solid var(--linha);border-radius:12px;padding:20px;text-align:center;margin:16px 0;font-size:19px}
+  .formula b{color:var(--violeta)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha)}
+  th{background:var(--nuvem);font-weight:650}
+  .faq details{border:1px solid var(--linha);border-radius:10px;padding:4px 16px;margin-bottom:10px}
+  .faq summary{font-weight:600;cursor:pointer;padding:12px 0}
+  .cta{margin-top:40px;background:linear-gradient(120deg,var(--azul),var(--violeta));color:#fff;border-radius:16px;padding:26px 24px}
+  .cta h2{margin:0 0 6px;color:#fff}
+  .cta p{margin:0 0 16px;opacity:.92}
+  .cta a{display:inline-block;background:#fff;color:var(--azul);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px}
+  .rel{margin-top:34px;font-size:15px}
+  .rel a{color:var(--azul);text-decoration:none}
+  code{background:var(--nuvem);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <nav class="crumbs"><a href="https://maintor.com.br/glossario">Glossário de manutenção</a> › MTBF</nav>
+
+  <h1>MTBF: o que é, fórmula e como calcular</h1>
+  <p class="dek">O indicador que mede a confiabilidade dos seus ativos — e mostra onde a manutenção precisa agir.</p>
+
+  <p class="resposta"><strong>MTBF</strong> (do inglês <em>Mean Time Between Failures</em>, ou <strong>Tempo Médio Entre Falhas</strong>) é o tempo médio que um ativo reparável opera entre uma falha e a próxima. Quanto maior o MTBF, mais confiável é o equipamento.</p>
+
+  <h2>A fórmula do MTBF</h2>
+  <p>O cálculo é direto: divide-se o tempo total em que o ativo esteve operando pelo número de falhas ocorridas no período.</p>
+  <div class="formula">MTBF = <b>Tempo total de operação</b> ÷ <b>Número de falhas</b></div>
+
+  <h3>Exemplo prático</h3>
+  <p>Uma injetora operou <strong>600 horas</strong> em um mês e apresentou <strong>3 paradas por falha</strong>. O MTBF é:</p>
+  <div class="formula">600 h ÷ 3 falhas = <b>200 horas</b> entre falhas</div>
+  <p>Na média, o equipamento roda 200 horas antes de falhar de novo. Acompanhar esse número mês a mês revela se as ações de manutenção estão de fato aumentando a confiabilidade.</p>
+
+  <h2>MTBF e MTTR: por que andam juntos</h2>
+  <p>O MTBF sozinho não conta a história toda. Ele mede o quão <em>raramente</em> o ativo falha; o <a href="https://maintor.com.br/glossario/mttr">MTTR</a> mede o quão <em>rápido</em> ele volta a operar. Juntos, definem a <a href="https://maintor.com.br/glossario/disponibilidade">disponibilidade</a>.</p>
+  <table>
+    <tr><th>Indicador</th><th>O que mede</th><th>Objetivo</th></tr>
+    <tr><td>MTBF</td><td>Tempo entre falhas (confiabilidade)</td><td>Aumentar</td></tr>
+    <tr><td>MTTR</td><td>Tempo para reparar (manutenabilidade)</td><td>Reduzir</td></tr>
+  </table>
+  <div class="formula" style="font-size:17px">Disponibilidade = MTBF ÷ (MTBF + MTTR)</div>
+
+  <h2>Como melhorar o MTBF</h2>
+  <p>Aumentar o MTBF significa fazer o ativo falhar com menos frequência. Na prática:</p>
+  <h3>1. Trocar corretiva por preventiva</h3>
+  <p>Planos de <a href="https://maintor.com.br/glossario/manutencao-preventiva">manutenção preventiva</a> baseados em tempo ou uso atacam a falha antes que ela pare a produção.</p>
+  <h3>2. Analisar a causa raiz</h3>
+  <p>Sem entender <em>por que</em> o ativo falha, você troca peça e o problema volta. Ferramentas como 5 Porquês e Pareto de falhas apontam a origem real.</p>
+  <h3>3. Medir de forma confiável</h3>
+  <p>MTBF só é útil se as falhas forem registradas de forma consistente. Ordens de serviço padronizadas transformam cada parada em dado — e o dado em decisão.</p>
+
+  <h2>Erros comuns ao usar o MTBF</h2>
+  <p>Aplicar MTBF a itens descartáveis (o correto é o <a href="https://maintor.com.br/glossario/mttf">MTTF</a>); comparar MTBF entre ativos muito diferentes; e tratar o número isolado sem cruzar com MTTR e criticidade do ativo.</p>
+
+  <div class="faq">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O que significa MTBF?</summary><p>Mean Time Between Failures — Tempo Médio Entre Falhas. É o tempo médio de operação de um ativo reparável entre uma falha e a próxima.</p></details>
+    <details><summary>Qual a diferença entre MTBF e MTTR?</summary><p>O MTBF mede quanto tempo o ativo opera entre falhas (confiabilidade). O MTTR mede quanto tempo leva para repará-lo (manutenabilidade). Juntos definem a disponibilidade.</p></details>
+    <details><summary>MTBF serve para qualquer equipamento?</summary><p>Só para ativos reparáveis. Para itens substituídos e não reparados, usa-se o MTTF (Tempo Médio Até a Falha).</p></details>
+  </div>
+
+  <div class="cta">
+    <h2>Meça o MTBF sem planilha</h2>
+    <p>No Maintor, cada ordem de serviço vira dado — e o MTBF, o MTTR e a disponibilidade dos seus ativos aparecem prontos no dashboard.</p>
+    <a href="https://maintor.com.br">Conhecer o Maintor</a>
+  </div>
+
+  <p class="rel"><strong>Termos relacionados:</strong>
+    <a href="https://maintor.com.br/glossario/mttr">MTTR</a> ·
+    <a href="https://maintor.com.br/glossario/disponibilidade">Disponibilidade</a> ·
+    <a href="https://maintor.com.br/glossario/manutencao-preventiva">Manutenção preventiva</a> ·
+    <a href="https://maintor.com.br/glossario/ordem-de-servico">Ordem de serviço</a>
+  </p>
+</article>
+</body>
+</html>
