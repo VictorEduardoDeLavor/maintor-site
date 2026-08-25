@@ -18,6 +18,16 @@ BLOG_SLUGS = {
     "reduzir-paradas-nao-planejadas",
 }
 
+BLOG_DESCRIPTIONS = {
+    "causa-raiz-de-falhas": "Aprenda a aplicar a Análise de Causa Raiz (RCA), o método dos 5 Porquês e o Diagrama de Ishikawa para eliminar falhas recorrentes no chão de fábrica.",
+    "cmms-vs-planilha": "Descubra os sinais de que sua gestão de manutenção industrial ultrapassou o Excel e entenda os benefícios da migração para um software CMMS.",
+    "kpis-manutencao-gestor": "MTBF, MTTR, Disponibilidade, OEE, Backlog e mais: conheça os 7 principais indicadores de manutenção industrial para apresentar à diretoria.",
+    "manutencao-industria-plastico": "Boas práticas de manutenção industrial para injetoras, chillers, reatores e caldeiras NR-13. Evite bateladas perdidas e paradas de linha.",
+    "plano-manutencao-preventiva-passo-a-passo": "Aprenda a estruturar um plano de manutenção preventiva industrial do zero: inventário, criticidade, rotinas, checklists e cronograma de execução.",
+    "preventiva-preditiva-corretiva": "Entenda a diferença entre manutenção preventiva, preditiva e corretiva. Saiba quando aplicar cada tipo para otimizar o orçamento da indústria.",
+    "reduzir-paradas-nao-planejadas": "Estratégias práticas para mitigar a dor nº 1 dos gestores industriais: identificação de causa raiz, preventiva eficiente e eliminação de gargalos.",
+}
+
 CALCULATOR_SLUGS = {
     "custo-parada-maquina",
     "mtbf-mttr-disponibilidade",
@@ -34,7 +44,9 @@ class PageParser(HTMLParser):
         self.canonical = None
         self.metadata = {}
         self.links = []
+        self.card_text = {}
         self._capture = None
+        self._card_href = None
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
@@ -50,16 +62,23 @@ class PageParser(HTMLParser):
             self.canonical = attributes.get("href")
         elif tag == "a" and attributes.get("href"):
             self.links.append(attributes["href"])
+            if "card" in attributes.get("class", "").split():
+                self._card_href = attributes["href"]
+                self.card_text[self._card_href] = ""
 
     def handle_endtag(self, tag):
         if tag == self._capture:
             self._capture = None
+        if tag == "a":
+            self._card_href = None
 
     def handle_data(self, data):
         if self._capture == "title":
             self.title += data
         elif self._capture == "h1":
             self.h1 += data
+        if self._card_href:
+            self.card_text[self._card_href] += data
 
 
 def parse_page(path):
@@ -122,6 +141,20 @@ class SiteStructureTests(unittest.TestCase):
             CALCULATOR_SLUGS,
         )
 
+    def test_blog_cards_use_source_descriptions(self):
+        page = parse_page(ROOT / "blog/index.html")
+        for slug, description in BLOG_DESCRIPTIONS.items():
+            url = f"{BASE_URL}/blog/{slug}"
+            with self.subTest(slug=slug):
+                self.assertIn(description, page.card_text.get(url, ""))
+
+    def test_mobile_navigation_keeps_content_areas_available(self):
+        hidden_rule = "nav a:not(.app){display:none}"
+        for relative_path in ("blog/index.html", "calculadoras/index.html"):
+            content = (ROOT / relative_path).read_text(encoding="utf-8")
+            with self.subTest(relative_path=relative_path):
+                self.assertNotIn(hidden_rule, content)
+
     def test_sitemap_has_36_unique_urls(self):
         locations = sitemap_locations()
         self.assertEqual(len(locations), 36)
@@ -132,14 +165,19 @@ class SiteStructureTests(unittest.TestCase):
     def test_every_sitemap_url_has_matching_file_and_canonical(self):
         for location in sitemap_locations():
             with self.subTest(location=location):
+                parsed = urlparse(location)
+                self.assertEqual(parsed.scheme, "https")
+                self.assertEqual(parsed.netloc, "maintor.com.br")
                 path = local_path_for_url(location)
                 self.assertTrue(path.is_file(), f"Arquivo ausente para {location}: {path}")
                 self.assertEqual(parse_page(path).canonical, location)
 
     def test_production_files_have_no_stale_host_or_flow_route(self):
-        production_files = [ROOT / "index.html", ROOT / "sitemap.xml"]
-        for directory in ("blog", "calculadoras", "glossario"):
-            production_files.extend(sorted((ROOT / directory).glob("*.html")))
+        production_files = sorted(ROOT.rglob("*.html"))
+        production_files.extend(sorted(ROOT.rglob("*.xml")))
+        production_files = [
+            path for path in production_files if "docs" not in path.parts
+        ]
 
         forbidden = (
             "victoreduardodelavor.github.io/maintor-site",

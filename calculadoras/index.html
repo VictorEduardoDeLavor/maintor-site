@@ -28,7 +28,7 @@
 }
 </script>
 <style>
-  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--nuvem:#f8fafc;--azul:#2563eb;--violeta:#7c3aed;--verde:#059669}
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--nuvem:#f8fafc;--azul:#2563eb;--violeta:#7c3aed;--verde:#047857}
   *{box-sizing:border-box}
   body{margin:0;background:#fff;color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
   a{color:inherit}
@@ -48,7 +48,7 @@
   .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:44px}
   .card{display:flex;flex-direction:column;min-height:260px;padding:26px;border:1px solid var(--linha);border-radius:16px;background:var(--nuvem);text-decoration:none;transition:transform .15s,border-color .15s,box-shadow .15s}
   .card:hover{transform:translateY(-2px);border-color:var(--azul);box-shadow:0 12px 28px rgba(15,23,42,.08)}
-  .metric{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;margin-bottom:18px;border-radius:14px;background:#dbeafe;color:var(--azul);font-size:15px;font-weight:850;letter-spacing:-.3px}
+  .metric{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;margin-bottom:18px;border-radius:14px;background:#dbeafe;color:#1d4ed8;font-size:15px;font-weight:850;letter-spacing:-.3px}
   .card:nth-child(2) .metric{background:#ede9fe;color:var(--violeta)}
   .card:nth-child(3) .metric{background:#d1fae5;color:var(--verde)}
   .card:nth-child(4) .metric{background:#ffedd5;color:#c2410c}
@@ -62,7 +62,7 @@
   footer{border-top:1px solid var(--linha);padding:24px 0;color:var(--suave);font-size:14px}
   .footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .footer a{color:var(--suave)}
-  @media(max-width:720px){.nav{align-items:flex-start;padding-top:16px;padding-bottom:16px}.nav nav{gap:12px}.nav nav a:not(.app){display:none}main{padding-top:44px}.grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}}
+  @media(max-width:720px){.nav{align-items:stretch;flex-direction:column;padding-top:14px;padding-bottom:14px;gap:12px}.nav nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:8px 12px;text-align:center}.nav nav a{font-size:13px}.nav nav a:not(.app){padding:4px 0}.nav nav .app{grid-column:1/-1;padding:10px 13px;white-space:nowrap}main{padding-top:44px}.grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
