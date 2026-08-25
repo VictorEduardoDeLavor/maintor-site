@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog de manutenção industrial | Guias Maintor</title>
+<meta name="description" content="Guias práticos sobre manutenção industrial, CMMS, indicadores, causa raiz, manutenção preventiva e redução de paradas não planejadas.">
+<link rel="canonical" href="https://maintor.com.br/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog de manutenção industrial | Guias Maintor">
+<meta property="og:description" content="Conteúdo prático para estruturar a manutenção, acompanhar indicadores e reduzir paradas na indústria.">
+<meta property="og:url" content="https://maintor.com.br/blog/">
+<meta property="og:image" content="https://maintor.com.br/midia/og.png">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Guias de manutenção industrial",
+  "url": "https://maintor.com.br/blog/",
+  "numberOfItems": 7,
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"url":"https://maintor.com.br/blog/causa-raiz-de-falhas","name":"Análise de Causa Raiz na Manutenção: 5 Porquês e Ishikawa"},
+    {"@type":"ListItem","position":2,"url":"https://maintor.com.br/blog/cmms-vs-planilha","name":"CMMS vs Planilha: Quando Trocar o Excel no Chão de Fábrica"},
+    {"@type":"ListItem","position":3,"url":"https://maintor.com.br/blog/kpis-manutencao-gestor","name":"Os 7 Principais KPIs de Manutenção para a Gestão Industrial"},
+    {"@type":"ListItem","position":4,"url":"https://maintor.com.br/blog/manutencao-industria-plastico","name":"Gestão de Manutenção na Indústria Plástica e Química"},
+    {"@type":"ListItem","position":5,"url":"https://maintor.com.br/blog/plano-manutencao-preventiva-passo-a-passo","name":"Plano de Manutenção Preventiva: Passo a Passo Completo"},
+    {"@type":"ListItem","position":6,"url":"https://maintor.com.br/blog/preventiva-preditiva-corretiva","name":"Manutenção Preventiva, Preditiva e Corretiva: Diferenças"},
+    {"@type":"ListItem","position":7,"url":"https://maintor.com.br/blog/reduzir-paradas-nao-planejadas","name":"Como Reduzir Paradas Não Planejadas na Indústria"}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--nuvem:#f8fafc;--azul:#2563eb;--violeta:#7c3aed}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding-left:20px;padding-right:20px}
+  header{border-bottom:1px solid var(--linha);background:rgba(255,255,255,.96)}
+  .nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{font-weight:800;font-size:21px;letter-spacing:-.4px;text-decoration:none;white-space:nowrap}
+  .brand span{display:inline-block;margin-left:5px;padding:2px 7px;border-radius:6px;background:linear-gradient(135deg,var(--azul),var(--violeta));color:#fff;font-size:10px;letter-spacing:.5px;vertical-align:2px}
+  nav{display:flex;align-items:center;justify-content:flex-end;gap:20px;flex-wrap:wrap}
+  nav a{text-decoration:none;color:var(--suave);font-size:14px;font-weight:600}
+  nav a:hover{color:var(--azul)}
+  nav .app{padding:8px 13px;border-radius:8px;background:var(--azul);color:#fff}
+  main{padding:64px 0 76px}
+  .eyebrow{margin:0 0 12px;color:var(--azul);font-weight:750;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+  h1{max-width:760px;font-size:clamp(36px,6vw,56px);line-height:1.08;letter-spacing:-1.5px;margin:0 0 18px}
+  .intro{max-width:720px;margin:0;color:var(--suave);font-size:19px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:18px;margin-top:44px}
+  .card{display:flex;flex-direction:column;min-height:245px;padding:24px;border:1px solid var(--linha);border-radius:16px;background:var(--nuvem);text-decoration:none;transition:transform .15s,border-color .15s,box-shadow .15s}
+  .card:hover{transform:translateY(-2px);border-color:var(--azul);box-shadow:0 12px 28px rgba(15,23,42,.08)}
+  .tag{margin-bottom:14px;color:var(--azul);font-size:13px;font-weight:750;text-transform:uppercase;letter-spacing:.06em}
+  .card h2{font-size:21px;line-height:1.3;letter-spacing:-.3px;margin:0 0 10px}
+  .card p{margin:0;color:var(--suave);font-size:15px}
+  .read{margin-top:auto;padding-top:18px;color:var(--azul);font-weight:700;font-size:14px}
+  .cta{margin-top:48px;padding:30px;border-radius:18px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #dbeafe;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .cta h2{font-size:24px;margin:0 0 4px}
+  .cta p{margin:0;color:var(--suave)}
+  .cta a{display:inline-block;padding:11px 18px;border-radius:9px;background:var(--azul);color:#fff;text-decoration:none;font-weight:700;white-space:nowrap}
+  footer{border-top:1px solid var(--linha);padding:24px 0;color:var(--suave);font-size:14px}
+  .footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .footer a{color:var(--suave)}
+  @media(max-width:720px){.nav{align-items:flex-start;padding-top:16px;padding-bottom:16px}.nav nav{gap:12px}.nav nav a:not(.app){display:none}main{padding-top:44px}.cta{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="https://maintor.com.br/">MAINTOR <span>CMMS</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="https://maintor.com.br/glossario/">Glossário</a>
+        <a href="https://maintor.com.br/blog/" aria-current="page">Blog</a>
+        <a href="https://maintor.com.br/calculadoras/">Calculadoras</a>
+        <a class="app" href="https://app.maintor.com.br">Entrar no Maintor</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Conteúdo para a manutenção</p>
+    <h1>Guias de manutenção industrial</h1>
+    <p class="intro">Boas práticas para organizar a rotina, tomar decisões com indicadores e reduzir perdas no chão de fábrica.</p>
+
+    <section class="grid" aria-label="Artigos do blog">
+      <a class="card" href="https://maintor.com.br/blog/causa-raiz-de-falhas">
+        <span class="tag">Confiabilidade</span>
+        <h2>Análise de Causa Raiz na Manutenção: 5 Porquês e Ishikawa</h2>
+        <p>Aprenda a aplicar RCA, 5 Porquês e Diagrama de Ishikawa para eliminar falhas recorrentes no chão de fábrica.</p>
+        <span class="read">Ler guia →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/blog/cmms-vs-planilha">
+        <span class="tag">Gestão</span>
+        <h2>CMMS vs Planilha: Quando Trocar o Excel no Chão de Fábrica</h2>
+        <p>Reconheça os sinais de que a operação ultrapassou a planilha e entenda os ganhos da migração para um CMMS.</p>
+        <span class="read">Ler guia →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/blog/kpis-manutencao-gestor">
+        <span class="tag">Indicadores</span>
+        <h2>Os 7 Principais KPIs de Manutenção para a Gestão Industrial</h2>
+        <p>MTBF, MTTR, Disponibilidade, OEE, Backlog e os indicadores essenciais para acompanhar e comunicar resultados.</p>
+        <span class="read">Ler guia →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/blog/manutencao-industria-plastico">
+        <span class="tag">Aplicação industrial</span>
+        <h2>Gestão de Manutenção na Indústria Plástica e Química</h2>
+        <p>Boas práticas para injetoras, chillers, reatores e caldeiras, com foco em evitar paradas e perdas de produção.</p>
+        <span class="read">Ler guia →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/blog/plano-manutencao-preventiva-passo-a-passo">
+        <span class="tag">Planejamento</span>
+        <h2>Plano de Manutenção Preventiva: Passo a Passo Completo</h2>
+        <p>Estruture inventário, criticidade, rotinas, checklists e cronograma de execução desde o início.</p>
+        <span class="read">Ler guia →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/blog/preventiva-preditiva-corretiva">
+        <span class="tag">Estratégia</span>
+        <h2>Manutenção Preventiva, Preditiva e Corretiva: Diferenças</h2>
+        <p>Entenda quando aplicar cada estratégia para equilibrar confiabilidade, risco e orçamento.</p>
+        <span class="read">Ler guia →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/blog/reduzir-paradas-nao-planejadas">
+        <span class="tag">Disponibilidade</span>
+        <h2>Como Reduzir Paradas Não Planejadas na Indústria</h2>
+        <p>Ações práticas para identificar causa raiz, fortalecer a preventiva e eliminar gargalos de manutenção.</p>
+        <span class="read">Ler guia →</span>
+      </a>
+    </section>
+
+    <section class="cta" aria-label="Conheça o Maintor">
+      <div>
+        <h2>Leve as boas práticas para a operação</h2>
+        <p>Centralize ordens de serviço, preventivas, ativos e indicadores no Maintor CMMS.</p>
+      </div>
+      <a href="https://app.maintor.com.br">Acessar o Maintor</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer">
+      <span>© 2026 Maintor CMMS</span>
+      <span><a href="https://maintor.com.br/">Início</a> · <a href="https://maintor.com.br/glossario/">Glossário</a> · <a href="https://maintor.com.br/calculadoras/">Calculadoras</a></span>
+    </div>
+  </footer>
+</body>
+</html>

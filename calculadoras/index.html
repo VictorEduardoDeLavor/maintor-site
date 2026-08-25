@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadoras de manutenção industrial | Maintor</title>
+<meta name="description" content="Calcule OEE, MTBF, MTTR, disponibilidade, custo de parada de máquina e ROI de um CMMS com ferramentas gratuitas para manutenção industrial.">
+<link rel="canonical" href="https://maintor.com.br/calculadoras/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadoras de manutenção industrial | Maintor">
+<meta property="og:description" content="Ferramentas gratuitas para transformar dados de manutenção em indicadores e impacto financeiro.">
+<meta property="og:url" content="https://maintor.com.br/calculadoras/">
+<meta property="og:image" content="https://maintor.com.br/midia/og.png">
+<meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Calculadoras de manutenção industrial",
+  "url": "https://maintor.com.br/calculadoras/",
+  "numberOfItems": 4,
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"url":"https://maintor.com.br/calculadoras/custo-parada-maquina","name":"Calculadora de Custo de Parada de Máquina"},
+    {"@type":"ListItem","position":2,"url":"https://maintor.com.br/calculadoras/mtbf-mttr-disponibilidade","name":"Calculadora de MTBF, MTTR e Disponibilidade"},
+    {"@type":"ListItem","position":3,"url":"https://maintor.com.br/calculadoras/oee","name":"Calculadora de OEE"},
+    {"@type":"ListItem","position":4,"url":"https://maintor.com.br/calculadoras/roi-cmms","name":"Calculadora de ROI do CMMS"}
+  ]
+}
+</script>
+<style>
+  :root{--tinta:#0f172a;--suave:#475569;--linha:#e2e8f0;--nuvem:#f8fafc;--azul:#2563eb;--violeta:#7c3aed;--verde:#059669}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--tinta);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding-left:20px;padding-right:20px}
+  header{border-bottom:1px solid var(--linha);background:rgba(255,255,255,.96)}
+  .nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{font-weight:800;font-size:21px;letter-spacing:-.4px;text-decoration:none;white-space:nowrap}
+  .brand span{display:inline-block;margin-left:5px;padding:2px 7px;border-radius:6px;background:linear-gradient(135deg,var(--azul),var(--violeta));color:#fff;font-size:10px;letter-spacing:.5px;vertical-align:2px}
+  nav{display:flex;align-items:center;justify-content:flex-end;gap:20px;flex-wrap:wrap}
+  nav a{text-decoration:none;color:var(--suave);font-size:14px;font-weight:600}
+  nav a:hover{color:var(--azul)}
+  nav .app{padding:8px 13px;border-radius:8px;background:var(--azul);color:#fff}
+  main{padding:64px 0 76px}
+  .eyebrow{margin:0 0 12px;color:var(--verde);font-weight:750;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+  h1{max-width:780px;font-size:clamp(36px,6vw,56px);line-height:1.08;letter-spacing:-1.5px;margin:0 0 18px}
+  .intro{max-width:740px;margin:0;color:var(--suave);font-size:19px}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:44px}
+  .card{display:flex;flex-direction:column;min-height:260px;padding:26px;border:1px solid var(--linha);border-radius:16px;background:var(--nuvem);text-decoration:none;transition:transform .15s,border-color .15s,box-shadow .15s}
+  .card:hover{transform:translateY(-2px);border-color:var(--azul);box-shadow:0 12px 28px rgba(15,23,42,.08)}
+  .metric{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;margin-bottom:18px;border-radius:14px;background:#dbeafe;color:var(--azul);font-size:15px;font-weight:850;letter-spacing:-.3px}
+  .card:nth-child(2) .metric{background:#ede9fe;color:var(--violeta)}
+  .card:nth-child(3) .metric{background:#d1fae5;color:var(--verde)}
+  .card:nth-child(4) .metric{background:#ffedd5;color:#c2410c}
+  .card h2{font-size:23px;line-height:1.3;letter-spacing:-.35px;margin:0 0 10px}
+  .card p{margin:0;color:var(--suave);font-size:15px}
+  .use{margin-top:auto;padding-top:20px;color:var(--azul);font-weight:700;font-size:14px}
+  .cta{margin-top:48px;padding:30px;border-radius:18px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #dbeafe;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .cta h2{font-size:24px;margin:0 0 4px}
+  .cta p{margin:0;color:var(--suave)}
+  .cta a{display:inline-block;padding:11px 18px;border-radius:9px;background:var(--azul);color:#fff;text-decoration:none;font-weight:700;white-space:nowrap}
+  footer{border-top:1px solid var(--linha);padding:24px 0;color:var(--suave);font-size:14px}
+  .footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .footer a{color:var(--suave)}
+  @media(max-width:720px){.nav{align-items:flex-start;padding-top:16px;padding-bottom:16px}.nav nav{gap:12px}.nav nav a:not(.app){display:none}main{padding-top:44px}.grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="https://maintor.com.br/">MAINTOR <span>CMMS</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="https://maintor.com.br/glossario/">Glossário</a>
+        <a href="https://maintor.com.br/blog/">Blog</a>
+        <a href="https://maintor.com.br/calculadoras/" aria-current="page">Calculadoras</a>
+        <a class="app" href="https://app.maintor.com.br">Entrar no Maintor</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Ferramentas gratuitas</p>
+    <h1>Calculadoras de manutenção industrial</h1>
+    <p class="intro">Transforme dados operacionais em indicadores claros de confiabilidade, eficiência e impacto financeiro.</p>
+
+    <section class="grid" aria-label="Calculadoras disponíveis">
+      <a class="card" href="https://maintor.com.br/calculadoras/custo-parada-maquina">
+        <span class="metric">R$</span>
+        <h2>Custo de Parada de Máquina</h2>
+        <p>Estime faturamento perdido, mão de obra ociosa, custo de reparo e refugo durante uma parada não planejada.</p>
+        <span class="use">Abrir calculadora →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/calculadoras/mtbf-mttr-disponibilidade">
+        <span class="metric">MTBF</span>
+        <h2>MTBF, MTTR e Disponibilidade</h2>
+        <p>Calcule confiabilidade, tempo médio de reparo e disponibilidade a partir das falhas e horas de operação.</p>
+        <span class="use">Abrir calculadora →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/calculadoras/oee">
+        <span class="metric">OEE</span>
+        <h2>Eficiência Global do Equipamento</h2>
+        <p>Combine Disponibilidade, Desempenho e Qualidade para medir a eficiência real do equipamento.</p>
+        <span class="use">Abrir calculadora →</span>
+      </a>
+      <a class="card" href="https://maintor.com.br/calculadoras/roi-cmms">
+        <span class="metric">ROI</span>
+        <h2>Retorno do Investimento em CMMS</h2>
+        <p>Projete economia, retorno e prazo de payback ao digitalizar a gestão da manutenção.</p>
+        <span class="use">Abrir calculadora →</span>
+      </a>
+    </section>
+
+    <section class="cta" aria-label="Conheça o Maintor">
+      <div>
+        <h2>Acompanhe esses indicadores continuamente</h2>
+        <p>Registre a operação e acompanhe os resultados da manutenção no Maintor CMMS.</p>
+      </div>
+      <a href="https://app.maintor.com.br">Acessar o Maintor</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer">
+      <span>© 2026 Maintor CMMS</span>
+      <span><a href="https://maintor.com.br/">Início</a> · <a href="https://maintor.com.br/glossario/">Glossário</a> · <a href="https://maintor.com.br/blog/">Blog</a></span>
+    </div>
+  </footer>
+</body>
+</html>
