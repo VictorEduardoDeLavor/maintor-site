@@ -1,7 +1,7 @@
 # Índices de conteúdo do Maintor CMMS — Especificação de design
 
-**Data:** 2026-08-25  
-**Status:** aprovado conceitualmente; aguardando revisão desta especificação  
+**Data:** 2026-08-25
+**Status:** aprovado conceitualmente; aguardando revisão desta especificação
 **Escopo:** site estático publicado pelo GitHub Pages em `maintor.com.br`
 
 ## Contexto
