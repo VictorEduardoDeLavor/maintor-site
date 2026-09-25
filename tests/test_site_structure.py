@@ -123,6 +123,15 @@ class SiteStructureTests(unittest.TestCase):
 
         self.assertNotIn("https://app.maintor.com.br\"", content)
 
+    def test_homepage_contact_form_submits_to_the_public_lead_endpoint(self):
+        content = (ROOT / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn('id="contact-form"', content)
+        self.assertIn('https://app.maintor.com.br/functions/upsertPublicLead', content)
+        self.assertIn("source: 'site'", content)
+        self.assertIn('id="contact-status"', content)
+        self.assertNotIn("Formulário demonstrativo", content)
+
     def assert_index_contract(self, relative_path, canonical, expected_slugs):
         path = ROOT / relative_path
         self.assertTrue(path.is_file(), f"Índice ausente: {relative_path}")

@@ -481,6 +481,17 @@
     outline: 2px solid var(--azul);
     border-color: transparent;
   }
+  .form-status {
+    min-height: 24px;
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .form-status.success { color: #047857; }
+  .form-status.error { color: #b91c1c; }
+  .form-note { margin: 12px 0 0; color: var(--suave); font-size: 12px; text-align: center; }
+  .form-note a { color: var(--azul); }
 
   /* Footer */
   footer {
@@ -765,8 +776,7 @@
           <p class="sec-sub" style="font-size:16px;margin:0;">Preencha os dados abaixo para receber um contato técnico sobre a sua operação.</p>
         </div>
 
-        <!-- ATENÇÃO: Conectar este formulário ao endpoint de captura/webhook na infraestrutura de produção -->
-        <form action="#" method="POST" onsubmit="alert('Obrigado pelo contato! Formulário demonstrativo.'); return false;">
+        <form id="contact-form">
           <div class="form-group">
             <label for="nome">Nome completo</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
@@ -805,7 +815,14 @@
             <textarea id="mensagem" name="mensagem" rows="3" placeholder="Conte brevemente sobre o número de máquinas ou principais desafios de manutenção..."></textarea>
           </div>
 
-          <button type="submit" class="btn-primary" style="width:100%;padding:14px;font-size:16px;margin-top:10px;">Enviar mensagem</button>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button id="contact-submit" type="submit" class="btn-primary" style="width:100%;padding:14px;font-size:16px;margin-top:10px;">Enviar mensagem</button>
+          <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
+          <p class="form-note">Ao enviar, você declara ciência da nossa <a href="https://app.maintor.com.br/PoliticaPrivacidade">Política de Privacidade</a>.</p>
         </form>
       </div>
     </div>
@@ -864,6 +881,57 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (() => {
+    const endpoint = 'https://app.maintor.com.br/functions/upsertPublicLead';
+    const form = document.getElementById('contact-form');
+    const submit = document.getElementById('contact-submit');
+    const status = document.getElementById('contact-status');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      submit.disabled = true;
+      submit.textContent = 'Enviando...';
+      status.className = 'form-status';
+      status.textContent = '';
+
+      const fields = new FormData(form);
+      const payload = {
+        source: 'site',
+        nome: fields.get('nome'),
+        empresa: fields.get('empresa'),
+        email: fields.get('email'),
+        telefone: fields.get('telefone'),
+        setor: fields.get('setor'),
+        mensagem: fields.get('mensagem'),
+        website: fields.get('website'),
+      };
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json();
+        if (!response.ok || !result.ok) throw new Error(result.error || 'Falha no envio');
+
+        status.className = 'form-status success';
+        status.textContent = 'Contato recebido. Nossa equipe falará com você em breve.';
+        form.reset();
+      } catch (error) {
+        status.className = 'form-status error';
+        status.textContent = 'Não foi possível enviar agora. Tente novamente ou escreva para contato@maintor.com.br.';
+      } finally {
+        submit.disabled = false;
+        submit.textContent = 'Enviar mensagem';
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
