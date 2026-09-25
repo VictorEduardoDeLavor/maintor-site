@@ -357,6 +357,43 @@
     text-decoration: none;
   }
 
+  /* Commercial Plans */
+  .pricing-sec {
+    padding: 72px 0;
+    background: #fff;
+    border-bottom: 1px solid var(--linha);
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .plan-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 30px;
+    border: 1px solid var(--linha);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 18px 45px -32px rgba(15, 23, 42, 0.38);
+  }
+  .plan-card.featured {
+    border-color: #93c5fd;
+    box-shadow: 0 24px 55px -32px rgba(37, 99, 235, 0.5);
+  }
+  .plan-card.pilot {
+    background: #fffbeb;
+    border-color: #fde68a;
+  }
+  .plan-card h3 { margin: 0 0 8px; font-size: 24px; }
+  .plan-price { margin: 0 0 14px; font-size: 19px; font-weight: 800; color: var(--azul); }
+  .plan-card.pilot .plan-price { color: #b45309; }
+  .plan-card p { color: var(--suave); margin: 0 0 24px; }
+  .plan-card .btn-primary, .plan-card .btn-secondary { margin-top: auto; text-align: center; }
+  .trial-note { margin: -20px auto 0; max-width: 720px; color: var(--suave); font-size: 14px; }
+
   /* Sector Specifics */
   .setores-sec {
     padding: 72px 0;
@@ -492,7 +529,7 @@
   }
 
   @media (max-width: 860px) {
-    .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+    .grid-2, .grid-3, .pricing-grid, .footer-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 34px; }
     .hero .dek { font-size: 17px; }
     .nav-links { display: none; }
@@ -514,13 +551,14 @@
     <ul class="nav-links">
       <li><a href="#funcionalidades">Funcionalidades</a></li>
       <li><a href="#setores">Setores</a></li>
+      <li><a href="#planos">Planos</a></li>
       <li><a href="https://maintor.com.br/glossario">Glossário</a></li>
       <li><a href="https://maintor.com.br/blog">Blog</a></li>
       <li><a href="https://maintor.com.br/calculadoras">Calculadoras</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="https://app.maintor.com.br" class="btn-link" target="_blank" rel="noopener">Entrar</a>
-      <a href="#contato" class="btn-primary">Falar com a gente</a>
+      <a href="https://app.maintor.com.br/Home" class="btn-link">Entrar</a>
+      <a href="https://app.maintor.com.br/Cadastro" class="btn-primary">Testar grátis</a>
     </div>
   </div>
 </header>
@@ -531,11 +569,12 @@
     <div class="wrap">
       <div class="eyebrow">SOFTWARE DE GESTÃO DE MANUTENÇÃO INDUSTRIAL (CMMS)</div>
       <h1>Sua manutenção ainda vive de planilha e de memória?</h1>
-      <p class="dek">Assuma o controle do chão de fábrica: ordens de serviço digitais, preventivas automáticas, estoque integrado e histórico de ativos em tempo real.</p>
+      <p class="dek">Centralize ordens de serviço, preventivas, ativos, estoque e indicadores em um CMMS feito para a rotina industrial.</p>
       <div class="hero-btns">
-        <a href="#demo" class="btn-primary" style="padding:14px 24px;font-size:16px;">Ver a Maintor funcionando</a>
-        <a href="#contato" class="btn-secondary" style="padding:14px 24px;font-size:16px;">Falar com a gente</a>
+        <a href="https://app.maintor.com.br/Cadastro" class="btn-primary" style="padding:14px 24px;font-size:16px;">Testar grátis por 30 dias</a>
+        <a href="https://app.maintor.com.br/Home" class="btn-secondary" style="padding:14px 24px;font-size:16px;">Entrar no Maintor</a>
       </div>
+      <p class="trial-note">O cartão é cadastrado no início. A cobrança só acontece após 30 dias se o plano não for cancelado.</p>
       <div class="hero-bullets">
         <span>Sem papel no chão de fábrica</span>
         <span>Baixa automática de estoque de peças</span>
@@ -563,7 +602,7 @@
   <section class="feat-sec" id="funcionalidades">
     <div class="wrap">
       <div style="text-align:center;">
-        <h2 class="sec-title">Tudo o que sua equipe precisa para eliminar paradas</h2>
+        <h2 class="sec-title">Tudo o que sua equipe precisa para organizar a manutenção</h2>
         <p class="sec-sub">Recursos desenvolvidos para a rotina real de gerentes, supervisores e mantenedores.</p>
       </div>
 
@@ -599,16 +638,46 @@
         <div class="card-feat">
           <div class="card-tag">Telemetria & IoT</div>
           <h3>Painel Preditivo de Saúde</h3>
-          <p>Com sensores de temperatura, vibração e ruído instalados (plano SENSE), o painel acusa desvios e sinais de degradação antes de a máquina parar.</p>
+          <p>No piloto assistido Sense, sensores de temperatura, vibração e ruído apoiam a identificação de desvios e sinais de degradação.</p>
           <a href="https://maintor.com.br/glossario/manutencao-preditiva" class="card-link">Manutenção Preditiva ›</a>
         </div>
 
         <div class="card-feat">
           <div class="card-tag">Inteligência Artificial</div>
           <h3>Copiloto de Manutenção</h3>
-          <p>Disponível nos planos PRO/TRIAL/SENSE, a inteligência artificial analisa o histórico do ativo e falhas semelhantes para sugerir hipóteses de causa e ações recomendadas.</p>
+          <p>No plano Pro, a inteligência artificial analisa o histórico do ativo e falhas semelhantes para sugerir hipóteses de causa e ações recomendadas.</p>
           <a href="https://maintor.com.br/glossario/cmms" class="card-link">O que é um CMMS ›</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section class="pricing-sec" id="planos">
+    <div class="wrap">
+      <div style="text-align:center;">
+        <h2 class="sec-title">Planos claros para começar</h2>
+        <p class="sec-sub">30 dias para testar Start ou Pro com cartão cadastrado e sem cobrança imediata.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="plan-card">
+          <h3>Start</h3>
+          <div class="plan-price">Start — R$ 119/mês</div>
+          <p>Estrutura essencial para ativos, corretivas, checklists e histórico.</p>
+          <a class="btn-secondary" href="https://app.maintor.com.br/Cadastro">Começar 30 dias grátis</a>
+        </article>
+        <article class="plan-card featured">
+          <h3>Pro</h3>
+          <div class="plan-price">Pro — R$ 197/mês ou R$ 1.970/ano</div>
+          <p>Inclui preventivas, calendário, dashboards avançados, materiais e IA.</p>
+          <a class="btn-primary" href="https://app.maintor.com.br/Cadastro">Começar 30 dias grátis</a>
+        </article>
+        <article class="plan-card pilot">
+          <h3>Sense</h3>
+          <div class="plan-price">Sense — Piloto assistido</div>
+          <p>Implantação técnica sob consulta com sensores, telemetria, alarmes e acompanhamento Maintor.</p>
+          <a class="btn-secondary" href="https://app.maintor.com.br/sense">Solicitar piloto</a>
+        </article>
       </div>
     </div>
   </section>
@@ -624,7 +693,7 @@
       <div class="grid-2">
         <div class="card-setor">
           <h3>🏭 Plástico & Injeção</h3>
-          <p>Proteja injetoras de 150t a 500t e monitore o <strong>chiller central</strong> — o ponto único de falha que pode paralisar a fábrica inteira. Mantenha rotinas de preventiva em moldes para zerar refugos.</p>
+          <p>Organize a manutenção de injetoras de 150t a 500t e do <strong>chiller central</strong>. Estruture rotinas preventivas em moldes e acompanhe o histórico de intervenções.</p>
         </div>
 
         <div class="card-setor">
@@ -639,7 +708,7 @@
 
         <div class="card-setor">
           <h3>🥫 Alimentos & Envase</h3>
-          <p>Proteja o estoque na cadeia de frio (câmaras frias e compressores de amônia) e garanta a sanitização rigorosa de pasteurizadores e linhas de envase sem risco de recall.</p>
+          <p>Acompanhe câmaras frias e compressores de amônia e registre as rotinas de sanitização de pasteurizadores e linhas de envase.</p>
         </div>
       </div>
     </div>
@@ -749,7 +818,8 @@
       <div>
         <div class="footer-brand">MAINTOR CMMS</div>
         <p>Software de gestão de manutenção industrial brasileiro. Ordens de serviço digitais, preventivas automáticas e controle de estoque em tempo real.</p>
-        <p><strong>CNPJ:</strong> 66.511.174/0001-27</p>
+        <p>Maintor Tecnologia Ltda. · CNPJ 66.511.174/0001-27</p>
+        <p><a href="mailto:contato@maintor.com.br">contato@maintor.com.br</a></p>
       </div>
 
       <div class="footer-col">
@@ -759,7 +829,9 @@
           <li><a href="#setores">Setores Industriais</a></li>
           <li><a href="#demo">Vídeo de Demonstração</a></li>
           <li><a href="#faq">Perguntas Frequentes</a></li>
-          <li><a href="https://app.maintor.com.br" target="_blank" rel="noopener">Acessar o App</a></li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="https://app.maintor.com.br/Cadastro">Testar grátis</a></li>
+          <li><a href="https://app.maintor.com.br/Home">Acessar o App</a></li>
         </ul>
       </div>
 
@@ -780,6 +852,8 @@
           <li>E-mail: contato@maintor.com.br</li>
           <li>Suporte Técnico Maintor</li>
           <li>Atendimento Industrial</li>
+          <li><a href="https://app.maintor.com.br/TermosDeUso">Termos de Uso</a></li>
+          <li><a href="https://app.maintor.com.br/PoliticaPrivacidade">Política de Privacidade</a></li>
         </ul>
       </div>
     </div>

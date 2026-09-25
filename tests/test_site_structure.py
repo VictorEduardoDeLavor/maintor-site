@@ -103,6 +103,26 @@ def local_path_for_url(url):
 
 
 class SiteStructureTests(unittest.TestCase):
+    def test_homepage_matches_approved_commercial_offer(self):
+        content = (ROOT / "index.html").read_text(encoding="utf-8")
+
+        for expected in (
+            "Centralize ordens de serviço, preventivas, ativos, estoque e indicadores",
+            "Testar grátis por 30 dias",
+            "https://app.maintor.com.br/Cadastro",
+            "https://app.maintor.com.br/Home",
+            "Start — R$ 119/mês",
+            "Pro — R$ 197/mês ou R$ 1.970/ano",
+            "Sense — Piloto assistido",
+            "https://app.maintor.com.br/sense",
+            "https://app.maintor.com.br/TermosDeUso",
+            "https://app.maintor.com.br/PoliticaPrivacidade",
+        ):
+            with self.subTest(expected=expected):
+                self.assertIn(expected, content)
+
+        self.assertNotIn("https://app.maintor.com.br\"", content)
+
     def assert_index_contract(self, relative_path, canonical, expected_slugs):
         path = ROOT / relative_path
         self.assertTrue(path.is_file(), f"Índice ausente: {relative_path}")
