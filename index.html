@@ -358,6 +358,15 @@
   }
 
   /* Commercial Plans */
+  .ia-sec { padding: 88px 0; background: linear-gradient(180deg, #F5F3FF 0%, #EFF6FF 100%); }
+  .ia-sec .eyebrow-ia { display:inline-block; font-size:12px; font-weight:800; letter-spacing:.14em; color: var(--violeta); margin-bottom:10px; }
+  .ia-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-top:36px; }
+  .ia-card { background:#fff; border:1px solid #E0E7FF; border-radius:14px; padding:22px; }
+  .ia-card h3 { margin:0 0 8px; font-size:18px; }
+  .ia-card p { margin:0; color: var(--suave); font-size:15px; }
+  .ia-card .onde { display:block; margin-top:12px; font-size:12px; font-weight:700; color: var(--azul); letter-spacing:.04em; }
+  .ia-nota { margin-top:26px; text-align:center; color: var(--suave); font-size:14px; }
+  .ia-nota b { color: var(--violeta); }
   .pricing-sec {
     padding: 72px 0;
     background: #fff;
@@ -562,6 +571,7 @@
     <ul class="nav-links">
       <li><a href="#funcionalidades">Funcionalidades</a></li>
       <li><a href="#setores">Setores</a></li>
+      <li><a href="#ia">IA do Maintor</a></li>
       <li><a href="#planos">Planos</a></li>
       <li><a href="https://maintor.com.br/glossario">Glossário</a></li>
       <li><a href="https://maintor.com.br/blog">Blog</a></li>
@@ -580,7 +590,7 @@
     <div class="wrap">
       <div class="eyebrow">SOFTWARE DE GESTÃO DE MANUTENÇÃO INDUSTRIAL (CMMS)</div>
       <h1>Sua manutenção ainda vive de planilha e de memória?</h1>
-      <p class="dek">Centralize ordens de serviço, preventivas, ativos, estoque e indicadores em um CMMS feito para a rotina industrial.</p>
+      <p class="dek">Centralize ordens de serviço, preventivas, ativos, estoque e indicadores em um CMMS feito para a rotina industrial — com uma IA que lê os dados da sua manutenção e ajuda a equipe a decidir.</p>
       <div class="hero-btns">
         <a href="https://app.maintor.com.br/Cadastro" class="btn-primary" style="padding:14px 24px;font-size:16px;">Testar grátis por 30 dias</a>
         <a href="https://app.maintor.com.br/Home" class="btn-secondary" style="padding:14px 24px;font-size:16px;">Entrar no Maintor</a>
@@ -590,6 +600,7 @@
         <span>Sem papel no chão de fábrica</span>
         <span>Baixa automática de estoque de peças</span>
         <span>Histórico auditável por máquina</span>
+        <span>IA que analisa os seus dados</span>
       </div>
     </div>
   </section>
@@ -606,6 +617,40 @@
           Seu navegador não suporta a exibição de vídeos HTML5.
         </video>
       </div>
+    </div>
+  </section>
+
+  <!-- IA do Maintor -->
+  <section class="ia-sec" id="ia">
+    <div class="wrap">
+      <div style="text-align:center;">
+        <div class="eyebrow-ia">INTELIGÊNCIA ARTIFICIAL NO PLANO PRO</div>
+        <h2 class="sec-title">Uma IA que conhece a sua fábrica, porque lê os seus dados</h2>
+        <p class="sec-sub">Ela trabalha em cima do que a sua equipe já registra no Maintor — ordens de serviço, causas de falha, preventivas, ativos e estoque — e devolve análise pronta para quem precisa decidir.</p>
+      </div>
+      <div class="ia-grid">
+        <div class="ia-card">
+          <h3>Análise da OS</h3>
+          <p>Abriu uma ordem de serviço? Um clique e a IA aponta as causas prováveis, com o nível de confiança, e sugere as ações para o técnico.</p>
+          <span class="onde">NA ORDEM DE SERVIÇO</span>
+        </div>
+        <div class="ia-card">
+          <h3>Resumo inteligente do ativo</h3>
+          <p>A IA lê o histórico real de falhas, causas e preventivas de cada máquina e mostra os padrões que se repetem — antes de você decidir consertar ou trocar.</p>
+          <span class="onde">NO HISTÓRICO DO ATIVO</span>
+        </div>
+        <div class="ia-card">
+          <h3>Leitura do backlog</h3>
+          <p>No painel, a IA resume as ordens abertas da empresa e aponta os gargalos e os ativos críticos que pedem atenção agora.</p>
+          <span class="onde">NO PAINEL EXECUTIVO</span>
+        </div>
+        <div class="ia-card">
+          <h3>Copiloto de manutenção</h3>
+          <p>Pergunte em português — "qual máquina mais parou este mês?", "o que fazer com esse alarme?" — e o copiloto responde com os dados da sua planta.</p>
+          <span class="onde">NO COPILOTO</span>
+        </div>
+      </div>
+      <p class="ia-nota">Sugestão da IA, decisão da sua equipe: toda análise aparece como apoio, para o time validar. <b>Disponível no plano Pro.</b></p>
     </div>
   </section>
 
@@ -656,8 +701,8 @@
         <div class="card-feat">
           <div class="card-tag">Inteligência Artificial</div>
           <h3>Copiloto de Manutenção</h3>
-          <p>No plano Pro, a inteligência artificial analisa o histórico do ativo e falhas semelhantes para sugerir hipóteses de causa e ações recomendadas.</p>
-          <a href="https://maintor.com.br/glossario/cmms" class="card-link">O que é um CMMS ›</a>
+          <p>No plano Pro, a IA analisa os seus dados: causa provável e ação sugerida na OS, resumo de cada ativo, leitura do backlog e um copiloto que responde em português.</p>
+          <a href="#ia" class="card-link">Como a IA trabalha ›</a>
         </div>
       </div>
     </div>
@@ -674,13 +719,13 @@
         <article class="plan-card">
           <h3>Start</h3>
           <div class="plan-price">Start — R$ 119/mês</div>
-          <p>Estrutura essencial para ativos, corretivas, checklists e histórico.</p>
+          <p>Gestão completa da manutenção: ordens de serviço, ativos e histórico, preventivas e calendário, estoque e compras, indicadores. Até 3 usuários e 5 ativos.</p>
           <a class="btn-secondary" href="https://app.maintor.com.br/Cadastro">Começar 30 dias grátis</a>
         </article>
         <article class="plan-card featured">
           <h3>Pro</h3>
           <div class="plan-price">Pro — R$ 197/mês ou R$ 1.970/ano</div>
-          <p>Inclui preventivas, calendário, dashboards avançados, materiais e IA.</p>
+          <p>Tudo do Start <b>+ a IA do Maintor</b> analisando os seus dados: causa provável na OS, resumo do ativo e do backlog, copiloto de manutenção. Usuários e ativos ilimitados.</p>
           <a class="btn-primary" href="https://app.maintor.com.br/Cadastro">Começar 30 dias grátis</a>
         </article>
         <article class="plan-card pilot">
@@ -734,6 +779,11 @@
       </div>
 
       <div class="faq-list">
+        <details>
+          <summary>Qual a diferença entre Start e Pro?</summary>
+          <p>A gestão é a mesma nos dois: ordens de serviço, ativos, preventivas, calendário, estoque, compras e indicadores. O Pro soma a IA do Maintor, que lê os dados da sua manutenção e ajuda a equipe — causa provável e ação sugerida na OS, resumo de cada ativo e do backlog, copiloto que responde em português — e não tem limite de usuários e ativos.</p>
+        </details>
+
         <details>
           <summary>O que é o Maintor CMMS?</summary>
           <p>O Maintor é um software especializado de gestão de manutenção industrial (CMMS) projetado para automatizar ordens de serviço, rotinas preventivas, controle de ativos e almoxarifado de peças.</p>
