@@ -358,6 +358,32 @@
   }
 
   /* Commercial Plans */
+
+  .dores-sec { padding: 72px 0 40px; background: #fff; }
+  .dores { display:grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:32px; }
+  .dor { border:1px solid #E2E8F0; border-radius:12px; padding:18px; color: var(--suave); }
+  .dor b { display:block; color:#0F172A; margin-bottom:4px; }
+  .dores-fecho { text-align:center; font-size:20px; font-weight:800; margin:28px 0 0; }
+  .numeros { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:36px; }
+  .num { background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:16px 18px; }
+  .num b { display:block; font-size:18px; color:#0F172A; }
+  .num span { font-size:14px; color: var(--suave); }
+  .mods { display:grid; gap:64px; margin-top:44px; }
+  .mod { display:grid; grid-template-columns: 1fr 1.25fr; gap:40px; align-items:center; }
+  .mod-inv { grid-template-columns: 1.25fr 1fr; }
+  .mod-inv .mod-txt { order:2; }
+  .mod h3 { font-size:24px; margin:6px 0 12px; }
+  .mod ul { margin:0 0 14px; padding-left:18px; color: var(--suave); }
+  .mod li { margin:6px 0; }
+  .shot { width:100%; height:auto; border-radius:12px; border:1px solid #E2E8F0; box-shadow:0 18px 40px -18px rgba(15,23,42,.35); background:#fff; }
+  .shots { display:grid; gap:12px; }
+  .shots-2 { grid-template-columns: 1fr 1fr; }
+  .shot-legenda { font-size:12px; color: var(--suave); margin:6px 0 0; text-align:center; }
+  .celular { display:grid; grid-template-columns: 1fr 180px; gap:14px; align-items:end; }
+  .celular .phone { border:8px solid #0F172A; border-radius:28px; overflow:hidden; aspect-ratio: 9/19; background:#fff; }
+  .celular .phone img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
+  .ia-telas { display:grid; grid-template-columns: 1fr 1fr; gap:18px; margin-top:28px; }
+  @media (max-width: 860px) { .mod { grid-template-columns: 1fr; } .mod-inv { grid-template-columns: 1fr; } .mod-inv .mod-txt { order:0; } .celular { grid-template-columns: 1fr 120px; } .ia-telas, .shots-2 { grid-template-columns:1fr; } }
   .ia-sec { padding: 88px 0; background: linear-gradient(180deg, #F5F3FF 0%, #EFF6FF 100%); }
   .ia-sec .eyebrow-ia { display:inline-block; font-size:12px; font-weight:800; letter-spacing:.14em; color: var(--violeta); margin-bottom:10px; }
   .ia-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-top:36px; }
@@ -605,6 +631,29 @@
     </div>
   </section>
 
+
+  <!-- Dores -->
+  <section class="dores-sec" id="dores">
+    <div class="wrap">
+      <div style="text-align:center;">
+        <h2 class="sec-title">A manutenção não pode viver apagando incêndio</h2>
+      </div>
+      <div class="dores">
+        <div class="dor"><b>Máquina parada e ninguém sabe por quê</b>o histórico está na cabeça de uma pessoa só.</div>
+        <div class="dor"><b>OS no caderno, no WhatsApp e na planilha</b>informação espalhada, custo invisível.</div>
+        <div class="dor"><b>A peça acabou na hora da manutenção</b>estoque sem mínimo, compra no apuro.</div>
+        <div class="dor"><b>Preventiva vencida descoberta tarde demais</b>corretiva cara e parada não planejada.</div>
+      </div>
+      <p class="dores-fecho">O Maintor existe para acabar com isso.</p>
+      <div class="numeros">
+        <div class="num"><b>OS ilimitadas</b><span>em qualquer plano</span></div>
+        <div class="num"><b>5 módulos</b><span>OS, preventiva, ativos, estoque e compras</span></div>
+        <div class="num"><b>IA integrada</b><span>analisa os seus dados — plano Pro</span></div>
+        <div class="num"><b>ERP OMIE</b><span>requisições de compra enviadas direto ao ERP</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Demo Video -->
   <div id="video-demo" aria-hidden="true"></div>
   <section class="demo-sec" id="demo">
@@ -650,6 +699,7 @@
           <span class="onde">NO COPILOTO</span>
         </div>
       </div>
+      <div class="ia-telas"><div><img class="shot" src="/midia/telas/p14.png" alt="Análise da IA com causa provável e ação sugerida" decoding="async"><p class="shot-legenda">Análise da IA: causa provável e ação sugerida</p></div><div><img class="shot" src="/midia/telas/p13.png" alt="Copiloto de manutenção respondendo com dados da planta" decoding="async"><p class="shot-legenda">Copiloto respondendo com os dados da planta</p></div></div>
       <p class="ia-nota">Sugestão da IA, decisão da sua equipe: toda análise aparece como apoio, para o time validar. <b>Disponível no plano Pro.</b></p>
     </div>
   </section>
@@ -662,49 +712,54 @@
         <p class="sec-sub">Recursos desenvolvidos para a rotina real de gerentes, supervisores e mantenedores.</p>
       </div>
 
-      <div class="grid-3">
-        <div class="card-feat">
-          <div class="card-tag">Operação em Tempo Real</div>
-          <h3>Ordens de Serviço sem Papel</h3>
-          <p>Acompanhe ordens de serviço por status em tempo real. Filtre por máquina parada, criticidade e área. O técnico atualiza o atendimento direto no celular.</p>
-          <a href="https://maintor.com.br/glossario/ordem-de-servico" class="card-link">Saiba mais sobre OS ›</a>
+      <div class="mods">
+      <div class="mod">
+        <div class="mod-txt">
+          <div class="card-tag">Indicadores</div>
+          <h3>Veja a sua manutenção em tempo real</h3>
+          <ul><li>OS abertas, em execução, concluídas, alta criticidade e ativos parados num painel só — sem montar planilha.</li><li>Horas de parada, OS aguardando peça e materiais a repor, com um clique até as ordens por trás de cada número.</li><li>Evolução de corretivas e preventivas no período.</li></ul>
+          <a class="card-link" href="/glossario/indicadores-de-manutencao">Indicadores de manutenção ›</a>
         </div>
-
-        <div class="card-feat">
-          <div class="card-tag">Rastreabilidade</div>
-          <h3>Ativos com Histórico Rastreável</h3>
-          <p>Organize a fábrica em estrutura hierárquica (Unidade → Setor → Ativo → Componente). Consulte o histórico de quebras anteriores antes de tomar qualquer decisão.</p>
-          <a href="https://maintor.com.br/glossario/gestao-de-ativos" class="card-link">Gestão de Ativos ›</a>
-        </div>
-
-        <div class="card-feat">
-          <div class="card-tag">Automação</div>
-          <h3>Preventivas e Planos Automáticos</h3>
-          <p>Crie planos de manutenção preventiva por calendário fixo ou por horas de uso (horímetro). O sistema gera as ordens de serviço automaticamente na data certa.</p>
-          <a href="https://maintor.com.br/glossario/manutencao-preventiva" class="card-link">Manutenção Preventiva ›</a>
-        </div>
-
-        <div class="card-feat">
-          <div class="card-tag">Almoxarifado</div>
-          <h3>Estoque Integrado à Ordem</h3>
-          <p>Acabe com furos no estoque. Ao registrar o consumo de materiais durante o fechamento da OS, o sistema realiza a baixa automática no saldo do almoxarifado.</p>
-          <a href="https://maintor.com.br/calculadoras/roi-cmms" class="card-link">Calcular ROI ›</a>
-        </div>
-
-        <div class="card-feat">
-          <div class="card-tag">Telemetria & IoT</div>
-          <h3>Painel Preditivo de Saúde</h3>
-          <p>No piloto assistido Sense, sensores de temperatura, vibração e ruído apoiam a identificação de desvios e sinais de degradação.</p>
-          <a href="https://maintor.com.br/glossario/manutencao-preditiva" class="card-link">Manutenção Preditiva ›</a>
-        </div>
-
-        <div class="card-feat">
-          <div class="card-tag">Inteligência Artificial</div>
-          <h3>Copiloto de Manutenção</h3>
-          <p>No plano Pro, a IA analisa os seus dados: causa provável e ação sugerida na OS, resumo de cada ativo, leitura do backlog e um copiloto que responde em português.</p>
-          <a href="#ia" class="card-link">Como a IA trabalha ›</a>
-        </div>
+        <div class="mod-img"><div class="shots"><img class="shot" src="/midia/telas/p01.png" alt="Painel executivo do Maintor com indicadores de OS e backlog" decoding="async"><div class="shots shots-2"><img class="shot" src="/midia/telas/p02.png" alt="Painel operacional com ordens de serviço em andamento" decoding="async"><img class="shot" src="/midia/telas/p03.png" alt="Evolução de ordens de serviço no período" decoding="async"></div></div></div>
       </div>
+      <div class="mod mod-inv">
+        <div class="mod-txt">
+          <div class="card-tag">Celular no chão de fábrica</div>
+          <h3>Tempo real na palma da mão</h3>
+          <ul><li>Abra OS pelo celular, na máquina — ativo, descrição e foto em segundos.</li><li>Acompanhe cada status de qualquer lugar, direto do navegador, sem instalar nada.</li><li>Gestor e manutentor veem o mesmo painel: chega de "como está aquela OS?".</li></ul>
+          <a class="card-link" href="/glossario/ordem-de-servico">Ordem de serviço ›</a>
+        </div>
+        <div class="mod-img"><div class="celular"><img class="shot" src="/midia/telas/p08.png" alt="Lista de ordens de serviço com status e prioridade" decoding="async"><div class="phone"><img class="" src="/midia/telas/p07.png" alt="Abertura de OS pelo celular" decoding="async"></div></div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-txt">
+          <div class="card-tag">Preventiva</div>
+          <h3>Preventivas que acontecem</h3>
+          <ul><li>Planos por ativo com a frequência que a máquina pede.</li><li>A OS nasce sozinha na data certa, com checklist e materiais do plano.</li><li>O manutentor atribuído é notificado, e o que vencer fica visível no painel.</li></ul>
+          <a class="card-link" href="/glossario/manutencao-preventiva">Manutenção preventiva ›</a>
+        </div>
+        <div class="mod-img"><img class="shot" src="/midia/telas/p06.png" alt="Calendário de preventivas por ativo" decoding="async"></div>
+      </div>
+      <div class="mod mod-inv">
+        <div class="mod-txt">
+          <div class="card-tag">Suprimentos</div>
+          <h3>Estoque e compras integrados ao ERP</h3>
+          <ul><li>Estoque com saldo e mínimo por material: a reposição aparece antes de faltar peça na OS.</li><li>A peça usada na OS dá baixa no estoque; a requisição de compra nasce dali, com aprovação.</li><li>Integração OMIE: a requisição vai direto para o ERP, sem redigitar.</li></ul>
+          <a class="card-link" href="/calculadoras/custo-parada-maquina">Quanto custa a peça que falta ›</a>
+        </div>
+        <div class="mod-img"><div class="shots shots-2"><div><img class="shot" src="/midia/telas/p05.png" alt="Controle de estoque de materiais de manutenção" decoding="async"><p class="shot-legenda">Estoque</p></div><div><img class="shot" src="/midia/telas/p11.png" alt="Requisições de compra integradas ao ERP OMIE" decoding="async"><p class="shot-legenda">Requisição enviada ao OMIE</p></div></div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-txt">
+          <div class="card-tag">Ativos</div>
+          <h3>Seus ativos organizados</h3>
+          <ul><li>Planta, linha, máquina e componente em árvore navegável.</li><li>Criticidade e status operacional em cada ativo, com o histórico de OS sempre à mão.</li><li>O status acompanha as OS: abriu com máquina parada, o ativo aparece parado.</li></ul>
+          <a class="card-link" href="/glossario/criticidade-de-ativos">Criticidade de ativos ›</a>
+        </div>
+        <div class="mod-img"><div class="shots shots-2"><img class="shot" src="/midia/telas/p09.png" alt="Árvore hierárquica de ativos" decoding="async"><img class="shot" src="/midia/telas/p10.png" alt="Grade de ativos com status e criticidade" decoding="async"></div></div>
+      </div>
+      </div>
+      <p class="ia-nota" style="margin-top:40px">Sensores de temperatura e vibração: <a href="https://app.maintor.com.br/sense">Maintor Sense, em piloto assistido</a>.</p>
     </div>
   </section>
 
