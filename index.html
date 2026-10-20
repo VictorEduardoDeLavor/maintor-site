@@ -34,12 +34,54 @@
   "name": "Maintor CMMS",
   "operatingSystem": "All",
   "applicationCategory": "BusinessApplication",
-  "description": "Sistema completo para ordens de serviço, planos de manutenção preventiva, gestão de estoque de peças e telemetria industrial.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "BRL"
-  }
+  "description": "Sistema de gestão de manutenção industrial (CMMS): ordens de serviço, planos de manutenção preventiva, gestão de estoque de peças e indicadores.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Maintor Start",
+      "url": "https://maintor.com.br/#planos",
+      "description": "Gestão completa da manutenção, sem IA: ordens de serviço, ativos, preventivas, estoque, compras e indicadores. Até 3 usuários e 5 ativos. Teste grátis por 30 dias.",
+      "price": "119.00",
+      "priceCurrency": "BRL",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "119.00",
+        "priceCurrency": "BRL",
+        "billingDuration": "P1M",
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Maintor Pro",
+      "url": "https://maintor.com.br/#planos",
+      "description": "Tudo do Start, mais a IA do Maintor sobre os dados da manutenção, sem limite de usuários e ativos. Teste grátis por 30 dias.",
+      "price": "197.00",
+      "priceCurrency": "BRL",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "197.00",
+        "priceCurrency": "BRL",
+        "billingDuration": "P1M",
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Maintor Pro (anual)",
+      "url": "https://maintor.com.br/#planos",
+      "description": "Pro cobrado uma vez por ano. Teste grátis por 30 dias.",
+      "price": "1970.00",
+      "priceCurrency": "BRL",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "1970.00",
+        "priceCurrency": "BRL",
+        "billingDuration": "P1Y",
+        "unitCode": "ANN"
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -49,10 +91,18 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Qual a diferença entre Start e Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A gestão é a mesma nos dois: ordens de serviço, ativos, preventivas, calendário, estoque, compras e indicadores. O Pro soma a IA do Maintor, que lê os dados da sua manutenção e ajuda a equipe — causa provável e ação sugerida na OS, resumo de cada ativo e do backlog, copiloto que responde em português — e não tem limite de usuários e ativos."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "O que é o Maintor CMMS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O Maintor é um software especialista de gestão de manutenção industrial (CMMS) desenvolvido para gerenciar ordens de serviço, planos de preventiva, inventário de ativos e estoque de peças em tempo real."
+        "text": "O Maintor é um software especializado de gestão de manutenção industrial (CMMS) projetado para automatizar ordens de serviço, rotinas preventivas, controle de ativos e almoxarifado de peças."
       }
     },
     {
@@ -60,7 +110,7 @@
       "name": "É difícil migrar minhas planilhas do Excel para o Maintor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. A carga inicial de equipamentos, áreas, materiais e histórico é feita pela equipe da Maintor a partir das suas planilhas, na implantação sem digitação manual item por item."
+        "text": "Não. A carga inicial de equipamentos, áreas, materiais e histórico é feita pela equipe da Maintor a partir das suas planilhas, na implantação. Você não precisa redigitar nada."
       }
     },
     {
@@ -68,7 +118,7 @@
       "name": "O Maintor funciona no celular ou tablet no chão de fábrica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. A interface é totalmente responsiva e acessível via navegador web em smartphones, tablets e computadores, permitindo aos mantenedores abrir, atualizar e encerrar ordens de serviço diretamente no local do atendimento."
+        "text": "Sim. O aplicativo roda diretamente no navegador de qualquer dispositivo móvel ou computador, permitindo que a equipe técnica abra e feche ordens de serviço no local do equipamento."
       }
     },
     {
@@ -76,7 +126,7 @@
       "name": "Quanto tempo leva para implantar o Maintor na minha fábrica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Com o assistente de onboarding em 4 passos e os cadastros padrão de causa de falha já pré-configurados, é possível cadastrar a empresa, subir os ativos principais e abrir a primeira ordem de serviço no mesmo dia."
+        "text": "Com o assistente de onboarding guiado em 4 passos, você cadastra sua empresa, sobe seus equipamentos principais e emite as primeiras ordens de serviço no primeiro dia."
       }
     },
     {
@@ -84,15 +134,15 @@
       "name": "Meus dados ficam seguros e posso exportar meu histórico quando quiser?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Todos os dados da sua empresa pertencem a você. O Maintor oferece exportação completa de relatórios e histórico de ordens de serviço para arquivos Excel/CSV a qualquer momento."
+        "text": "Sim. O histórico completo de ordens de serviço, ativos e movimentações de estoque pode ser exportado para planilhas Excel a qualquer momento."
       }
     },
     {
       "@type": "Question",
-      "name": "O Maintor atende às particularidades do meu setor industrial?",
+      "name": "O Maintor serve para o meu setor industrial?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. O sistema atende indústrias de injeção plástica, química, metalurgia, alimentos e manufatura em geral, com suporte a estruturas de ativos hierárquicas, controle de utilidades e planos preventivos customizáveis."
+        "text": "Sim. A estrutura de ativos e planos do Maintor atende fábricas de injeção plástica, química, metalurgia, alimentos e manufatura em geral."
       }
     }
   ]
@@ -649,7 +699,7 @@
         <div class="num"><b>OS ilimitadas</b><span>em qualquer plano</span></div>
         <div class="num"><b>5 módulos</b><span>OS, preventiva, ativos, estoque e compras</span></div>
         <div class="num"><b>IA integrada</b><span>analisa os seus dados — plano Pro</span></div>
-        <div class="num"><b>ERP OMIE</b><span>requisições de compra enviadas direto ao ERP</span></div>
+        <div class="num"><b>ERP OMIE</b><span>requisição de compra enviada ao OMIE, ativada na implantação</span></div>
       </div>
     </div>
   </section>
@@ -743,11 +793,11 @@
       <div class="mod mod-inv">
         <div class="mod-txt">
           <div class="card-tag">Suprimentos</div>
-          <h3>Estoque e compras integrados ao ERP</h3>
-          <ul><li>Estoque com saldo e mínimo por material: a reposição aparece antes de faltar peça na OS.</li><li>A peça usada na OS dá baixa no estoque; a requisição de compra nasce dali, com aprovação.</li><li>Integração OMIE: a requisição vai direto para o ERP, sem redigitar.</li></ul>
+          <h3>Estoque e compras, com envio ao OMIE</h3>
+          <ul><li>Estoque com saldo e mínimo por material: a reposição aparece antes de faltar peça na OS.</li><li>A peça usada na OS dá baixa no estoque; a requisição de compra nasce dali, com aprovação.</li><li>Integração OMIE: a requisição de compra criada no Maintor é enviada ao OMIE. A Maintor ativa a integração na implantação, com as credenciais de API da sua conta OMIE.</li></ul>
           <a class="card-link" href="/calculadoras/custo-parada-maquina">Quanto custa a peça que falta ›</a>
         </div>
-        <div class="mod-img"><div class="shots shots-2"><div><img class="shot" src="/midia/telas/p05.png" alt="Controle de estoque de materiais de manutenção" decoding="async"><p class="shot-legenda">Estoque</p></div><div><img class="shot" src="/midia/telas/p11.png" alt="Requisições de compra integradas ao ERP OMIE" decoding="async"><p class="shot-legenda">Requisição enviada ao OMIE</p></div></div></div>
+        <div class="mod-img"><div class="shots shots-2"><div><img class="shot" src="/midia/telas/p05.png" alt="Controle de estoque de materiais de manutenção" decoding="async"><p class="shot-legenda">Estoque</p></div><div><img class="shot" src="/midia/telas/p11.png" alt="Requisição de compra enviada ao OMIE" decoding="async"><p class="shot-legenda">Requisição enviada ao OMIE</p></div></div></div>
       </div>
       <div class="mod">
         <div class="mod-txt">
