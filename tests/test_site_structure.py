@@ -188,10 +188,10 @@ class SiteStructureTests(unittest.TestCase):
             with self.subTest(relative_path=relative_path):
                 self.assertNotIn(hidden_rule, content)
 
-    def test_sitemap_has_36_unique_urls(self):
+    def test_sitemap_has_37_unique_urls(self):
         locations = sitemap_locations()
-        self.assertEqual(len(locations), 36)
-        self.assertEqual(len(set(locations)), 36)
+        self.assertEqual(len(locations), 37)
+        self.assertEqual(len(set(locations)), 37)
         self.assertIn(f"{BASE_URL}/blog/", locations)
         self.assertIn(f"{BASE_URL}/calculadoras/", locations)
 
@@ -329,6 +329,27 @@ class SiteStructureTests(unittest.TestCase):
                 last_change = result.stdout.strip()
                 if last_change:
                     self.assertGreaterEqual(lastmod, last_change)
+
+    def test_help_page_publishes_the_support_rule(self):
+        content = (ROOT / "ajuda/index.html").read_text(encoding="utf-8")
+        for expected in (
+            "https://wa.me/5511946610634",
+            "victor@maintor.com.br",
+            "segunda a sexta, das 9h às 18h",
+            "não prometemos um prazo fixo",
+            "Gerenciar assinatura",
+            "Exportar Excel",
+            "Excluir minha conta",
+        ):
+            with self.subTest(expected=expected):
+                self.assertIn(expected, content)
+        # Decisão D13: sem SLA numérico, sem "atendimento prioritário".
+        self.assertNotRegex(content, r"em até \d+ ?(h|horas|minutos)")
+        self.assertNotIn("prioritário", content)
+        self.assertNotIn("93941", content)
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn("https://maintor.com.br/ajuda/", home)
+        self.assertNotIn('href="#demo"', home)
 
 
 if __name__ == "__main__":
