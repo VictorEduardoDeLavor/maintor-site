@@ -6,7 +6,7 @@ import unittest
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -113,7 +113,7 @@ class SiteStructureTests(unittest.TestCase):
         for expected in (
             "Centralize ordens de serviço, preventivas, ativos, estoque e indicadores",
             "Testar grátis por 30 dias",
-            "https://app.maintor.com.br/Cadastro",
+            "https://wa.me/5511946610634?text=",
             "https://app.maintor.com.br/Home",
             "Start — R$ 119/mês",
             "Pro — R$ 197/mês ou R$ 1.970/ano",
@@ -302,13 +302,25 @@ class SiteStructureTests(unittest.TestCase):
         for path in pages:
             content = path.read_text(encoding="utf-8")
             with self.subTest(path=path.relative_to(ROOT)):
-                self.assertIn("https://app.maintor.com.br/Cadastro?utm_source=site", content)
-                self.assertIn("utm_medium=conteudo", content)
-                self.assertIn(f"utm_campaign={path.parent.name.replace('calculadoras', 'calculadora')}-{path.stem}", content)
+                # Lançamento 01/11 com venda assistida: o CTA abre o WhatsApp e diz de qual página veio.
+                campanha = f"{path.parent.name.replace('calculadoras', 'calculadora')}-{path.stem}"
+                self.assertIn("https://wa.me/5511946610634?text=", content)
+                self.assertIn(quote(f"(vim pela página {campanha})", safe=""), content)
+                self.assertNotIn("app.maintor.com.br/Cadastro", content)
                 self.assertIn("https://maintor.com.br/#video-demo", content)
                 self.assertIn("https://wa.me/5511946610634", content)
                 self.assertNotIn("11) 93941-3839", content)
                 self.assertNotIn("contato@maintor.com.br", content)
+
+    def test_no_production_page_sends_visitors_to_self_service_signup(self):
+        # Lançamento de 01/11 só com venda assistida: nenhum CTA leva ao cadastro com checkout.
+        for path in sorted(ROOT.rglob("*.html")):
+            if ".git" in path.parts or "node_modules" in path.parts:
+                continue
+            with self.subTest(path=path.relative_to(ROOT)):
+                content = path.read_text(encoding="utf-8")
+                self.assertNotIn("app.maintor.com.br/Cadastro", content)
+                self.assertNotIn("checkout do Stripe", content)
 
     def test_sitemap_lastmod_is_not_older_than_the_last_change(self):
         tree = ET.parse(ROOT / "sitemap.xml")
@@ -337,7 +349,7 @@ class SiteStructureTests(unittest.TestCase):
             "victor@maintor.com.br",
             "segunda a sexta, das 9h às 18h",
             "não prometemos um prazo fixo",
-            "Gerenciar assinatura",
+            "não pedimos cartão para começar",
             "Exportar Excel",
             "Excluir minha conta",
         ):
