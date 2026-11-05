@@ -1071,6 +1071,24 @@
 <script>
   (() => {
     const endpoint = 'https://app.maintor.com.br/functions/upsertPublicLead';
+    // CRM comercial (Maintor Leads): recebe o mesmo contato em paralelo, com a origem e os utm.
+    // O token é público por desenho (função só cria/atualiza lead, com limite por IP e sem duplicar).
+    const crmEndpoint = 'https://maintor-leads-30a0a804.base44.app/functions/captarLead';
+    const crmToken = '2l-UaqQnRhF-oi_S6oDqgVSZxFJKyj5kU78QpVGMbuw';
+    const utm = new URLSearchParams(location.search);
+    const captarLeadCRM = (p) => fetch(crmEndpoint, {
+      method: 'POST', keepalive: true,
+      headers: { 'Content-Type': 'application/json', 'x-site-token': crmToken },
+      body: JSON.stringify({
+        frente: 'cmms', nome: p.nome, telefone: p.telefone, email: p.email,
+        cidade: '', mensagem: [p.empresa && `Empresa: ${p.empresa}`, p.setor && `Setor: ${p.setor}`, p.mensagem]
+          .filter(Boolean).join(' · '),
+        origem: 'site · formulário home',
+        utm_source: utm.get('utm_source') || '', utm_medium: utm.get('utm_medium') || '',
+        utm_campaign: utm.get('utm_campaign') || '',
+      }),
+    }).catch(() => {});
+    window.captarLeadCRM = captarLeadCRM;
     const form = document.getElementById('contact-form');
     const submit = document.getElementById('contact-submit');
     const status = document.getElementById('contact-status');
@@ -1097,6 +1115,7 @@
       };
 
       try {
+        if (!payload.website) captarLeadCRM(payload); // honeypot vazio = humano
         const response = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
